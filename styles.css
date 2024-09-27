@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cookie&display=swap');
+
+/* Universal Styles */
+:root {
+    /* Color palette variables here */
+    --base-text: #000;
+    --orange: #e88d66ff;
+    --melon: #eeae9cff;
+    --pale-yellow: #fffce4ff;
+    --light-pink: #edc5d5ff;
+    --magenta: #a25877ff;
+}
+
+/* Landing page styles */
+
+/* Menu page styles */
+
+/* Podcast page styles */
+
+/* About Us/FAQ page styles */
