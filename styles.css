@@ -11,6 +11,10 @@
     --magenta: #a25877ff;
 }
 
+.icon{
+    align-items: end;
+}
+
 /* Landing page styles */
 
 /* Menu page styles */
