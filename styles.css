@@ -18,3 +18,51 @@
 /* Podcast page styles */
 
 /* About Us/FAQ page styles */
+
+/* Footer styles*/
+.footer{
+    position: fixed; /* Fix footer to bottom of the screen*/
+    left:0;
+    bottom:0;
+    width:100%; /*Set footer width to entire screen*/
+    height:12%; /*Set footer height and minimum height */
+    min-height:75px;
+    background-color: var(--magenta); /*Set background color of footer*/
+    color: var(--pale-yellow); /*Set text color in footer*/
+    font-family: 'Comic Neue'; /*Set font of the footer*/
+    font-size: 1.6vw;
+}
+
+/*Display elements of the footer in a grid with 3 equal columns*/
+.footer-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/*Center footer image*/
+.footer-img{
+    display:block;
+    margin: auto;
+}
+
+/*Set footer image size and pad from top of the footer*/
+.footer-img-size{
+    height: 3.4em;
+    min-height:50px;
+    width: auto;
+    padding-top: 8%;
+}
+
+/*Vertically center left footer text and align left*/
+.left-footer-text{
+    display:block;
+    margin: auto 0;
+    text-align: left;
+}
+
+/*Vertically center left footer text and align right*/
+.right-footer-text{
+    display:block;
+    margin: auto 0;
+    text-align: right;
+}
