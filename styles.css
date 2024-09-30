@@ -9,6 +9,12 @@
     --pale-yellow: #fffce4ff;
     --light-pink: #edc5d5ff;
     --magenta: #a25877ff;
+
+    --title-size: calc(5vw + 2rem);
+    --lg-heading-size: calc(5vw + .25rem);
+    --sm-heading-size: calc(2.5vw + .125rem);
+    --normal-text-size: 2vw;
+
 }
 
 
@@ -30,6 +36,19 @@
 }
 
 /* Landing page styles */
+.landing-header {
+    background-color: auto;
+}
+
+.header-text {
+    font-family: "Cookie", cursive;
+    font-size: var(--title-size);
+}
+
+.regular-text {
+    font-family: "Comic Neue", sans-serif;
+    font-size: var(--normal-text-size);
+}
 
 /* Menu page styles */
 
