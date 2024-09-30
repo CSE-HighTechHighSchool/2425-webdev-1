@@ -11,9 +11,6 @@
     --magenta: #a25877ff;
 }
 
-.navbar{
-    background-color: #E88D66;
-}
 
 .logo{
     transform: scale(0.25);
@@ -24,10 +21,12 @@
     top: 0;
     right: 0;
     margin: 0px;
+    background-color: var(--orange);
 }
        
-title{
-    font-family: Cookie, 'sans serif';
+.navName{
+    font-family: Cookie, sans-serif;
+    text-align: center;
 }
 
 /* Landing page styles */
