@@ -40,6 +40,19 @@
     --bs-border-width: 0;
 }
 
+#nav-menu{
+    color: var(--pale-yellow);
+    background-color: var(--orange);
+    display:block;
+    right: 0;
+    top: 5px;
+    width: 100px;
+
+   /*
+    margin-top: 55px;
+    margin-right:15px;*/
+}
+
 .nav-button{
     display: inline-block;
 }
