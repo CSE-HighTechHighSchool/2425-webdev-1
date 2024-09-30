@@ -22,16 +22,29 @@
     background-image: url("img/awning-design.png");
     background-size: contain;
     background-position: bottom-right;
+    z-index: 2;
+    position: relative;
 }
 
-.header-text {
+.title-text {
     font-family: "Cookie", cursive;
     font-size: var(--title-size);
 }
 
-.regular-text {
+.normal-text {
     font-family: "Comic Neue", sans-serif;
     font-size: var(--normal-text-size);
+}
+
+.header-text {
+    font-family: "Cookie", cursive;
+    font-size: var(--lg-heading-size);
+}
+
+.featured-items {
+    background-color: var(--melon);
+    margin-top: -40px;
+    z-index: 4;
 }
 
 /* Menu page styles */
