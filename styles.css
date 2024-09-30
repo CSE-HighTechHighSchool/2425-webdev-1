@@ -20,7 +20,8 @@
 /* Landing page styles */
 .landing-header {
     background-image: url("img/awning-design.png");
-    background-size: cover;
+    background-size: contain;
+    background-position: bottom-right;
 }
 
 .header-text {
