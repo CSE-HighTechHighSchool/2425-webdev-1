@@ -10,130 +10,41 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <div class="container">
+    <nav class="navbar navbar-expand-lg">
+        <span>
+        <div class="container navbarMenu">
             <!-- Website Name -->
-             <h1>Humming Bee Bakes</h1>
-            <!-- Logo -->
+             <h1 class="text-align-left">Humming Bee Bakes</h1>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                <span><img src="images/logo" class="logo align-text-top w-5"></span>
+             <!-- Logo -->
+            <button class="navbar-toggler navbar-brand" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span><img src="img/temporary-bee.jpg" class="logo"></span>
             </button>
-            <section class="menu menu--circle">
-  <input type="checkbox" id="menu__active"/>
-  <label for="menu__active" class="menu__active">
-    <div class="menu__toggle">
-      <div class="icon">
-        <div class="hamburger"></div>
-      </div>
-    </div>
-    <input type="radio" name="arrow--up" id="degree--up-0"/>
-    <input type="radio" name="arrow--up" id="degree--up-1" />
-    <input type="radio" name="arrow--up" id="degree--up-2" />
-    <div class="menu__listings">
-      <ul class="circle">
-        <li>
-          <div class="placeholder">
-            <div class="upside">
-              <a href="https://codepen.io/logrithumn" class="button"><i class="fa fa-user"></i></a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="placeholder">
-            <div class="upside">
-              <a href="#" class="button"><i class="fa fa-cog"></i></a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="placeholder">
-            <div class="upside">
-              <a href="#">&nbsp</a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="placeholder">
-            <div class="upside">
-              <a href="#" class="button"><i class="fa fa-commenting"></i></a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="placeholder">
-            <div class="upside">
-              <a href="#" class="button"><i class="fa fa-trash"></i></a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="placeholder">
-            <div class="upside">
-              <a href="#" class="button"><i class="fa fa-battery-4"></i></a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="placeholder">
-            <div class="upside">
-              <a href="#" class="button"><i class="fa fa-calendar"></i></a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="placeholder">
-            <div class="upside">
-              <a href="#" class="button"><i class="fa fa-cloud"></i></a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="placeholder">
-            <div class="upside">
-              <a href="#" class="button"><i class="fa fa-wifi"></i></a>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="placeholder">
-            <div class="upside">
-              <a href="#" class="button"><i class="fa fa-envelope-o"></i></a>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="menu__arrow menu__arrow--top">
-      <ul>
-        <li>
-          <label for="degree--up-0"><div class="arrow"></div></label>
-          <label for="degree--up-1"><div class="arrow"></div></label>
-          <label for="degree--up-2"><div class="arrow"></div></label>
-        </li>
-      </ul>
-    </div>
-  </label>
-</section>
-            <div class="collapse navbar-collapse" id="navmenu">
-                <!-- Links to hamburger menu button -->
-                <ul class="navbar-nav ms-auto"> <!-- ms-auto provides auto spacing for margin-->
-                    <li class="nav-item">
-                        <a href=".html" class="nav-link nbMenuItem">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href=".html" class="nav-link nbMenuItem">Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href=".html" class="nav-link nbMenuItem">Podcasts</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href=".html" class="nav-link nbMenuItem">About Us</a>
-                    </li>
-                </ul>
-            </div>
+            
+            <!-- Navbar -->
+            <section>
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <!-- Links to hamburger menu button -->
+                    <ul class="navbar-nav ms-auto"> <!-- ms-auto provides auto spacing for margin-->
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link nbMenuItem">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="menu.html" class="nav-link nbMenuItem">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="podcasts.html" class="nav-link nbMenuItem">Podcasts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link nbMenuItem">About Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
         </div>
+        </span>
     </nav>
+
 
     <!-- Footer -->
     <footer class="footer">

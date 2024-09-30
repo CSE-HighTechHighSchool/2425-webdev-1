@@ -11,8 +11,23 @@
     --magenta: #a25877ff;
 }
 
-.icon{
-    align-items: end;
+.navbar{
+    background-color: #E88D66;
+}
+
+.logo{
+    transform: scale(0.25);
+}
+
+.navbarMenu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0px;
+}
+       
+title{
+    font-family: Cookie, 'sans serif';
 }
 
 /* Landing page styles */
