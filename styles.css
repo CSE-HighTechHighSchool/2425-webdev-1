@@ -19,7 +19,8 @@
 
 /* Landing page styles */
 .landing-header {
-    background-color: auto;
+    background-image: url("img/awning-design.png");
+    background-size: cover;
 }
 
 .header-text {
