@@ -19,36 +19,47 @@
 
 
 .logo{
-    transform: scale(0.25);
+    transform: scale(0.35);
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    margin: 0px;
 }
 
-.navbarMenu{
+.navbar-menu{
     position: fixed;
     top: 0;
     right: 0;
     margin: 0px;
+    color: var(--pale-yellow);
     background-color: var(--orange);
+    --bs-navbar-toggler-focus-width: 0;
+    display: block;
+    --bs-navbar-toggler-padding-x: 0;
+    --bs-navbar-toggler-padding-y: 0;
+    --bs-border-width: 0;
+}
+
+.nav-button{
+    display: inline-block;
 }
        
-.navName{
+.nav-name{
     font-family: Cookie, sans-serif;
-    text-align: center;
+    display: inline-block;
+}
+
+.menu-item{
+    font-family: 'Comic Neue';
+    align-items: end;
+    color: var(--pale-yellow);
+}
+
+.nb-menu-item{
+    color: var(--pale-yellow);
 }
 
 /* Landing page styles */
-.landing-header {
-    background-color: auto;
-}
-
-.header-text {
-    font-family: "Cookie", cursive;
-    font-size: var(--title-size);
-}
-
-.regular-text {
-    font-family: "Comic Neue", sans-serif;
-    font-size: var(--normal-text-size);
-}
 
 /* Menu page styles */
 
