@@ -6,6 +6,7 @@
     --base-text: #000;
     --orange: #e88d66ff;
     --melon: #eeae9cff;
+    --pale-orange: #FBE0CF;
     --pale-yellow: #fffce4ff;
     --light-pink: #edc5d5ff;
     --magenta: #a25877ff;
@@ -14,6 +15,55 @@
 /* Landing page styles */
 
 /* Menu page styles */
+
+.menu{
+    position:fixed;
+    height:100%;
+    width:100%;
+    background-color: var(--pale-yellow)
+}
+
+.menu-header{
+    display:block;
+    color: var(--light-pink);
+    background-color: var(--magenta);
+    font-family: 'Cookie';
+    text-align: center;
+    width: 25%;
+    margin:auto;
+}
+
+.menu-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(10, 100%);
+    text-align:center;
+    column-gap: 10px;
+}
+
+.menu-col-1{
+    background-color: var(--orange);
+    grid-column: 1;
+    grid-row: 1 / 4; 
+}
+
+.menu-col-2{
+    background-color: var(--orange);
+    grid-column: 2;
+    grid-row: 2 / 5; 
+}
+
+.menu-col-3{
+    background-color: var(--orange);
+    grid-column: 3;
+    grid-row: 1 / 4; 
+}
+
+.menu-subheader{
+    color: var(--pale-orange);
+    font-family: 'Cookie';
+    padding: 3px;
+}
 
 /* Podcast page styles */
 
@@ -28,7 +78,7 @@
     height:12%; /*Set footer height and minimum height */
     min-height:75px;
     background-color: var(--magenta); /*Set background color of footer*/
-    color: var(--pale-yellow); /*Set text color in footer*/
+    color: var(--light-pink); /*Set text color in footer*/
     font-family: 'Comic Neue'; /*Set font of the footer*/
     font-size: 1.6vw;
 }
