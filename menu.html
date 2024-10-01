@@ -10,12 +10,44 @@
     <link rel="stylesheet" href="styles.css">
 </head>
     <body>
+        <nav class="navbar navbar-lg">
+            <div class="container-fluid navbar-menu">
+                <!-- Website Name -->
+                 <h1 class="nav-name">Humming Bee Bakes</h1>
+                
+                 <!-- Logo -->
+                <button class="nav-button navbar-toggler navbar-brand icon-link align-text-top" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="logo align-middle"><img src="img/temporary-bee.jpg" class="logo"></span>
+                </button>
+                
+                <!-- Navbar -->
+                    <div class="container collapse navbar-collapse nav-menu" id="navmenu">
+                        <!-- Links to hamburger menu button -->
+                        <ul class="navbar-nav menu-item"> <!-- ms-auto provides auto spacing for margin-->
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link nb-menu-item">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="menu.html" class="nav-link nb-menu-item">Menu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="podcasts.html" class="nav-link nb-menu-item">Podcasts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="about.html" class="nav-link nb-menu-item">About Us</a>
+                            </li>
+                        </ul>
+                    </div>
+        </nav>
+
+
         <!-- Menu Page-->
         <div class="menu p-2">
             <br>
             <h1 class="menu-header">Menu</h1>
-            <div class="menu-grid">
-                <div class="menu-col-1">
+            <br>
+            <div class="menu-flex">
+                <div class="menu-item">
                     <!-- Menu Item Subheading-->
                     <h2 class="menu-subheader">Cookies</h2>
                     <!-- Sample Image-->
@@ -23,10 +55,10 @@
 
                     <br>
                     <br>
-                    <!-- Extra Info-->
+                    
                     <div class="accordion">
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
+                            <h2 class="accordion-header">
                                 <button id="chocolateChip" class="accordion-button collapsed" 
                                 type="button" data-bs-toggle="collapse" data-bs-target="#chocolateChipDesc" 
                                 aria-expanded="false" aria-controls="collapseOne">
@@ -36,7 +68,44 @@
                             <div id="chocolateChipDesc" class="accordion-collapse collapse" 
                             aria-labelledby="headingOne" data-bs-parent="#chocolateChip">
                                 <div class="accordion-body">
-                                  <p>Ingredients: Flour, Chocolate Chips, Butter, Sugar, Brown Sugar, Eggs, Baking Soda, Vanilla Extract, Salt</p>
+                                  <p>Ingredients: Flour, Chocolate Chips, Butter, Sugar, Brown Sugar, Egg, Baking Soda, 
+                                    Vanilla Extract, Salt</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button id="sugar-cookie" class="accordion-button collapsed" 
+                                type="button" data-bs-toggle="collapse" data-bs-target="#sugar-cookie-desc" 
+                                aria-expanded="false" aria-controls="collapseOne">
+                                Sugar // $1.50
+                                </button>
+                            </h2>
+                            <div id="sugar-cookie-desc" class="accordion-collapse collapse" 
+                            aria-labelledby="headingOne" data-bs-parent="#sugar-cookie">
+                                <div class="accordion-body">
+                                  <p>Ingredients: Flour, Butter, Sugar, Egg, Baking Soda, Baking Powder, Vanilla Extract</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button id="smore" class="accordion-button collapsed" 
+                                type="button" data-bs-toggle="collapse" data-bs-target="#smore-desc" 
+                                aria-expanded="false" aria-controls="collapseOne">
+                                S'more // $2.00
+                                </button>
+                            </h2>
+                            <div id="smore-desc" class="accordion-collapse collapse" 
+                            aria-labelledby="headingOne" data-bs-parent="#smore">
+                                <div class="accordion-body">
+                                  <p>Ingredients: Flour, Mini Marshmallows, Chocolate Chips, Butter, Graham 
+                                    Cracker, Sugar, Brown Sugar, Baking Soda, Baking Powder, Egg, Corn Starch</p>
                                 </div>
                             </div>
                         </div>
@@ -44,13 +113,55 @@
                     <br>
 
                 </div>
-                <div class="menu-col-2">
+                <div class="menu-item">
                     <h2 class="menu-subheader">Seasonal Items</h2>
+                    <img class="menu-img"" src="img/menu-pie.jpg" alt="Pumpkin Pie">
+                    <br>
+                    <br>
+
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button id="pumpkin-pie" class="accordion-button collapsed" 
+                                type="button" data-bs-toggle="collapse" data-bs-target="#pumpkin-pie-desc" 
+                                aria-expanded="false" aria-controls="collapseOne">
+                                Pumpkin Pie // $5.50
+                                </button>
+                            </h2>
+                            <div id="pumpkin-pie-desc" class="accordion-collapse collapse" 
+                            aria-labelledby="headingOne" data-bs-parent="#pumpkin-pie">
+                                <div class="accordion-body">
+                                  <p>num num</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button id="apple-cider-donuts" class="accordion-button collapsed" 
+                                type="button" data-bs-toggle="collapse" data-bs-target="#apple-cider-donuts-desc" 
+                                aria-expanded="false" aria-controls="collapseOne">
+                                Apple Cider Donuts // $5.50
+                                </button>
+                            </h2>
+                            <div id="apple-cider-donuts-desc" class="accordion-collapse collapse" 
+                            aria-labelledby="headingOne" data-bs-parent="#apple-cider-donuts">
+                                <div class="accordion-body">
+                                  <p>appy juice</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
                 </div>
-                <div class="menu-col-3">
+                <div class="menu-item">
                     <h2 class="menu-subheader">Cakes</h2>
                 </div>
-            </div>
+
+                <div class="menu-item">
+                    <h2 class="menu-subheader">Pies</h2>
+                </div>
             <br>
         </div>
 

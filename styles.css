@@ -29,6 +29,7 @@
 
 .navbar-menu{
     position: fixed;
+    z-index:1;
     top: 0;
     right: 0;
     margin: 0px;
@@ -79,8 +80,8 @@
 
 .menu{
     position:fixed;
-    height:88%;
-    bottom:12%;
+    height:82%;
+    top:6%;
     width:100%;
     background-color: var(--pale-yellow);
     overflow-y: scroll;
@@ -95,57 +96,47 @@
     width: 25%;
     margin:auto;
     font-size: var(--lg-heading-size);
+    border-radius:30px;
 }
 
-.menu-grid{
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(8, 5vw);
+.menu-flex{
+    display:inline-flex;
+    flex-flow: row wrap;
     text-align:center;
-    column-gap: 10px;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+    align-self:stretch;
+    width:100%;
 }
 
-.menu-col-1{
-    background-color: var(--orange);
-    grid-column: 1;
-    grid-row: 1 / 5; 
+.menu-item{
+    background-color: var(--light-pink);
+    flex-basis: 30%;
     border-radius: 30px;
-}
+    border: solid 1.5px var(--base-text);
 
-.menu-col-2{
-    background-color: var(--orange);
-    grid-column: 2;
-    grid-row: 2 / 6; 
-    border-radius: 30px;
-}
-
-.menu-col-3{
-    background-color: var(--orange);
-    grid-column: 3;
-    grid-row: 1 / 5; 
-    border-radius: 30px;
 }
 
 .menu-subheader{
-    color: var(--pale-orange);
+    color: var(--base-text);
     font-family: 'Cookie';
     padding: 3px;
     size: var(--sm-heading-size);
 }
 
 .menu-img{
-    width:75%;
+    width:300px;
     height:auto;
     border-radius: 30px;
-    border: solid 2px var(--pale-orange);
+    border: solid 2px var(--base-text);
 }
 
 .accordion-button-style{
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: var(1vw);
     background-color: var(--magenta);
     color: var(--light-pink);
-    border-radius:0px;
 }
 
 .accordion{
@@ -153,9 +144,12 @@
     --bs-accordion-active-bg: var(--magenta);
     --bs-accordion-color: var(--magenta);
     --bs-accordion-bg: var(--light-pink);
-    --bs-accordion-btn-color: var(--magenta);
+    --bs-accordion-btn-bg: var(--light-pink);
+    --bs-accordion-btn-color: var(--base-text);
     font-family: 'Comic Neue';
-
+    --bs-accordion-border-radius: 0px;
+    --bs-accordion-inner-border-radius:0px;
+    --bs-accordion-border-width:0px;
 }
 
 /* Podcast page styles */
