@@ -3,18 +3,19 @@
 /* Universal Styles */
 :root {
     /* Color palette variables here */
-    --base-text: #000;
-    --orange: #e88d66ff;
-    --melon: #eeae9cff;
-    --pale-yellow: #fffce4ff;
-    --light-pink: #edc5d5ff;
-    --magenta: #a25877ff;
+    --base-text: rgb(54, 55, 50);
+    --orange: rgb(232, 141, 102);
+    --melon: rgb(238, 174, 156);
+    --light-orange: rgb(255, 215, 191);
+    --pale-yellow: rgb(255, 252, 228);
+    --light-pink: rgb(237, 197, 213);
+    --medium-pink: rgb(200, 143, 166);
+    --magenta: rgb(162, 88, 119);
 
     --title-size: calc(5vw + 2rem);
     --lg-heading-size: calc(5vw + .25rem);
     --sm-heading-size: calc(2.5vw + .125rem);
     --normal-text-size: 2vw;
-
 }
 
 
@@ -38,6 +39,7 @@
     --bs-navbar-toggler-padding-x: 0;
     --bs-navbar-toggler-padding-y: 0;
     --bs-border-width: 0;
+    z-index: 3;
 }
 
 #nav-menu{
@@ -74,32 +76,52 @@
 
 /* Landing page styles */
 .landing-header {
-    background-image: url("img/awning-design.png");
+    background-image: url("img/alt-awning.png");
     background-size: contain;
     background-position: bottom-right;
-    z-index: 2;
-    position: relative;
+    background-color: var(--light-orange);
 }
 
 .title-text {
     font-family: "Cookie", cursive;
     font-size: var(--title-size);
+    color: var(--base-text);
 }
 
 .normal-text {
     font-family: "Comic Neue", sans-serif;
     font-size: var(--normal-text-size);
+    color: var(--base-text);
 }
 
 .header-text {
     font-family: "Cookie", cursive;
     font-size: var(--lg-heading-size);
+    color: var(--base-text);
 }
 
 .featured-items {
-    background-color: var(--melon);
-    margin-top: -40px;
-    z-index: 4;
+    background-color: var(--light-orange);
+    padding-bottom: 3rem;
+}
+
+.featured-recipes {
+    display: flex;
+    justify-content: center;
+}
+
+.card-img-top {
+    height: 18rem;
+}
+
+.card-title {
+    font-family: "Cookie", cursive;
+    font-size: var(--sm-heading-size);
+    color: var(--base-text);
+}
+
+.row {
+    --bs-gutter-x: 5rem;
 }
 
 /* Menu page styles */
@@ -110,7 +132,6 @@
 
 /* Footer styles*/
 .footer{
-    position: fixed; /* Fix footer to bottom of the screen*/
     left:0;
     bottom:0;
     width:100%; /*Set footer width to entire screen*/
