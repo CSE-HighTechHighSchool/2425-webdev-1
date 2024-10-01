@@ -7,7 +7,7 @@
     --orange: rgb(232, 141, 102);
     --melon: rgb(238, 174, 156);
     --light-orange: rgb(255, 215, 191);
-    --pale-yellow: rgb(255, 252, 228);
+    --pale-yellow: 255, 252, 228;
     --light-pink: rgb(237, 197, 213);
     --medium-pink: rgb(200, 143, 166);
     --magenta: rgb(162, 88, 119);
@@ -32,7 +32,7 @@
     top: 0;
     right: 0;
     margin: 0px;
-    color: var(--pale-yellow);
+    color: rgb(var(--pale-yellow));
     background-color: var(--orange);
     --bs-navbar-toggler-focus-width: 0;
     display: block;
@@ -43,7 +43,7 @@
 }
 
 #nav-menu{
-    color: var(--pale-yellow);
+    color: rgb(var(--pale-yellow));
     background-color: var(--orange);
     display:block;
     right: 0;
@@ -67,11 +67,11 @@
 .menu-item{
     font-family: 'Comic Neue';
     align-items: end;
-    color: var(--pale-yellow);
+    color: rgb(var(--pale-yellow));
 }
 
 .nb-menu-item{
-    color: var(--pale-yellow);
+    color: rgb(var(--pale-yellow));
 }
 
 /* Landing page styles */
@@ -110,23 +110,29 @@
     justify-content: center;
 }
 
-.card {
+.card, .card-img-overlay {
     --bs-border-radius: 20px;
-    transition: filter 500ms 200ms;
+    transition: all 300ms 50ms;
 }
 
 .card:hover {
-    filter: drop-shadow(0px 0px 2px rgba(var(--base-text), 70%));
+    filter: drop-shadow(0px 0px 4px var(--magenta));
 }
 
-.card-img-top {
+.card:hover .card-img-overlay {
+    opacity: 1;
+}
+
+.card-img {
     height: 18rem;
 }
 
-.card-body {
-    background-color: var(--pale-yellow);
-    border-radius: 20px;
+.card-img-overlay {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(var(--pale-yellow), .75) 20%, rgb(var(--pale-yellow), .8));
     height: 6rem;
+    top: auto;
+    border-radius: 0px 0px var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius);
+    opacity: 0;
 }
 
 .card-title {
@@ -153,7 +159,7 @@
     height:12%; /*Set footer height and minimum height */
     min-height:75px;
     background-color: var(--magenta); /*Set background color of footer*/
-    color: var(--pale-yellow); /*Set text color in footer*/
+    color: rgb(var(--pale-yellow)); /*Set text color in footer*/
     font-family: 'Comic Neue'; /*Set font of the footer*/
     font-size: 1.6vw;
 }
