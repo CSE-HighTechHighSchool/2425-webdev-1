@@ -17,6 +17,61 @@
 
 }
 
+
+.logo{
+    transform: scale(0.35);
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    margin: 0px;
+}
+
+.navbar-menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0px;
+    color: var(--pale-yellow);
+    background-color: var(--orange);
+    --bs-navbar-toggler-focus-width: 0;
+    display: block;
+    --bs-navbar-toggler-padding-x: 0;
+    --bs-navbar-toggler-padding-y: 0;
+    --bs-border-width: 0;
+}
+
+#nav-menu{
+    color: var(--pale-yellow);
+    background-color: var(--orange);
+    display:block;
+    right: 0;
+    top: 5px;
+    width: 100px;
+
+   /*
+    margin-top: 55px;
+    margin-right:15px;*/
+}
+
+.nav-button{
+    display: inline-block;
+}
+       
+.nav-name{
+    font-family: Cookie, sans-serif;
+    display: inline-block;
+}
+
+.menu-item{
+    font-family: 'Comic Neue';
+    align-items: end;
+    color: var(--pale-yellow);
+}
+
+.nb-menu-item{
+    color: var(--pale-yellow);
+}
+
 /* Landing page styles */
 .landing-header {
     background-image: url("img/awning-design.png");
