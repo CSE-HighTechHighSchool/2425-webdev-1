@@ -84,6 +84,7 @@
     height: 250px;
     background-color:var(--magenta);
     text-align: center;
+    position: static;
 }
 
 .top-text{
@@ -92,6 +93,7 @@
     display:inline-block;
     padding-top: 80px;
     color: var(--pale-yellow);
+    position:static;
 }
 
 .about-blurb{
@@ -120,7 +122,7 @@
 }
 
 .maya-intro, .vee-intro, .maria-intro{
-    margin: 25px;
+    margin: 30px;
 }
 /* Footer styles*/
 .footer{
