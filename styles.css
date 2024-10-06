@@ -31,6 +31,7 @@
     top: 0;
     right: 0;
     margin: 0px;
+    max-height: 50px;
     color: var(--pale-yellow);
     background-color: var(--orange);
     --bs-navbar-toggler-focus-width: 0;
@@ -38,6 +39,11 @@
     --bs-navbar-toggler-padding-x: 0;
     --bs-navbar-toggler-padding-y: 0;
     --bs-border-width: 0;
+}
+
+.dropdown{
+    --bs-dropdown-bg: var(--orange);
+    background-color: var(--orange);
 }
 
 #nav-menu{
@@ -56,10 +62,22 @@
 .nav-button{
     display: inline-block;
 }
-       
+
+.dropdown-img{
+    transform: scale(0.2);
+    position: absolute;
+    top: -77px;
+    right: -100px;
+}
+
+.dropdown-btn{
+    max-height: 50px;
+    max-width: 75px;
+}
+
 .nav-name{
     font-family: Cookie, sans-serif;
-    display: inline-block;
+    display: inline-block;x
 }
 
 .menu-item{
