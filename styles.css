@@ -113,6 +113,7 @@
 .card, .card-img-overlay {
     --bs-border-radius: 20px;
     transition: all 300ms 50ms;
+    
 }
 
 .card:hover {
@@ -140,6 +141,26 @@
     font-size: var(--sm-heading-size);
     color: var(--base-text);
 }
+
+.menu-btn {
+    --bs-btn-bg: var(--medium-pink);
+    --bs-btn-hover-bg: var(--magenta);
+    --bs-btn-color: rgb(var(--pale-yellow));
+    --bs-btn-hover-color: rgb(var(--pale-yellow));
+    font-family: "Comic Neue", cursive;
+    font-size: calc(var(--sm-heading-size) * .75);
+}
+/*
+.podcast-cover {
+    position: relative;
+
+}
+
+.recent-podcasts {
+    background-color: var(--melon);
+    width: 100%;
+    overflow-x: hidden;
+}*/
 
 .row {
     --bs-gutter-x: 5rem;
