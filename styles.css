@@ -105,7 +105,7 @@
     padding-bottom: 3rem;
 }
 
-.featured-recipes {
+.center-content {
     display: flex;
     justify-content: center;
 }
@@ -150,17 +150,18 @@
     font-family: "Comic Neue", cursive;
     font-size: calc(var(--sm-heading-size) * .75);
 }
-/*
-.podcast-cover {
-    position: relative;
 
+.podcast-cover {
+    aspect-ratio: 1 / 1;
+    width: auto;
+    object-fit: cover;
 }
 
 .recent-podcasts {
     background-color: var(--melon);
     width: 100%;
     overflow-x: hidden;
-}*/
+}
 
 .row {
     --bs-gutter-x: 5rem;
