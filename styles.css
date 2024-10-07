@@ -43,7 +43,17 @@
 
 .dropdown{
     --bs-dropdown-bg: var(--orange);
+    --bs-dropdown-box-bg: var(--orange);
+
+}
+
+.dropdown-menu{
     background-color: var(--orange);
+    --bs-dropdown-link-color: var(--pale-yellow);
+    --bs-dropdown-link-hover-color: var(--pale-yellow);
+    --bs-dropdown-link-hover-bg: var(--melon);
+    --bs-dropdown-link-active-color:var(--pale-yellow) ;
+    --bs-dropdown-link-active-bg: var(--orange);
 }
 
 #nav-menu{
@@ -66,30 +76,32 @@
 .dropdown-img{
     transform: scale(0.2);
     position: absolute;
-    top: -77px;
-    right: -100px;
+    top: -80px;
+    right: -115px;
 }
 
 .dropdown-btn{
     max-height: 50px;
     max-width: 75px;
+    position: absolute;
+    right: 100px;
+    top: -10px;
 }
 
 .nav-name{
     font-family: Cookie, sans-serif;
-    display: inline-block;x
+    display: inline-block;
 }
 
-.menu-item{
-    font-family: 'Comic Neue';
-    align-items: end;
-    color: var(--pale-yellow);
+.dropdown-menu{
+    position: absolute;
+    right: 60px;
 }
 
-.nb-menu-item{
-    color: var(--pale-yellow);
+.dropdown-menu[data-bs-popper]{
+    left: auto;
+    top: 20px;
 }
-
 /* Landing page styles */
 
 /* Menu page styles */
