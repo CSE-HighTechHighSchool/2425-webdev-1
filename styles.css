@@ -80,11 +80,12 @@
 
 .menu{
     position:fixed;
-    height:82%;
+    height:94%;
     top:6%;
     width:100%;
     background-color: var(--pale-yellow);
     overflow-y: scroll;
+    overflow-x:hidden;
 }
 
 .menu-header{
@@ -158,16 +159,19 @@
 
 /* Footer styles*/
 .footer{
-    position: fixed; /* Fix footer to bottom of the screen*/
-    left:0;
+    position:relative;
+    margin:0 0 -2% -2%;
     bottom:0;
-    width:100%; /*Set footer width to entire screen*/
-    height:12%; /*Set footer height and minimum height */
+    left:0;
+    padding: 0.5% 2%;
+    width: 104%; /*Set footer width to entire screen*/
+    height:14%; /*Set footer height and minimum height */
     min-height:75px;
     background-color: var(--magenta); /*Set background color of footer*/
     color: var(--light-pink); /*Set text color in footer*/
     font-family: 'Comic Neue'; /*Set font of the footer*/
     font-size: 1.6vw;
+    overflow:hidden;
 }
 
 /*Display elements of the footer in a grid with 3 equal columns*/
@@ -184,10 +188,9 @@
 
 /*Set footer image size and pad from top of the footer*/
 .footer-img-size{
-    height: 3.4em;
+    height: 3em;
     min-height:50px;
     width: auto;
-    padding-top: 8%;
 }
 
 /*Vertically center left footer text and align left*/
