@@ -31,6 +31,7 @@
     top: 0;
     right: 0;
     margin: 0px;
+    max-height: 50px;
     color: var(--pale-yellow);
     background-color: var(--orange);
     --bs-navbar-toggler-focus-width: 0;
@@ -38,6 +39,21 @@
     --bs-navbar-toggler-padding-x: 0;
     --bs-navbar-toggler-padding-y: 0;
     --bs-border-width: 0;
+}
+
+.dropdown{
+    --bs-dropdown-bg: var(--orange);
+    --bs-dropdown-box-bg: var(--orange);
+
+}
+
+.dropdown-menu{
+    background-color: var(--orange);
+    --bs-dropdown-link-color: var(--pale-yellow);
+    --bs-dropdown-link-hover-color: var(--pale-yellow);
+    --bs-dropdown-link-hover-bg: var(--melon);
+    --bs-dropdown-link-active-color:var(--pale-yellow) ;
+    --bs-dropdown-link-active-bg: var(--orange);
 }
 
 #nav-menu{
@@ -56,22 +72,45 @@
 .nav-button{
     display: inline-block;
 }
-       
+
+.dropdown-img{
+    transform: scale(0.2);
+    position: absolute;
+    top: -85px;
+    right: -110px;
+}
+
+.dropdown-btn{
+    max-height: 50px;
+    max-width: 75px;
+    position: absolute;
+    right: 0px;
+    top: -10px;
+    color: var(--orange);
+}
+
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    color: var(--orange);
+}
+
+.btn:hover{
+    color: var(--orange);
+}
+
 .nav-name{
     font-family: Cookie, sans-serif;
     display: inline-block;
 }
 
-.menu-item{
-    font-family: 'Comic Neue';
-    align-items: end;
-    color: var(--pale-yellow);
+.dropdown-menu{
+    position: absolute;
+    right: -15px;
 }
 
-.nb-menu-item{
-    color: var(--pale-yellow);
+.dropdown-menu[data-bs-popper]{
+    left: auto;
+    top: 20px;
 }
-
 /* Landing page styles */
 
 /* Menu page styles */
