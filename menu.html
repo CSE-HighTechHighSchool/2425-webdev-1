@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humming Bee Bakery</title>
+    <!-- Bootstrap 5 import -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+    <body>
+        <nav class="navbar navbar-lg">
+            <div class="container-fluid navbar-menu">
+                <!-- Website Name -->
+                 <h1 class="nav-name">Humming Bee Bakes</h1>
+                
+                 <!-- Logo -->
+                <button class="nav-button navbar-toggler navbar-brand icon-link align-text-top" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="logo align-middle"><img src="img/temporary-bee.jpg" class="logo"></span>
+                </button>
+                
+                <!-- Navbar -->
+                    <div class="container collapse navbar-collapse nav-menu" id="navmenu">
+                        <!-- Links to hamburger menu button -->
+                        <ul class="navbar-nav menu-item"> <!-- ms-auto provides auto spacing for margin-->
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link nb-menu-item">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="menu.html" class="nav-link nb-menu-item">Menu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="podcasts.html" class="nav-link nb-menu-item">Podcasts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="about.html" class="nav-link nb-menu-item">About Us</a>
+                            </li>
+                        </ul>
+                    </div>
+        </nav>
+
+
+        <!-- Menu Page-->
+        <div class="menu p-2">
+            <br>
+            <h1 class="menu-header">Menu</h1>
+            <br>
+            <div class="menu-flex">
+                <div class="menu-item">
+                    <!-- Menu Item Subheading-->
+                    <h2 class="menu-subheader">Cookies</h2>
+                    <!-- Sample Image-->
+                    <img class="menu-img"" src="img/menu-cookies.jpg" alt="Chocolate Chip Cookies">
+
+                    <br>
+                    <br>
+                    
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button id="chocolate-chip" class="accordion-button collapsed" 
+                                type="button" data-bs-toggle="collapse" data-bs-target="#chocolate-chip-desc" 
+                                aria-expanded="false" aria-controls="collapseOne">
+                                Chocolate Chip // $1.50
+                                </button>
+                            </h2>
+                            <div id="chocolate-chip-desc" class="accordion-collapse collapse" 
+                            aria-labelledby="headingOne" data-bs-parent="#chocolate-chip">
+                                <div class="accordion-body">
+                                  <p>Ingredients: Flour, Chocolate Chips, Butter, Sugar, Brown Sugar, Egg, Baking Soda, 
+                                    Vanilla Extract, Salt</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button id="sugar-cookie" class="accordion-button collapsed" 
+                                type="button" data-bs-toggle="collapse" data-bs-target="#sugar-cookie-desc" 
+                                aria-expanded="false" aria-controls="collapseOne">
+                                Sugar // $1.50
+                                </button>
+                            </h2>
+                            <div id="sugar-cookie-desc" class="accordion-collapse collapse" 
+                            aria-labelledby="headingOne" data-bs-parent="#sugar-cookie">
+                                <div class="accordion-body">
+                                  <p>Ingredients: Flour, Butter, Sugar, Egg, Baking Soda, Baking Powder, Vanilla Extract</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button id="smore" class="accordion-button collapsed" 
+                                type="button" data-bs-toggle="collapse" data-bs-target="#smore-desc" 
+                                aria-expanded="false" aria-controls="collapseOne">
+                                S'more // $2.00
+                                </button>
+                            </h2>
+                            <div id="smore-desc" class="accordion-collapse collapse" 
+                            aria-labelledby="headingOne" data-bs-parent="#smore">
+                                <div class="accordion-body">
+                                  <p>Ingredients: Flour, Mini Marshmallows, Chocolate Chips, Butter, Graham 
+                                    Cracker, Sugar, Brown Sugar, Baking Soda, Baking Powder, Egg, Corn Starch</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                </div>
+                <div class="menu-item">
+                    <h2 class="menu-subheader">Seasonal Items</h2>
+                    <img class="menu-img"" src="img/menu-pie.jpg" alt="Pumpkin Pie">
+                    <br>
+                    <br>
+
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button id="pumpkin-pie" class="accordion-button collapsed" 
+                                type="button" data-bs-toggle="collapse" data-bs-target="#pumpkin-pie-desc" 
+                                aria-expanded="false" aria-controls="collapseOne">
+                                Pumpkin Pie // $24.00
+                                </button>
+                            </h2>
+                            <div id="pumpkin-pie-desc" class="accordion-collapse collapse" 
+                            aria-labelledby="headingOne" data-bs-parent="#pumpkin-pie">
+                                <div class="accordion-body">
+                                  <p> 8 inch diameter, serves 14 people
+                                  </p>
+                                  <p>Ingredients: Pie Crust, Canned Pumpkin, Evaporated Milk, Egg, Granulated Sugar, Ground 
+                                    Cinnamon, Ground Ginger, Ground Cloves, Salt
+                                  </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button id="apple-cider-donuts" class="accordion-button collapsed" 
+                                type="button" data-bs-toggle="collapse" data-bs-target="#apple-cider-donuts-desc" 
+                                aria-expanded="false" aria-controls="collapseOne">
+                                Apple Cider Donuts // $12.00
+                                </button>
+                            </h2>
+                            <div id="apple-cider-donuts-desc" class="accordion-collapse collapse" 
+                            aria-labelledby="headingOne" data-bs-parent="#apple-cider-donuts">
+                                <div class="accordion-body">
+                                  <p>Comes in a pack of 6</p>
+                                  <p>Ingredients: Apple Cider, Flour, Milk, Granulated Sugar, Brown Sugar, Butter, Egg
+                                    Ground Cinnamon, Baking Soda, Apple Pie Spice, Vanilla Extract, Baking Powder
+                                  </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <div class="menu-item">
+                    <h2 class="menu-subheader">Cakes</h2>
+
+                    <img class="menu-img"" src="img/menu-cake.jpg" alt="Chocolate Cake">
+                    <br>
+                    <br>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button id="chocolate-cake" class="accordion-button collapsed" 
+                                type="button" data-bs-toggle="collapse" data-bs-target="#chocolate-cake-desc" 
+                                aria-expanded="false" aria-controls="collapseOne">
+                                Chocolate // $20.00
+                                </button>
+                            </h2>
+                            <div id="chocolate-cake-desc" class="accordion-collapse collapse" 
+                            aria-labelledby="headingOne" data-bs-parent="#chocolate-cake">
+                                <div class="accordion-body">
+                                  <p>
+                                        8 inch diameter, serves 14 people
+                                  </p>
+                                  <p>Ingredients: Flour, Sugar, Water, Milk, Cocoa Powder, Avocado Oil, Egg, Baking Powder,
+                                    Baking Soda, Vanilla Extract, Salt 
+                                  </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button id="vanilla-cake" class="accordion-button collapsed" 
+                                type="button" data-bs-toggle="collapse" data-bs-target="#vanilla-cake-desc" 
+                                aria-expanded="false" aria-controls="collapseOne">
+                                Vanilla // $20.00
+                                </button>
+                            </h2>
+                            <div id="vanilla-cake-desc" class="accordion-collapse collapse" 
+                            aria-labelledby="headingOne" data-bs-parent="#vanilla-cake">
+                                <div class="accordion-body">
+                                  <p>8 inch diameter, serves 14 people</p>
+                                  <p>Ingredients: Flour, Sugar, Milk, Avocado Oil, Egg, Vanilla Extract, Salt </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button id="carrot-cake" class="accordion-button collapsed" 
+                                type="button" data-bs-toggle="collapse" data-bs-target="#carrot-cake-desc" 
+                                aria-expanded="false" aria-controls="collapseOne">
+                                Carrot // $20.00
+                                </button>
+                            </h2>
+                            <div id="carrot-cake-desc" class="accordion-collapse collapse" 
+                            aria-labelledby="headingOne" data-bs-parent="#carrot-cake">
+                                <div class="accordion-body">
+                                  <p>8 inch diameter, serves 14 people</p>
+                                  <p>Ingredients: Flour, Sugar, Brown Sugar, Egg, Baking Soda, Vinegar, Carrots, 
+                                    Crushed Pineapple, Walnuts, Coconut, Oil</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                </div>
+
+                <div class="menu-item">
+                    <h2 class="menu-subheader">Pies</h2>
+                    <img class="menu-img"" src="img/menu-apple-pie.jpg" alt="Chocolate Cake">
+                    <br>
+                    <br>
+
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button id="apple-pie" class="accordion-button collapsed" 
+                                type="button" data-bs-toggle="collapse" data-bs-target="#apple-pie-desc" 
+                                aria-expanded="false" aria-controls="collapseOne">
+                                Apple // $18.00
+                                </button>
+                            </h2>
+                            <div id="apple-pie-desc" class="accordion-collapse collapse" 
+                            aria-labelledby="headingOne" data-bs-parent="#apple-pie">
+                                <div class="accordion-body">
+                                  <p>8 inch diameter, serves 14 people</p>
+                                  <p>Ingredients: Pie Crust, Flour, Apple, Egg, Granulated Sugar, Brown Sugar, Ground 
+                                    Cinnamon, Nutmeg, Lemon, Salt</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button id="blueberry-pie" class="accordion-button collapsed" 
+                                type="button" data-bs-toggle="collapse" data-bs-target="#blueberry-pie-desc" 
+                                aria-expanded="false" aria-controls="collapseOne">
+                                Blueberry // $18.00
+                                </button>
+                            </h2>
+                            <div id="blueberry-pie-desc" class="accordion-collapse collapse" 
+                            aria-labelledby="headingOne" data-bs-parent="#blueberry-pie">
+                                <div class="accordion-body">
+                                  <p>8 inch diameter, serves 14 people</p>
+                                  <p>Ingredients: Pie Crust, Blueberry, Flour, Egg, Granulated Sugar, Butter
+                                    Lemon, Corn Starch, Cinnamon, Salt</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button id="pecan-pie" class="accordion-button collapsed" 
+                                type="button" data-bs-toggle="collapse" data-bs-target="#pecan-pie-desc" 
+                                aria-expanded="false" aria-controls="collapseOne">
+                                Pecan // $18.00
+                                </button>
+                            </h2>
+                            <div id="pecan-pie-desc" class="accordion-collapse collapse" 
+                            aria-labelledby="headingOne" data-bs-parent="#pecan-pie">
+                                <div class="accordion-body">
+                                  <p>8 inch diameter, serves 14 people</p>
+                                  <p>Ingredients: Pie Crust, Pecan, Egg, Granulated Sugar, Butter, Ground 
+                                    Cinnamon, Corn Syrup, Vanilla Extract, Salt</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                </div>
+
+                <div class="menu-item">
+                    <h2 class="menu-subheader">Cupcakes</h2>
+
+                    <img class="menu-img"" src="img/menu-cupcake.jpg" alt="Chocolate Cake">
+                    <br>
+                    <br>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button id="chocolate-cupcake" class="accordion-button collapsed" 
+                                type="button" data-bs-toggle="collapse" data-bs-target="#chocolate-cupcake-desc" 
+                                aria-expanded="false" aria-controls="collapseOne">
+                                Chocolate // $4.00
+                                </button>
+                            </h2>
+                            <div id="chocolate-cupcake-desc" class="accordion-collapse collapse" 
+                            aria-labelledby="headingOne" data-bs-parent="#chocolate-cupcake">
+                                <div class="accordion-body">
+                                  <p>Ingredients: Flour, Sugar, Water, Milk, Cocoa Powder, Avocado Oil, Egg, Baking Powder,
+                                    Baking Soda, Vanilla Extract, Salt 
+                                  </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button id="vanilla-cupcake" class="accordion-button collapsed" 
+                                type="button" data-bs-toggle="collapse" data-bs-target="#vanilla-cupcake-desc" 
+                                aria-expanded="false" aria-controls="collapseOne">
+                                Vanilla // $4.00
+                                </button>
+                            </h2>
+                            <div id="vanilla-cupcake-desc" class="accordion-collapse collapse" 
+                            aria-labelledby="headingOne" data-bs-parent="#vanilla-cupcake">
+                                <div class="accordion-body">
+                                  <p>Ingredients: Flour, Sugar, Milk, Avocado Oil, Egg, Vanilla Extract, Salt </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button id="red-velvet-cupcake" class="accordion-button collapsed" 
+                                type="button" data-bs-toggle="collapse" data-bs-target="#red-velvet-cupcake-desc" 
+                                aria-expanded="false" aria-controls="collapseOne">
+                                Red Velvet // $4.00
+                                </button>
+                            </h2>
+                            <div id="red-velvet-cupcake-desc" class="accordion-collapse collapse" 
+                            aria-labelledby="headingOne" data-bs-parent="#red-velvet-cupcake">
+                                <div class="accordion-body">
+                                  <p>Ingredients: Flour, Sugar, Brown Sugar, Egg, Baking Soda, Vinegar, Carrots, 
+                                    Crushed Pineapple, Walnuts, Coconut, Oil</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            <br>
+        </div>
+        <br>
+        <br>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <!--Copyright info on left side of the footer-->
+                <div class="left-footer-text">Copyright &copy; Humming Bee Bakes</div>
+
+                <!-- Image of logo in the center -->
+                <div class="footer-img">
+                    <img class="footer-img-size img-fluid" src="img/temporary-bee.jpg" alt="Logo"> 
+                </div>
+
+                <!-- Contact info on right side of the footer-->
+                <div class="right-footer-text">Contact us at XXX-XXX-XXXX</div> 
+            </div>
+        </footer>
+    </body>
+</html>

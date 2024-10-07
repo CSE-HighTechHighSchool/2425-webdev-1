@@ -6,6 +6,7 @@
     --base-text: #000;
     --orange: #e88d66ff;
     --melon: #eeae9cff;
+    --pale-orange: #FBE0CF;
     --pale-yellow: #fffce4ff;
     --light-pink: #edc5d5ff;
     --magenta: #a25877ff;
@@ -28,6 +29,7 @@
 
 .navbar-menu{
     position: fixed;
+    z-index:1;
     top: 0;
     right: 0;
     margin: 0px;
@@ -115,22 +117,100 @@
 
 /* Menu page styles */
 
+.menu{
+    position:fixed;
+    height:94%;
+    top:6%;
+    width:100%;
+    background-color: var(--pale-yellow);
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+
+.menu-header{
+    display:block;
+    color: var(--light-pink);
+    background-color: var(--magenta);
+    font-family: 'Cookie';
+    text-align: center;
+    width: 25%;
+    margin:auto;
+    font-size: var(--lg-heading-size);
+    border-radius:30px;
+}
+
+.menu-flex{
+    display:inline-flex;
+    flex-flow: row wrap;
+    text-align:center;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+    align-self:stretch;
+    width:100%;
+}
+
+.menu-item{
+    background-color: var(--light-pink);
+    flex-basis: 30%;
+    border-radius: 30px;
+    border: solid 1.5px var(--base-text);
+
+}
+
+.menu-subheader{
+    color: var(--base-text);
+    font-family: 'Cookie';
+    padding: 3px;
+    size: var(--sm-heading-size);
+}
+
+.menu-img{
+    width:300px;
+    height:auto;
+    border-radius: 30px;
+    border: solid 2px var(--base-text);
+}
+
+.accordion-button-style{
+    margin-top: 5px;
+    font-size: var(1vw);
+    background-color: var(--magenta);
+    color: var(--light-pink);
+}
+
+.accordion{
+    --bs-accordion-active-color: var(--light-pink);
+    --bs-accordion-active-bg: var(--magenta);
+    --bs-accordion-color: var(--magenta);
+    --bs-accordion-bg: var(--light-pink);
+    --bs-accordion-btn-bg: var(--light-pink);
+    --bs-accordion-btn-color: var(--base-text);
+    font-family: 'Comic Neue';
+    --bs-accordion-border-radius: 0px;
+    --bs-accordion-inner-border-radius:0px;
+    --bs-accordion-border-width:0px;
+}
+
 /* Podcast page styles */
 
 /* About Us/FAQ page styles */
 
 /* Footer styles*/
 .footer{
-    position: fixed; /* Fix footer to bottom of the screen*/
-    left:0;
+    position:relative;
+    margin:0 0 -2% -2%;
     bottom:0;
-    width:100%; /*Set footer width to entire screen*/
-    height:12%; /*Set footer height and minimum height */
+    left:0;
+    padding: 0.5% 2%;
+    width: 104%; /*Set footer width to entire screen*/
+    height:14%; /*Set footer height and minimum height */
     min-height:75px;
     background-color: var(--magenta); /*Set background color of footer*/
-    color: var(--pale-yellow); /*Set text color in footer*/
+    color: var(--light-pink); /*Set text color in footer*/
     font-family: 'Comic Neue'; /*Set font of the footer*/
     font-size: 1.6vw;
+    overflow:hidden;
 }
 
 /*Display elements of the footer in a grid with 3 equal columns*/
@@ -147,10 +227,9 @@
 
 /*Set footer image size and pad from top of the footer*/
 .footer-img-size{
-    height: 3.4em;
+    height: 3em;
     min-height:50px;
     width: auto;
-    padding-top: 8%;
 }
 
 /*Vertically center left footer text and align left*/
