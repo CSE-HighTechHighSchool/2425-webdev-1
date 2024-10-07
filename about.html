@@ -10,10 +10,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container-fluid top-banner z-7">
+    <nav class="navbar navbar-lg fixed-top">
+        <div class="container-fluid navbar-menu">
+            <!-- Website Name -->
+             <h1 class="nav-name">Humming Bee Bakes</h1>
+             <!-- Logo -->
+            <!-- Navbar -->
+            <div class="dropdown">
+                <button class="btn dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img class="dropdown-img" src="img/temporary-bee.jpg">
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="index.html">Home</a></li>
+                  <li><a class="dropdown-item" href="menu.html">Menu</a></li>
+                  <li><a class="dropdown-item" href="podcasts.html">Podcasts</a></li>
+                  <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid top-banner position-relative">
             <!-- Top Image Banner -->
-        <h1 class="top-text text-center align-middle z-5">About Us</h1>
-        <button class="blurb-btn z-4" type="button" data-bs-toggle="collapse" data-bs-target="#about-blurb" aria-expanded="false" aria-controls="about-blurb">+</button>
+        <h1 class="top-text text-center position-absolute top-50 translate-middle start-50">About Us</h1>
+        <button class="blurb-btn" type="button" data-bs-toggle="collapse" data-bs-target="#about-blurb" aria-expanded="false" aria-controls="about-blurb"></button>
     </div>
     <div class="container collapse" id="about-blurb">
         <h2 class="about-blurb card card-body">We are cool.</h2>
@@ -44,4 +63,19 @@
             </div>
         </div>
     </div>
+     <!-- Footer -->
+     <footer class="footer">
+        <div class="container footer-grid">
+            <!-- Copyright info on left side of the footer-->
+            <div class="left-footer-text">Copyright &copy; Humming Bee Bakes</div> 
+
+            <!-- Image of logo in the center -->
+            <div class="footer-img">
+                <img class="footer-img-size img-fluid" src="img/temporary-bee.jpg" alt="Logo"> 
+            </div>
+
+            <!-- Contact info on right side of the footer-->
+            <div class="right-footer-text">Contact us at XXX-XXX-XXXX</div> 
+        </div>
+    </footer>
 </body>

@@ -68,7 +68,6 @@
     margin-top: 55px;
     margin-right:15px;*/
 }
-
 .nav-button{
     display: inline-block;
 }
@@ -124,6 +123,7 @@
     background-color:var(--magenta);
     text-align: center;
     position: static;
+    z-index: 4;
 }
 
 .top-text{
@@ -133,6 +133,7 @@
     padding-top: 80px;
     color: var(--pale-yellow);
     position:static;
+    z-index: 5;
 }
 
 .about-blurb{
@@ -141,9 +142,6 @@
 }
 
 .blurb-btn{
-    position: absolute;
-    top: 140px;
-    right: 580px;
     border: none;
     background-color: var(--magenta);
     display: inline-block;
@@ -154,6 +152,16 @@
     padding: 1px 30px;
     text-align: center;
     color: var(--magenta);
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    z-index: 3;
+    border-top: 50px solid;
+    margin: 2rem;
+    position: relative;
+    top: 142px;
+    right: 30px;
 }
 
 .about-cards{
