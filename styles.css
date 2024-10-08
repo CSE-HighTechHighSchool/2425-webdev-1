@@ -3,7 +3,7 @@
 /* Universal Styles */
 :root {
     /* Color palette variables here */
-    --base-text:54, 55, 50;
+    --base-text: 54, 55, 50;
     --orange: rgb(232, 141, 102);
     --melon: rgb(238, 174, 156);
     --light-orange: rgb(255, 215, 191);
@@ -11,7 +11,7 @@
     --light-pink: rgb(237, 197, 213);
     --medium-pink: rgb(200, 143, 166);
     --magenta: rgb(162, 88, 119);
-    --stripe-color: 54,55,50;
+    --stripe-color: rgb(0,0,0);
 
     --title-size: calc(5vw + 2rem);
     --lg-heading-size: calc(5vw + .25rem);
@@ -53,10 +53,10 @@
 
 .dropdown-menu{
     background-color: var(--orange);
-    --bs-dropdown-link-color: var(--pale-yellow);
-    --bs-dropdown-link-hover-color: var(--pale-yellow);
+    --bs-dropdown-link-color: rgb(var(--pale-yellow));
+    --bs-dropdown-link-hover-color: rgb(var(--pale-yellow));
     --bs-dropdown-link-hover-bg: var(--melon);
-    --bs-dropdown-link-active-color:var(--pale-yellow) ;
+    --bs-dropdown-link-active-color:rgb(var(--pale-yellow)) ;
     --bs-dropdown-link-active-bg: var(--orange);
 }
 
@@ -68,10 +68,10 @@
 
 .dropdown-menu{
     background-color: var(--orange);
-    --bs-dropdown-link-color: var(--pale-yellow);
-    --bs-dropdown-link-hover-color: var(--pale-yellow);
+    --bs-dropdown-link-color: rgb(var(--pale-yellow));
+    --bs-dropdown-link-hover-color: rgb(var(--pale-yellow));
     --bs-dropdown-link-hover-bg: var(--melon);
-    --bs-dropdown-link-active-color:var(--pale-yellow) ;
+    --bs-dropdown-link-active-color:rgb(var(--pale-yellow)) ;
     --bs-dropdown-link-active-bg: var(--orange);
 }
 
@@ -230,7 +230,7 @@
     height:94%;
     top:6%;
     width:100%;
-    background-color: var(--pale-orange);
+    background-color: var(--light-orange);
     overflow-y: scroll;
     overflow-x:hidden;
 }
@@ -263,11 +263,11 @@
     background-color: var(--light-pink);
     flex-basis: 30%;
     border-radius: 30px;
-    border: solid 1.5px var(--base-text);
+    border: solid 1.5px rgb(var(--base-text));
 }
 
 .menu-subheader{
-    color: var(--base-text);
+    color: rgb(var(--base-text));
     font-family: 'Cookie';
     padding: 3px;
     size: var(--md-heading-size);
@@ -277,7 +277,7 @@
     width:300px;
     height:auto;
     border-radius: 30px;
-    border: solid 2px var(--base-text);
+    border: solid 2px rgb(var(--base-text));
 }
 
 .accordion-button-style{
@@ -293,7 +293,7 @@
     --bs-accordion-color: var(--magenta);
     --bs-accordion-bg: var(--light-pink);
     --bs-accordion-btn-bg: var(--light-pink);
-    --bs-accordion-btn-color: var(--base-text);
+    --bs-accordion-btn-color: rgb(var(--base-text));
     font-family: 'Comic Neue';
     --bs-accordion-border-radius: 0px;
     --bs-accordion-inner-border-radius:0px;
@@ -328,7 +328,7 @@
 }
 
 .pale-yellow-stripe{
-    --stripe-color: var(--pale-yellow);
+    --stripe-color: rgb(var(--pale-yellow));
     top:120%;
     left:-20%;
     z-index:+4;
@@ -442,7 +442,7 @@
     bottom:0;
     left:0;
     padding: 0.5% 2%;
-    width: 102%; /*Set footer width to entire screen*/
+    width: 103%; /*Set footer width to entire screen*/
     height:14%; /*Set footer height and minimum height */
     min-height:75px;
     background-color: var(--magenta); /*Set background color of footer*/
