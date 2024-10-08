@@ -11,9 +11,10 @@
     --light-pink: rgb(237, 197, 213);
     --medium-pink: rgb(200, 143, 166);
     --magenta: rgb(162, 88, 119);
-
     --title-size: calc(5vw + 2rem);
+
     --lg-heading-size: calc(5vw + .25rem);
+    --md-heading-size: calc(2.5vw + .125rem);
     --sm-heading-size: calc(2.5vw + .125rem);
     --normal-text-size: 2vw;
 
@@ -39,7 +40,7 @@
     right: 0;
     margin: 0px;
     max-height: 50px;
-    color: rgb(var(--pale-yellow));
+    color: rgb(rgb(var(--pale-yellow)));
     background-color: var(--orange);
     --bs-navbar-toggler-focus-width: 0;
     display: block;
@@ -56,10 +57,10 @@
 
 .dropdown-menu{
     background-color: var(--orange);
-    --bs-dropdown-link-color: var(--pale-yellow);
-    --bs-dropdown-link-hover-color: var(--pale-yellow);
+    --bs-dropdown-link-color: rgb(var(--pale-yellow));
+    --bs-dropdown-link-hover-color: rgb(var(--pale-yellow));
     --bs-dropdown-link-hover-bg: var(--melon);
-    --bs-dropdown-link-active-color:var(--pale-yellow) ;
+    --bs-dropdown-link-active-color:rgb(var(--pale-yellow)) ;
     --bs-dropdown-link-active-bg: var(--orange);
 }
 
@@ -71,15 +72,15 @@
 
 .dropdown-menu{
     background-color: var(--orange);
-    --bs-dropdown-link-color: var(--pale-yellow);
-    --bs-dropdown-link-hover-color: var(--pale-yellow);
+    --bs-dropdown-link-color: rgb(var(--pale-yellow));
+    --bs-dropdown-link-hover-color: rgb(var(--pale-yellow));
     --bs-dropdown-link-hover-bg: var(--melon);
-    --bs-dropdown-link-active-color:var(--pale-yellow) ;
+    --bs-dropdown-link-active-color:rgb(var(--pale-yellow)) ;
     --bs-dropdown-link-active-bg: var(--orange);
 }
 
 #nav-menu{
-    color: rgb(var(--pale-yellow));
+    color: rgb(rgb(var(--pale-yellow)));
     background-color: var(--orange);
     display:block;
     right: 0;
@@ -122,6 +123,7 @@
 .nav-name{
     font-family: Cookie, sans-serif;
     display: inline-block;
+    color: rgb(var(--pale-yellow));
 }
 
 .dropdown-menu{
@@ -327,17 +329,18 @@
     font-size:var(--title-size);
     display:inline-block;
     padding-top: 80px;
-    color: var(--pale-yellow);
+    color: rgb(var(--pale-yellow));
     position:static;
     z-index: 5;
 }
 
 .about-body{
-    background-color: var(--pale-yellow);
+    background-color: rgb(var(--pale-yellow));
+    height: 100%;
 }
 
 .about-page{
-    background-color: var(--pale-yellow);
+    background-color: rgb(var(--pale-yellow));
     width: 100%;
 }
 
@@ -347,16 +350,22 @@
     background-color: var(--light-pink);
     color: var(--magenta);
     --bs-card-border-color: rgba(0,0,0,0);
+    line-height: 1.5;
+    padding-top: 25px;
 }
 
 .faq-section{
-    background-color: var(--pale-orange);
+    background-color: var(--light-orange);
+    border-radius: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .faq-title{
     color: var(--orange);
     font-family: Cookie, sans-serif;
     font-size: var(--lg-heading-size);
+    text-shadow: var(--melon) 2px 2px;
 }
 
 .blurb-btn{
