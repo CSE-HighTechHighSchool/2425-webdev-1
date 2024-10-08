@@ -213,7 +213,7 @@
 }
 
 .recent-podcasts {
-    background-color: var(--melon);
+    background-color: rgb(var(--pale-yellow));
     width: 100%;
     overflow-x: hidden;
 }
