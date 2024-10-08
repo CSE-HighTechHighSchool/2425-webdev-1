@@ -29,9 +29,11 @@
 
 .navbar-menu{
     position: fixed;
+    z-index:1;
     top: 0;
     right: 0;
     margin: 0px;
+    max-height: 50px;
     color: rgb(var(--pale-yellow));
     background-color: var(--orange);
     --bs-navbar-toggler-focus-width: 0;
@@ -39,7 +41,36 @@
     --bs-navbar-toggler-padding-x: 0;
     --bs-navbar-toggler-padding-y: 0;
     --bs-border-width: 0;
-    z-index: 3;
+}
+
+.dropdown{
+    --bs-dropdown-bg: var(--orange);
+    --bs-dropdown-box-bg: var(--orange);
+
+}
+
+.dropdown-menu{
+    background-color: var(--orange);
+    --bs-dropdown-link-color: var(--pale-yellow);
+    --bs-dropdown-link-hover-color: var(--pale-yellow);
+    --bs-dropdown-link-hover-bg: var(--melon);
+    --bs-dropdown-link-active-color:var(--pale-yellow) ;
+    --bs-dropdown-link-active-bg: var(--orange);
+}
+
+.dropdown{
+    --bs-dropdown-bg: var(--orange);
+    --bs-dropdown-box-bg: var(--orange);
+
+}
+
+.dropdown-menu{
+    background-color: var(--orange);
+    --bs-dropdown-link-color: var(--pale-yellow);
+    --bs-dropdown-link-hover-color: var(--pale-yellow);
+    --bs-dropdown-link-hover-bg: var(--melon);
+    --bs-dropdown-link-active-color:var(--pale-yellow) ;
+    --bs-dropdown-link-active-bg: var(--orange);
 }
 
 #nav-menu{
@@ -58,22 +89,45 @@
 .nav-button{
     display: inline-block;
 }
-       
+
+.dropdown-img{
+    transform: scale(0.2);
+    position: absolute;
+    top: -85px;
+    right: -110px;
+}
+
+.dropdown-btn{
+    max-height: 50px;
+    max-width: 75px;
+    position: absolute;
+    right: 0px;
+    top: -10px;
+    color: var(--orange);
+}
+
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    color: var(--orange);
+}
+
+.btn:hover{
+    color: var(--orange);
+}
+
 .nav-name{
     font-family: Cookie, sans-serif;
     display: inline-block;
 }
 
-.menu-item{
-    font-family: 'Comic Neue';
-    align-items: end;
-    color: rgb(var(--pale-yellow));
+.dropdown-menu{
+    position: absolute;
+    right: -15px;
 }
 
-.nb-menu-item{
-    color: rgb(var(--pale-yellow));
+.dropdown-menu[data-bs-popper]{
+    left: auto;
+    top: 20px;
 }
-
 /* Landing page styles */
 .landing-header {
     background-image: url("img/alt-awning.png");
@@ -169,21 +223,100 @@
 
 /* Menu page styles */
 
+.menu{
+    position:fixed;
+    height:94%;
+    top:6%;
+    width:100%;
+    background-color: var(--pale-yellow);
+    overflow-y: scroll;
+    overflow-x:hidden;
+}
+
+.menu-header{
+    display:block;
+    color: var(--light-pink);
+    background-color: var(--magenta);
+    font-family: 'Cookie';
+    text-align: center;
+    width: 25%;
+    margin:auto;
+    font-size: var(--lg-heading-size);
+    border-radius:30px;
+}
+
+.menu-flex{
+    display:inline-flex;
+    flex-flow: row wrap;
+    text-align:center;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+    align-self:stretch;
+    width:100%;
+}
+
+.menu-item{
+    background-color: var(--light-pink);
+    flex-basis: 30%;
+    border-radius: 30px;
+    border: solid 1.5px var(--base-text);
+
+}
+
+.menu-subheader{
+    color: var(--base-text);
+    font-family: 'Cookie';
+    padding: 3px;
+    size: var(--sm-heading-size);
+}
+
+.menu-img{
+    width:300px;
+    height:auto;
+    border-radius: 30px;
+    border: solid 2px var(--base-text);
+}
+
+.accordion-button-style{
+    margin-top: 5px;
+    font-size: var(1vw);
+    background-color: var(--magenta);
+    color: var(--light-pink);
+}
+
+.accordion{
+    --bs-accordion-active-color: var(--light-pink);
+    --bs-accordion-active-bg: var(--magenta);
+    --bs-accordion-color: var(--magenta);
+    --bs-accordion-bg: var(--light-pink);
+    --bs-accordion-btn-bg: var(--light-pink);
+    --bs-accordion-btn-color: var(--base-text);
+    font-family: 'Comic Neue';
+    --bs-accordion-border-radius: 0px;
+    --bs-accordion-inner-border-radius:0px;
+    --bs-accordion-border-width:0px;
+}
+
 /* Podcast page styles */
 
 /* About Us/FAQ page styles */
 
 /* Footer styles*/
 .footer{
-    left:0;
+    position:relative;
+    margin:0 0 -2% -2%;
     bottom:0;
-    width:100%; /*Set footer width to entire screen*/
-    height:12%; /*Set footer height and minimum height */
+    left:0;
+    padding: 0.5% 2%;
+    width: 104%; /*Set footer width to entire screen*/
+    height:14%; /*Set footer height and minimum height */
     min-height:75px;
     background-color: var(--magenta); /*Set background color of footer*/
-    color: rgb(var(--pale-yellow)); /*Set text color in footer*/
+    color: var(--light-pink); /*Set text color in footer*/
     font-family: 'Comic Neue'; /*Set font of the footer*/
     font-size: 1.6vw;
+    overflow:hidden;
 }
 
 /*Display elements of the footer in a grid with 3 equal columns*/
@@ -200,10 +333,9 @@
 
 /*Set footer image size and pad from top of the footer*/
 .footer-img-size{
-    height: 3.4em;
+    height: 3em;
     min-height:50px;
     width: auto;
-    padding-top: 8%;
 }
 
 /*Vertically center left footer text and align left*/
