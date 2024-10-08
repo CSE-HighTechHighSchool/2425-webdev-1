@@ -10,6 +10,7 @@
     --pale-yellow: #fffce4ff;
     --light-pink: #edc5d5ff;
     --magenta: #a25877ff;
+    --stripe-color: #000;
 
     --title-size: calc(5vw + 2rem);
     --lg-heading-size: calc(5vw + .25rem);
@@ -83,7 +84,7 @@
     height:94%;
     top:6%;
     width:100%;
-    background-color: var(--pale-yellow);
+    background-color: var(--pale-orange);
     overflow-y: scroll;
     overflow-x:hidden;
 }
@@ -98,6 +99,7 @@
     margin:auto;
     font-size: var(--lg-heading-size);
     border-radius:30px;
+    border: solid 1.5px var(--base-text);
 }
 
 .menu-flex{
@@ -116,7 +118,6 @@
     flex-basis: 30%;
     border-radius: 30px;
     border: solid 1.5px var(--base-text);
-
 }
 
 .menu-subheader{
@@ -152,6 +153,130 @@
     --bs-accordion-inner-border-radius:0px;
     --bs-accordion-border-width:0px;
 }
+
+.melon-stripe{
+    --stripe-color: var(--melon);
+    top:20%;
+    left:1%;
+}
+
+.orange-stripe{
+    --stripe-color: var(--orange);
+    top:30%;
+    left:-5%;
+    z-index:+1;
+}
+
+.magenta-stripe{
+    --stripe-color: var(--magenta);
+    top:60%;
+    left:-10%;
+    z-index:+2;
+}
+
+.light-pink-stripe{
+    --stripe-color: var(--light-pink);
+    top:90%;
+    left:-15%;
+    z-index:+3;
+}
+
+.pale-yellow-stripe{
+    --stripe-color: var(--pale-yellow);
+    top:120%;
+    left:-20%;
+    z-index:+4;
+}
+
+.circles{
+    height: 200px;
+    width: 200px;
+    background-color: var(--stripe-color);
+    border-radius: 50%;
+    display: inline-block;
+    position:absolute;
+    z-index:-5;
+    margin-top:100px;
+    margin-left:-20px;
+    box-shadow: 320px 0 0 0px var(--stripe-color),
+              640px 0 0 0px var(--stripe-color),
+              960px 0 0 0px var(--stripe-color),
+              1280px 0 0 0px var(--stripe-color),
+              320px 90px 0 0px var(--stripe-color),
+              640px 90px 0 0px var(--stripe-color),
+              960px 90px 0 0px var(--stripe-color),
+              1280px 90px 0 0px var(--stripe-color),
+              1500px 90px 0 0px var(--stripe-color);
+
+}
+
+.rectangle{
+    height:200px;
+    width:110%;
+    margin-left:-3%;
+    position:absolute;
+}
+
+.melon-rect{
+    top:30%;
+    z-index:-6;
+    background-color: var(--melon);
+}
+
+.orange-rect{
+    top:60%;
+    z-index:-6;
+    background-color: var(--orange);
+}
+
+.magenta-rect{
+    top:90%;
+    z-index:-5;
+    background-color: var(--magenta);
+}
+
+.light-pink-rect{
+    top:120%;
+    z-index:-5;
+    background-color: var(--light-pink);
+}
+
+.move-over{
+    left: 320px;
+    bottom:230px;
+}
+.move-over-two{
+    left: 640px;
+    bottom:460px;
+}
+.move-over-three{
+    left: 960px;
+    bottom:690px;
+}
+.move-over-four{
+    left: 1280px;
+    bottom:920px;
+}
+
+.circle-bottom{
+    width: 220px;
+    height: 200px;
+    margin-top:30px;
+    margin-left:150px;
+    position: relative;
+    overflow: hidden;
+}
+
+.circle-bottom::before {
+    content: '';
+    position: absolute;
+    bottom: 80%;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    box-shadow: 0px 250px 0px 250px var(--stripe-color);
+    z-index:-5;
+  }
 
 /* Podcast page styles */
 
