@@ -14,8 +14,9 @@
 
     --title-size: calc(5vw + 2rem);
     --lg-heading-size: calc(5vw + .25rem);
-    --sm-heading-size: calc(2.5vw + .125rem);
-    --normal-text-size: 2vw;
+    --md-heading-size: calc(2.5vw + .125rem);
+    --sm-heading-size: 2vw;
+    --normal-text-size: 1.5rem;
 }
 
 
@@ -192,7 +193,7 @@
 
 .card-title {
     font-family: "Cookie", cursive;
-    font-size: var(--sm-heading-size);
+    font-size: var(--md-heading-size);
     color: var(--base-text);
 }
 
@@ -202,7 +203,7 @@
     --bs-btn-color: rgb(var(--pale-yellow));
     --bs-btn-hover-color: rgb(var(--pale-yellow));
     font-family: "Comic Neue", cursive;
-    font-size: calc(var(--sm-heading-size) * .75);
+    font-size: calc(var(--md-heading-size) * .75);
 }
 
 .podcast-cover {
@@ -268,7 +269,7 @@
     color: var(--base-text);
     font-family: 'Cookie';
     padding: 3px;
-    size: var(--sm-heading-size);
+    size: var(--md-heading-size);
 }
 
 .menu-img{
@@ -299,6 +300,13 @@
 }
 
 /* Podcast page styles */
+.episode-title {
+    font-size: var(--sm-heading-size);
+    font-family: "Comic Neue", cursive;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
 
 /* About Us/FAQ page styles */
 
@@ -309,14 +317,14 @@
     bottom:0;
     left:0;
     padding: 0.5% 2%;
-    width: 104%; /*Set footer width to entire screen*/
+    width: 102%; /*Set footer width to entire screen*/
     height:14%; /*Set footer height and minimum height */
     min-height:75px;
     background-color: var(--magenta); /*Set background color of footer*/
     color: var(--light-pink); /*Set text color in footer*/
     font-family: 'Comic Neue'; /*Set font of the footer*/
     font-size: 1.6vw;
-    overflow:hidden;
+    overflow-x: hidden;
 }
 
 /*Display elements of the footer in a grid with 3 equal columns*/
