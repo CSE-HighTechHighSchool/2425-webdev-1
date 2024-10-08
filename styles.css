@@ -214,6 +214,17 @@
     font-size: var(--normal-text-size);
     background-color: var(--light-pink);
     color: var(--magenta);
+    --bs-card-border-color: rgba(0,0,0,0);
+}
+
+.faq-section{
+    background-color: var(--pale-orange);
+}
+
+.faq-title{
+    color: var(--orange);
+    font-family: Cookie, sans-serif;
+    font-size: var(--lg-heading-size);
 }
 
 .blurb-btn{
