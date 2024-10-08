@@ -18,7 +18,6 @@
 
 }
 
-
 .logo{
     transform: scale(0.35);
     position: fixed;
@@ -201,9 +200,20 @@
     z-index: 5;
 }
 
+.about-body{
+    background-color: var(--pale-yellow);
+}
+
+.about-page{
+    background-color: var(--pale-yellow);
+    width: 100%;
+}
+
 .about-blurb{
     font-family: 'Comic Neue', sans-serif;
     font-size: var(--normal-text-size);
+    background-color: var(--light-pink);
+    color: var(--magenta);
 }
 
 .blurb-btn{
