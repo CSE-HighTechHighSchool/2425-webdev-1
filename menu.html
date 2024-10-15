@@ -9,31 +9,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <nav class="navbar navbar-lg">
-        <div class="container-fluid navbar-menu">
-            <!-- Website Name -->
-             <h1 class="nav-name">Humming Bee Bakes</h1>                
-                 <!-- Logo -->
-            <button class="nav-button navbar-toggler navbar-brand icon-link align-text-top" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                <span class="logo align-middle"><img src="img/temporary-bee.jpg" class="logo"></span>
-            </button>
-                
-            <!-- Navbar -->
-            <div class="container collapse navbar-collapse nav-menu" id="navmenu">
-                    <!-- Links to hamburger menu button -->
-                <ul class="navbar-nav menu-item"> <!-- ms-auto provides auto spacing for margin-->
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link nb-menu-item">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="menu.html" class="nav-link nb-menu-item">Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="podcasts.html" class="nav-link nb-menu-item">Podcasts</a>
-                   </li>
-                    <li class="nav-item">
-                        <a href="about.html" class="nav-link nb-menu-item">About Us</a>                        </li>
+    <body>
+        <nav class="navbar navbar-lg">
+            <div class="container-fluid navbar-menu">
+                <!-- Website Name -->
+                 <h1 class="nav-name">Humming Bee Bakes</h1>
+                <!-- Navbar -->
+                <div class="dropdown">
+                    <button class="btn dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img class="dropdown-img" src="img/temporary-bee.jpg">
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="index.html">Home</a></li>
+                      <li><a class="dropdown-item" href="menu.html">Menu</a></li>
+                      <li><a class="dropdown-item" href="podcasts.html">Podcasts</a></li>
+                      <li><a class="dropdown-item" href="about.html">About Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -90,6 +80,19 @@
                 </div>
                 <div class="rectangle light-pink-rect"></div>
                 <div class="pale-yellow-stripe circles">
+                    <div class="circle-bottom">
+                    </div>
+                    <div class="move-over circle-bottom">
+                    </div>
+                    <div class="move-over-two circle-bottom">
+                    </div>
+                    <div class="move-over-three circle-bottom">
+                    </div>
+                    <div class="move-over-four circle-bottom">
+                    </div>
+                </div>
+                <div class="rectangle pale-yellow-rect"></div>
+                <div class="light-orange-stripe circles">
                     <div class="circle-bottom">
                     </div>
                     <div class="move-over circle-bottom">
@@ -437,7 +440,7 @@
 
                 <!-- Image of logo in the center -->
                 <div class="footer-img">
-                    <img class="footer-img-size img-fluid" src="img/temporary-bee.jpg" alt="Logo"> 
+                    <img class="footer-img-size img-fluid" src="img/bee-logo.png" alt="Logo"> 
                 </div>
 
                 <!-- Contact info on right side of the footer-->
