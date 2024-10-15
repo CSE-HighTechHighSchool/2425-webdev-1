@@ -460,7 +460,8 @@
 /* Footer styles*/
 .footer{
     position: relative;
-    margin:0 -2%;
+    margin:0;
+    margin-left: -2%;
     margin-bottom: -2%;
     bottom:0;
     left:0;
@@ -473,6 +474,10 @@
     font-family: 'Comic Neue'; /*Set font of the footer*/
     font-size: 1.6vw;
     overflow-x: hidden;
+}
+
+.footer-fix {
+    width: 102%;
 }
 
 /*Display elements of the footer in a grid with 3 equal columns*/
