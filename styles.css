@@ -492,6 +492,11 @@
   }
 
 /* Podcast page styles */
+.episodes {
+    background-color: var(--melon);
+    padding-top: 1%;
+}
+
 .episode-title {
     font-size: var(--sm-heading-size);
     font-family: "Comic Neue", cursive;
@@ -505,6 +510,20 @@
     background-color: rgb(var(--pale-yellow));
 }
 
+.podcast-header-border {
+    content: " ";
+    position: absolute;
+    right: 0;
+    left: 0;
+    background-size: contain;
+    background-repeat-y: no-repeat;
+    background-position: 50% 100%;
+    opacity: 1;
+    z-index: 2;
+    height: 32px;
+    background-image: url("img/wave-pattern-block.svg");
+    transform: translate3d(0, 40%, 0);
+}
 
 /* About Us/FAQ page styles */
 
