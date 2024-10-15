@@ -300,6 +300,15 @@
     --bs-accordion-border-width:0px;
 }
 
+.menu-item:nth-of-type(4), .menu-item:nth-of-type(5) {
+    margin-bottom: 175px;
+}
+
+
+.menu-item:nth-of-type(4):has(.accordion-button:not(.collapsed)), .menu-item:nth-of-type(5):has(.accordion-button:not(.collapsed)) {
+    margin-bottom: 25px;
+}
+
 .melon-stripe{
     --stripe-color: var(--melon);
     top:20%;
@@ -450,8 +459,9 @@
 
 /* Footer styles*/
 .footer{
-    position:relative;
-    margin:0 0 -2% -2%;
+    position: relative;
+    margin:0 -2%;
+    margin-bottom: -2%;
     bottom:0;
     left:0;
     padding: 0.5% 2%;
