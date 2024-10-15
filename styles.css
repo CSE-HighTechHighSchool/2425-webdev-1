@@ -130,6 +130,7 @@
     left: auto;
     top: 20px;
 }
+
 /* Landing page styles */
 .landing-header {
     background-image: url("img/alt-awning.png");
@@ -334,6 +335,13 @@
     z-index:+4;
 }
 
+.light-orange-stripe{
+    --stripe-color: var(--light-orange);
+    top:150%;
+    left:-25%;
+    z-index:+6;
+}
+
 .circles{
     height: 200px;
     width: 200px;
@@ -385,6 +393,12 @@
     top:120%;
     z-index:-5;
     background-color: var(--light-pink);
+}
+
+.pale-yellow-rect{
+    top:150%;
+    z-index:-6;
+    background-color: rgb(var(--pale-yellow));
 }
 
 .move-over{
