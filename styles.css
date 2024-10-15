@@ -484,6 +484,7 @@
     border-radius: 10px;
     padding-bottom: 20px;
     margin-bottom: 15px;
+    
 }
 
 .faq-title{
@@ -491,6 +492,24 @@
     font-family: Cookie, sans-serif;
     font-size: var(--lg-heading-size);
     text-shadow: var(--melon) 2px 2px;
+}
+
+.accordionFAQ{
+    --bs-accordion-bg: var(--light-orange);
+    --bs-accordion-btn-bg: var(--light-orange);
+    --bs-accordion-active-bg: var(--orange);
+    --bs-accordion-active-color: var(--light-orange);
+    --bs-accordion-btn-focus-box-shadow: none;
+    --bs-accordion-color: var(--orange);
+    --bs-accordion-btn-color: var(--orange);
+}
+
+.accordionFAQ .accordion-button::after{
+   background-image: url(img/orange-arrow.png);
+}
+
+.accordionFAQ .accordion-button:not(.collapsed)::after{
+    background-image: url(img/light-orange-arrow.png);
 }
 
 .blurb-btn{
