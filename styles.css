@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cookie&display=swap');
 
-
 /* Universal Styles */
 :root {
     /* Color palette variables here */
@@ -26,7 +25,6 @@
     z-index: 100;
 }
 
-
 .navbar-menu{
     position: fixed;
     z-index:1;
@@ -43,14 +41,12 @@
     --bs-border-width: 0;
 }
 
-
 .dropdown{
     --bs-dropdown-bg: var(--orange);
     --bs-dropdown-box-bg: var(--orange);
 
 
 }
-
 
 .dropdown-menu{
     background-color: var(--orange);
@@ -61,14 +57,12 @@
     --bs-dropdown-link-active-bg: var(--orange);
 }
 
-
 .dropdown{
     --bs-dropdown-bg: var(--orange);
     --bs-dropdown-box-bg: var(--orange);
 
 
 }
-
 
 .dropdown-menu{
     background-color: var(--orange);
@@ -78,7 +72,6 @@
     --bs-dropdown-link-active-color:rgb(var(--pale-yellow)) ;
     --bs-dropdown-link-active-bg: var(--orange);
 }
-
 
 #nav-menu{
     color: rgb(rgb(var(--pale-yellow)));
@@ -144,6 +137,10 @@
     top: 20px;
 }
 
+.below-navbar {
+    padding-top: 70px;
+}
+
 .wave-divider {
     content: " ";
     position: absolute;
@@ -165,7 +162,6 @@
     background-size: contain;
     background-position: bottom-right;
     background-color: var(--light-orange);
-    margin-top: 34px;
 }
 
 .title-text {
@@ -527,7 +523,6 @@
 }
 
 .podcast-header {
-    margin-top: 33px;
     background-color: var(--light-orange);
 }
 
