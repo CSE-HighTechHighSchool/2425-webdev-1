@@ -11,6 +11,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="img/bee-logo.png">
 </head>
 <body>
     <nav class="navbar navbar-lg">
@@ -39,26 +40,24 @@
     </section>
 
     <section class="episodes">
-        <h2 class="header-text text-center">Episodes</h2>
-        <div class="container">
-            <table class="table">
-                <thead>
+        <h2 class="header-text text-center pt-3">Episodes</h2>
+        <div class="container" id="ep-table-container">
+            <table class="table table-hover episode-table rounded">
+                <thead class="podcast-th">
                     <tr>
-                        <th scope="col">Ep. No.</th>
                         <th scope="col">Title</th>
-                        <th scope="col">Description</th>
+                        <th scope="col" class="ep-description">Description</th>
                         <th scope="col">Listen</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-group-divider">
                     <tr>
-                        <td>1</td>
-                        <td>Episode</td>
-                        <td>
+                        <td class="ep-title">Episode Title</td>
+                        <td class="ep-description">
                             Lorem ipsum odor amet, consectetuer adipiscing elit. Vulputate quis lacinia dui habitasse
                             facilisi posuere augue.
                         </td>
-                        <td>
+                        <td class="ep-audio">
                             <audio src="audio/temp-audio.mp3" type="audio/mpeg" controls>
                             Your browser does not support the audio element.
                             </audio>
@@ -66,13 +65,12 @@
                         
                     </tr>
                     <tr>
-                        <td>2</td>
-                        <td>Episode</td>
-                        <td>
+                        <td class="ep-title">Episode Title</td>
+                        <td class="ep-description">
                             Lorem ipsum odor amet, consectetuer adipiscing elit. Vulputate quis lacinia dui habitasse
                             facilisi posuere augue.
                         </td>
-                        <td>
+                        <td class="ep-audio">
                             <audio src="audio/temp-audio.mp3" type="audio/mpeg" controls>
                             Your browser does not support the audio element.
                             </audio>
@@ -80,22 +78,21 @@
                         
                     </tr>
                     <tr>
-                        <td>3</td>
-                        <td>Episode</td>
-                        <td>
+                        <td class="ep-title">Episode Title</td>
+                        <td class="ep-description">
                             Lorem ipsum odor amet, consectetuer adipiscing elit. Vulputate quis lacinia dui habitasse
                             facilisi posuere augue.
                         </td>
-                        <td>
+                        <td class="ep-audio">
                             <audio src="audio/temp-audio.mp3" type="audio/mpeg" controls>
                             Your browser does not support the audio element.
                             </audio>
                         </td>
-                        
                     </tr>
                 </tbody>
             </table>
         </div>
+        <br>
     </section>
     <!-- Footer -->
     <footer class="footer footer-fix">

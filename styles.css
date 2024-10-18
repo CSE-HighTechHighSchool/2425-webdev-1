@@ -493,8 +493,31 @@
 
 /* Podcast page styles */
 .episodes {
-    background-color: var(--melon);
-    padding-top: 1%;
+    background-color: rgb(var(--pale-yellow));
+}
+
+.episode-table {
+    --bs-table-bg: rgba(var(--pale-yellow), 80%);
+    --bs-table-border-color: var(--light-pink);
+    font-family: "Comic Neue", cursive;
+}
+
+.ep-description {
+    border-right: var(--bs-border-width) solid var(--bs-table-border-color);
+    border-left: var(--bs-border-width) solid var(--bs-table-border-color);
+}
+
+#ep-table-container {
+    border: var(--bs-border-width) solid var(--light-pink);
+    border-radius: 10px;
+}
+
+.podcast-th {
+    font-size: calc(var(--sm-heading-size) / 1.25);
+}
+
+.table-group-divider {
+    border-top-color: var(--medium-pink);
 }
 
 .episode-title {
@@ -504,10 +527,9 @@
     margin-bottom: 0;
 }
 
-
 .podcast-header {
-    margin-top: 35px;
-    background-color: rgb(var(--pale-yellow));
+    margin-top: 33px;
+    background-color: var(--light-orange);
 }
 
 .podcast-header-border {
@@ -515,6 +537,7 @@
     position: absolute;
     right: 0;
     left: 0;
+    background-color: #0000;
     background-size: contain;
     background-repeat-y: no-repeat;
     background-position: 50% 100%;
@@ -523,6 +546,7 @@
     height: 32px;
     background-image: url("img/wave-pattern-block.svg");
     transform: translate3d(0, 40%, 0);
+    border-bottom: 1px solid rgb(var(--pale-yellow));
 }
 
 /* About Us/FAQ page styles */
