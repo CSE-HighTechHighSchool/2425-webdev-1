@@ -13,23 +13,17 @@
     --medium-pink: rgb(200, 143, 166);
     --magenta: rgb(162, 88, 119);
     --stripe-color: rgb(0,0,0);
-
     --title-size: calc(5vw + 2rem);
+
     --lg-heading-size: calc(5vw + .25rem);
     --md-heading-size: calc(2.5vw + .125rem);
-    --sm-heading-size: 2vw;
-    --normal-text-size: 1.5rem;
+    --sm-heading-size: calc(2.5vw + .125rem);
+    --normal-text-size: 2vw;
+
 }
 
-
-
-
-.logo{
-    transform: scale(0.35);
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    margin: 0px;
+.navbar{
+    z-index: 100;
 }
 
 
@@ -40,7 +34,7 @@
     right: 0;
     margin: 0px;
     max-height: 50px;
-    color: rgb(var(--pale-yellow));
+    color: rgb(rgb(var(--pale-yellow)));
     background-color: var(--orange);
     --bs-navbar-toggler-focus-width: 0;
     display: block;
@@ -87,7 +81,7 @@
 
 
 #nav-menu{
-    color: rgb(var(--pale-yellow));
+    color: rgb(rgb(var(--pale-yellow)));
     background-color: var(--orange);
     display:block;
     right: 0;
@@ -107,12 +101,17 @@
 
 
 .dropdown-img{
-    transform: scale(0.2);
+    transform: scale(0.025);
     position: absolute;
-    top: -85px;
-    right: -110px;
+    top:  -1017px;
+    right: -1000px;
+    transition: all 300ms ease-out 100ms;
 }
 
+.dropdown-img:hover{
+    top:-1016px;
+    transform: scale(0.025) rotate(20deg);
+}
 
 .dropdown-btn{
     max-height: 50px;
@@ -137,6 +136,7 @@
 .nav-name{
     font-family: Cookie, sans-serif;
     display: inline-block;
+    color: rgb(var(--pale-yellow));
 }
 
 
@@ -550,8 +550,108 @@
 }
 
 /* About Us/FAQ page styles */
+.top-banner{
+    width: 100%;
+    height: 250px;
+    background-color:var(--magenta);
+    text-align: center;
+    position: static;
+    z-index: 4;
+}
 
+.top-text{
+    font-family: 'Cookie', sans-serif;
+    font-size:var(--title-size);
+    display:inline-block;
+    padding-top: 80px;
+    color: rgb(var(--pale-yellow));
+    position:static;
+    z-index: 5;
+}
 
+.about-body{
+    background-color: rgb(var(--pale-yellow));
+    height: 100%;
+}
+
+.about-page{
+    background-color: rgb(var(--pale-yellow));
+    width: 100%;
+}
+
+.about-blurb{
+    font-family: 'Comic Neue', sans-serif;
+    font-size: var(--normal-text-size);
+    background-color: var(--light-pink);
+    color: var(--magenta);
+    --bs-card-border-color: rgba(0,0,0,0);
+    line-height: 1.5;
+    padding-top: 25px;
+}
+
+.faq-section{
+    background-color: var(--light-orange);
+    border-radius: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    
+}
+
+.faq-title{
+    color: var(--orange);
+    font-family: Cookie, sans-serif;
+    font-size: var(--lg-heading-size);
+    text-shadow: var(--melon) 2px 2px;
+}
+
+.accordionFAQ{
+    --bs-accordion-bg: var(--light-orange);
+    --bs-accordion-btn-bg: var(--light-orange);
+    --bs-accordion-active-bg: var(--orange);
+    --bs-accordion-active-color: var(--light-orange);
+    --bs-accordion-btn-focus-box-shadow: none;
+    --bs-accordion-color: var(--orange);
+    --bs-accordion-btn-color: var(--orange);
+}
+
+.accordionFAQ .accordion-button::after{
+   background-image: url(img/orange-arrow.png);
+}
+
+.accordionFAQ .accordion-button:not(.collapsed)::after{
+    background-image: url(img/light-orange-arrow.png);
+}
+
+.blurb-btn{
+    border: none;
+    background-color: var(--magenta);
+    display: inline-block;
+    transform: rotate(45deg);
+    font-family:'Comic Neue', sans-serif;
+    font-size: var(--title-size);
+    margin: 4px 2px;
+    padding: 1px 30px;
+    text-align: center;
+    color: var(--magenta);
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    z-index: 3;
+    border-top: 50px solid;
+    margin: 2rem;
+    position: relative;
+    top: 142px;
+    right: 30px;
+}
+
+.about-cards{
+    margin:auto;
+}
+
+.maya-intro, .vee-intro, .maria-intro{
+    margin: 30px;
+}
 /* Footer styles*/
 .footer{
     position: relative;
@@ -572,6 +672,10 @@
 }
 
 .footer.footer-fix {
+    width: 102%;
+}
+
+.footer-fix {
     width: 102%;
 }
 
