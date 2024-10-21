@@ -281,87 +281,79 @@
 
 /* Menu page styles */
 
-
+/*General styles for menu page*/
 .menu{
-    position:fixed;
-    height:94%;
-    top:6%;
-    width:100%;
-    background-color: var(--light-orange);
-    overflow-y: scroll;
-    overflow-x:hidden;
+    position:fixed; /*Set position to fixed*/
+    height:94%; /*Set height to 94%*/
+    top:6%; /*Offset 6% from the top so there is no overlap with navbar*/
+    width:100%; /*Make menu take up the full screen*/
+    background-color: var(--light-orange); /*Set background color to light orange*/
+    overflow-y: scroll; /*Make y overflow scroll*/
+    overflow-x:hidden; /*Hide x ocerflow*/
 }
 
-
+/*Menu page header styles*/
 .menu-header{
-    display:block;
-    color: var(--light-pink);
-    background-color: var(--magenta);
-    font-family: 'Cookie';
-    text-align: center;
-    width: 25%;
-    margin:auto;
-    font-size: var(--lg-heading-size);
-    border-radius:30px;
-    border: solid 1.5px var(--base-text);
+    display:block; /*Set display type to block*/
+    color: var(--light-pink); /*Set text color to light pink*/
+    background-color: var(--magenta); /*Set text box color to magenta*/
+    font-family: 'Cookie'; /*Set font to Cookie*/
+    text-align: center; /*Align text to the cetner*/
+    width: 25%; /*Set width to 25%*/
+    margin:auto; /*Center textbox*/
+    font-size: var(--lg-heading-size); /*Set font size to lg heading size*/
+    border-radius:30px; /*Round text box edges*/
+    border: solid 2px rgb(var(--base-text)); /*Add black border to text box*/
 }
 
-
+/*Flexbox section of menu to hold accordions*/
 .menu-flex{
-    display:inline-flex;
-    flex-flow: row wrap;
-    text-align:center;
-    align-items:center;
-    justify-content:center;
-    gap:15px;
-    align-self:stretch;
-    width:100%;
+    display:inline-flex; /*Set display type to inline-flex*/
+    flex-flow: row wrap; /*Set flow to row wrap*/
+    text-align:center; /*Align text center*/
+    align-items:center; /*Align items center on the cross axis*/
+    justify-content:center; /*Align items center on the main axis*/
+    gap:15px; /*Set gap between items of 15px*/
+    align-self:stretch; /*Stretch to align items on the cross axis*/
+    width:100%; /*Set width to 100%*/
 }
 
-
+/*Base styles for sections of menu items*/
 .menu-item{
-    background-color: var(--light-pink);
-    flex-basis: 30%;
-    border-radius: 30px;
-    border: solid 1.5px rgb(var(--base-text));
+    background-color: var(--light-pink); /*Set background color to light pink*/
+    flex-basis: 30%; /*Set main size of the item to 30%*/
+    border-radius: 30px; /*Round edges*/
+    border: solid 2px rgb(var(--base-text)); /*Create black border*/
 }
 
-
+/*Menu subheaders*/
 .menu-subheader{
-    color: rgb(var(--base-text));
-    font-family: 'Cookie';
-    padding: 3px;
-    size: var(--md-heading-size);
+    color: rgb(var(--base-text)); /*Set text color to base text*/
+    font-family: 'Cookie'; /*Set font family to Cookie*/
+    padding: 3px; /*Set padding to 3px*/
+    size: var(--md-heading-size); /*Set text size to md heading size*/
 }
 
-
+/*Menu image styles*/
 .menu-img{
-    width:300px;
-    height:auto;
-    border-radius: 30px;
-    border: solid 2px rgb(var(--base-text));
+    width:300px; /*Set width to 300px*/
+    height:auto; /*Set height to auto*/
+    border-radius: 30px; /*Round edges*/
+    border: solid 2px rgb(var(--base-text));  /*Add black border*/
 }
 
-
-.accordion-button-style{
-    margin-top: 5px;
-    font-size: var(1vw);
-    background-color: var(--magenta);
-    color: var(--light-pink);
-}
-
-
+/*Accordion Styles*/
 .accordion{
-    --bs-accordion-active-color: var(--light-pink);
-    --bs-accordion-active-bg: var(--magenta);
-    --bs-accordion-color: var(--magenta);
-    --bs-accordion-bg: var(--light-pink);
-    --bs-accordion-btn-bg: var(--light-pink);
-    --bs-accordion-btn-color: rgb(var(--base-text));
-    font-family: 'Comic Neue';
-    --bs-accordion-border-radius: 0px;
-    --bs-accordion-inner-border-radius:0px;
-    --bs-accordion-border-width:0px;
+    --bs-accordion-active-color: var(--light-pink); /*Set accordion text color when active to light pink*/
+    --bs-accordion-active-bg: var(--magenta); /*Set accordion background color when active to magenta*/
+    --bs-accordion-color: var(--magenta); /*Set default accordion text color to magenta*/
+    --bs-accordion-bg: var(--light-pink); /*Set default accordion background color to light pink*/
+    --bs-accordion-btn-bg: var(--light-pink); /*Set accordion button background color to light pink*/
+    --bs-accordion-btn-color: rgb(var(--base-text)); /*Set accordion button text color to base text*/
+    font-family: 'Comic Neue'; /*Set font to Comic Neue*/
+    --bs-accordion-border-radius: 0px; /*Set border radius to 0px*/
+    --bs-accordion-inner-border-radius:0px; /*Set inner border radius to 0px*/
+    --bs-accordion-border-width:0px; /*Get ride of accordion border*/
 }
 
 .menu-item:nth-of-type(4), .menu-item:nth-of-type(5) {
@@ -373,142 +365,170 @@
     margin-bottom: 25px;
 }
 
+/*Base info for Melon colored stripe*/
 .melon-stripe{
-    --stripe-color: var(--melon);
-    top:20%;
-    left:1%;
+    --stripe-color: var(--melon); /*Set stripe color to melon*/
+    top:20%; /*Offset 20% from top*/
+    left:1%; /*Offset 1% from left*/
 }
 
+/*Base info for orange colored stripe*/
 .orange-stripe{
-    --stripe-color: var(--orange);
-    top:30%;
-    left:-5%;
-    z-index:+1;
+    --stripe-color: var(--orange); /*Set stripe color to orange*/
+    top:30%; /*Offset 30% from top*/
+    left:-5%; /*Offset -5% from left*/
+    z-index:1; /*Set z index to 1*/
 }
 
+/*Base info for magenta colored stripe*/
 .magenta-stripe{
-    --stripe-color: var(--magenta);
-    top:60%;
-    left:-10%;
-    z-index:+2;
+    --stripe-color: var(--magenta); /*Set stripe color to magenta*/
+    top:60%; /*Offset 60% from top*/
+    left:-10%; /*Offset -10% from left*/
+    z-index:2; /*Set z index to 2*/
 }
 
+/*Base info for light pink colored stripe*/
 .light-pink-stripe{
-    --stripe-color: var(--light-pink);
-    top:90%;
-    left:-15%;
-    z-index:+3;
+    --stripe-color: var(--light-pink); /*Set stripe color to light pink*/
+    top:90%; /*Offset 90% from top*/
+    left:-15%; /*Offset -15% from left*/
+    z-index:3; /*Set z index to 3*/
 }
 
+/*Base info for pale yellow colored stripe*/
 .pale-yellow-stripe{
-    --stripe-color: rgb(var(--pale-yellow));
-    top:120%;
-    left:-20%;
-    z-index:+4;
+    --stripe-color: rgb(var(--pale-yellow)); /*Set stripe color to pale yellow*/
+    top:120%; /*Offset 120% from top*/
+    left:-20%; /*Offset -20% from left*/
+    z-index:4; /*Set z index to 4*/
 }
 
+/*Base info for light orange colored stripe*/
 .light-orange-stripe{
-    --stripe-color: var(--light-orange);
-    top:150%;
-    left:-25%;
-    z-index:+6;
+    --stripe-color: var(--light-orange); /*Set stripe color to light orange*/
+    top:150%; /*Offset 150% from top*/
+    left:-25%; /*Offset -25% from left*/
+    z-index:5; /*Set z index to 5*/
 }
 
+/*Top circles segment of squiggly stripes*/
 .circles{
-    height: 200px;
-    width: 200px;
-    background-color: var(--stripe-color);
-    border-radius: 50%;
-    display: inline-block;
-    position:absolute;
-    z-index:-5;
-    margin-top:100px;
-    margin-left:-20px;
-    box-shadow: 320px 0 0 0px var(--stripe-color),
-              640px 0 0 0px var(--stripe-color),
-              960px 0 0 0px var(--stripe-color),
-              1280px 0 0 0px var(--stripe-color),
-              320px 90px 0 0px var(--stripe-color),
-              640px 90px 0 0px var(--stripe-color),
-              960px 90px 0 0px var(--stripe-color),
-              1280px 90px 0 0px var(--stripe-color),
-              1500px 90px 0 0px var(--stripe-color);
+    height: 200px; /*Set circle's height to 200px*/
+    width: 200px; /*Set circle's width to 200px*/
+    background-color: var(--stripe-color); /*Set initial circle color to stripe color variable*/
+    border-radius: 50%; /*Round edges to be circlular*/
+    display: inline-block; /*Set display to inline block*/
+    position:absolute; /*Set position to absolute*/
+    z-index:-5; /*Set z index to -5*/
+    margin-top:100px; /*Place circles 100px from the top*/
+    margin-left:-20px; /*Place circles -20px from the left of the screen*/
+
+     /*Create copies of the initial circle to create the top of the squiggly lines*/
+    box-shadow: 320px 0 0 0px var(--stripe-color), /*Create box shadow copy of circle 320px to the right*/
+              640px 0 0 0px var(--stripe-color), /*Create box shadow copy of circle 640px to the right*/
+              960px 0 0 0px var(--stripe-color), /*Create box shadow copy of circle 960px to the right*/
+              1280px 0 0 0px var(--stripe-color), /*Create box shadow copy of circle 1280px to the right*/
+
+              /*Create copies of the initial circle to fill space below the top of the squiggly lines*/
+              320px 90px 0 0px var(--stripe-color), /*Create box shadow copy of circle 320px to the right and 90px down*/
+              640px 90px 0 0px var(--stripe-color), /*Create box shadow copy of circle 640px to the right and 90px down*/
+              960px 90px 0 0px var(--stripe-color), /*Create box shadow copy of circle 960px to the right and 90px down*/
+              1280px 90px 0 0px var(--stripe-color), /*Create box shadow copy of circle 1280px to the right and 90px down*/
+              1500px 90px 0 0px var(--stripe-color);  /*Create box shadow copy of circle 1500px to the right and 90px down*/
 
 }
 
+/*Rectangles that fill space below squiggly stripe*/
 .rectangle{
-    height:200px;
-    width:110%;
-    margin-left:-3%;
-    position:absolute;
+    height:200px; /*Set height to 200px*/
+    width:110%; /*Set width to 100%*/
+    margin-left:-3%; /*Set left margin to -3%*/
+    position:absolute; /*Set position to absolute*/
 }
 
+/*Fill in bottom of melon stripe*/
 .melon-rect{
-    top:30%;
-    z-index:-6;
-    background-color: var(--melon);
+    top:30%; /*Set rectangle 30% from top*/
+    z-index:-6; /*Set z index to -6*/
+    background-color: var(--melon); /*Set rectangle color to melon*/
 }
 
+/*Fill in bottom of orange stripe*/
 .orange-rect{
-    top:60%;
-    z-index:-6;
-    background-color: var(--orange);
+    top:60%; /*Set rectangle 60% from top*/
+    z-index:-6; /*Set z index to -6*/
+    background-color: var(--orange); /*Set rectangle color to orange*/
 }
 
+/*Fill in bottom of magenta stripe*/
 .magenta-rect{
-    top:90%;
-    z-index:-5;
-    background-color: var(--magenta);
+    top:90%; /*Set rectangle 90% from top*/
+    z-index:-5; /*Set z index to -5*/
+    background-color: var(--magenta); /*Set rectangle color to magenta*/
 }
 
+/*Fill in bottom of light pink stripe*/
 .light-pink-rect{
-    top:120%;
-    z-index:-5;
-    background-color: var(--light-pink);
+    top:120%; /*Set rectangle 120% from top*/
+    z-index:-5; /*Set z index to -5*/
+    background-color: var(--light-pink); /*Set rectangle color to light pink*/
 }
 
+/*Fill in bottom of pale yellow stripe*/
 .pale-yellow-rect{
-    top:150%;
-    z-index:-6;
-    background-color: rgb(var(--pale-yellow));
+    top:150%; /*Set rectangle 150% from top*/
+    z-index:-6; /*Set z index to -6*/
+    background-color: rgb(var(--pale-yellow)); /*Set rectangle color to pale yellow*/
 }
 
+/*Align circle-bottom with circles to create squiggly line*/
 .move-over{
-    left: 320px;
-    bottom:230px;
+    left: 320px; /*Set rectangle 320px from the left*/
+    bottom:230px; /*Set rectangle 230px from the bottom*/
 }
+
+/*Align circle-bottom with circles to create squiggly line*/
 .move-over-two{
-    left: 640px;
-    bottom:460px;
+    left: 640px; /*Set rectangle 640px from the left*/
+    bottom:460px; /*Set rectangle 460px from the bottom*/
 }
+
+/*Align circle-bottom with circles to create squiggly line*/
 .move-over-three{
-    left: 960px;
-    bottom:690px;
+    left: 960px; /*Set rectangle 960px from the left*/
+    bottom:690px; /*Set rectangle 690px from the bottom*/
 }
+
+/*Align circle-bottom with circles to create squiggly line*/
 .move-over-four{
-    left: 1280px;
-    bottom:920px;
+    left: 1280px; /*Set rectangle 1280px from the left*/
+    bottom:920px; /*Set rectangle 920px from the bottom*/
 }
 
+/*Cutout circle section of squiggly stripes*/
 .circle-bottom{
-    width: 220px;
-    height: 200px;
-    margin-top:30px;
-    margin-left:150px;
-    position: relative;
-    overflow: hidden;
+    width: 220px; /*Set width to 220px*/
+    height: 200px; /*Set height to 200px*/
+    margin-top:30px; /*Set top margin to 30px*/
+    margin-left:150px; /*Set left margin to 150px*/
+    position: relative; /*Set position to relative*/
+    overflow: hidden; /*Hide overflow to circle cutouts*/
 }
 
+/*Rectangular bottom of cutout section of squiggly stripes*/
 .circle-bottom::before {
-    content: '';
-    position: absolute;
-    bottom: 80%;
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    box-shadow: 0px 250px 0px 250px var(--stripe-color);
-    z-index:-5;
+    content: ''; /*Set content to ''*/
+    position: absolute; /*Set position to absolute*/
+    bottom: 80%; /*Move 80% from bottom*/
+    width: 100%; /*Set width to 100%*/
+    height: 100%; /*Set height to 100%*/
+    border-radius: 100%; /*Round circular segment*/
+    box-shadow: 0px 250px 0px 250px var(--stripe-color); /*Create bottom cuout as a box shadow*/
+    z-index:-5; /*Set z index to -5*/
   }
+
+
 
 /* Podcast page styles */
 .episodes {
@@ -678,24 +698,27 @@
 .maya-intro, .vee-intro, .maria-intro{
     margin: 30px;
 }
+
+
 /* Footer styles*/
 .footer{
-    position: relative;
-    margin:0;
-    margin-left: -2%;
-    margin-bottom: -2%;
-    bottom:0;
-    left:0;
-    padding: 0.5% 2%;
+    position: relative; /*Set footer position to relative */
+    margin:0; /*Set margins to 0*/
+    margin-left: -2%; /*Set margin left to -2%*/
+    margin-bottom: -2%; /*SEt margin bottom to -2%*/
+    bottom:0; /*Set to bottom of screen*/
+    left:0; /*Set to left of screen*/
+    padding: 0.5% 2%; /*Set vertical padding to 0.5% and horizontal padding to 2%*/
     width: 103%; /*Set footer width to entire screen*/
     height:14%; /*Set footer height and minimum height */
-    min-height:75px;
+    min-height:75px; /*Set minimum height to 75px*/
     background-color: var(--magenta); /*Set background color of footer*/
     color: var(--light-pink); /*Set text color in footer*/
     font-family: 'Comic Neue'; /*Set font of the footer*/
-    font-size: 1.6vw;
-    overflow-x: hidden;
+    font-size: 1.6vw; /*Set font size to 1.6 vw*/
+    overflow-x: hidden; /*Hide x overflow*/
 }
+
 
 .footer.footer-fix {
     width: 102%;
@@ -707,30 +730,33 @@
 
 /*Display elements of the footer in a grid with 3 equal columns*/
 .footer-grid{
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display:grid; /*Set display to grid*/
+    grid-template-columns: 1fr 1fr 1fr; /*Create three equally sized columns*/
 }
 
 
 /*Center footer image*/
 .footer-img{
-    display:block;
-    margin: auto;
+    display:block; /*Set image display to grid*/
+    margin: auto; /*Center image*/
 }
 
 
-/*Set footer image size and pad from top of the footer*/
+/*Set footer image size, pad from top of the footer, add logo animation*/
 .footer-img-size{
-    height: 3em;
-    min-height:50px;
-    width: auto;
-    animation: fly-bee-fly 1.5s ease-in-out infinite;
+    height: 3em; /*Set height to 3em*/
+    min-height:50px; /*Set minimum height to 50px*/
+    width: auto; /*Set width to auto*/
+    animation: fly-bee-fly 1.5s ease-in-out infinite; /*Make bee ease in and out of positions 2px above and below its default*/
 }
 
+/*Keyframes for logo animation*/
 @keyframes fly-bee-fly{
+    /*Start animation at 2px above default position*/  
       0%, 100%{
         transform: translateY(2px);
       }
+      /*Logo travels to 2px below default position at 50% of the animation time*/
       50%{
         transform: translateY(-2px);
     }
@@ -740,16 +766,16 @@
 
 /*Vertically center left footer text and align left*/
 .left-footer-text{
-    display:block;
-    margin: auto 0;
-    text-align: left;
+    display:block; /*Set display to block*/
+    margin: auto 0; /*Center vertically and set horizontal margins to 0*/
+    text-align: left; /*Align text left*/
 }
 
 
-/*Vertically center left footer text and align right*/
+/*Vertically center right footer text and align right*/
 .right-footer-text{
-    display:block;
-    margin: auto 0;
-    text-align: right;
+    display:block; /*Set display to block*/
+    margin: auto 0; /*Center vertically and set horizontal margins to 0*/
+    text-align: right; /*Align text right*/
 }
 
