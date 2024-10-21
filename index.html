@@ -14,30 +14,32 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="img/bee-logo.png">
 </head>
-    <body>
-        <nav class="navbar navbar-lg">
-            <div class="container-fluid navbar-menu">
-                <!-- Website Name -->
-                <h1 class="nav-name">Humming Bee Bakes</h1>
-                <!-- Navbar -->
-                <div class="dropdown">
-                    <button class="btn dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+<body>
+    <nav class="navbar navbar-lg">
+        <div class="container-fluid navbar-menu">
+            <!-- Website Name -->
+            <h1 class="nav-name">Humming Bee Bakes</h1>
+            <!-- Navbar -->
+            <div class="dropdown">
+                <button class="btn dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
                     <img class="dropdown-img" src="img/bee-logo.png">
-                    </button>
-                    <ul class="dropdown-menu">
+                </button>
+                <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="index.html">Home</a></li>
                     <li><a class="dropdown-item" href="menu.html">Menu</a></li>
                     <li><a class="dropdown-item" href="podcasts.html">Podcasts</a></li>
                     <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                    </ul>
-                </div>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
     <div class="container-full">
         <section class="landing-header px-3 pb-5 below-navbar">
             <h1 class="title-text text-center">Humming Bee Bakes</h1>
-            <p class="normal-text text-center">Lorem ipsum dolor set amit.</p>
+            <p class="normal-text text-center">Nos encantan las galletas y los pasteles</p>
         </section>
 
         <section class="featured-items">
@@ -45,7 +47,7 @@
             <div class="container center-content">
                 <div class="row mb-2">
                     <div class="col">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card item-card" style="width: 18rem;">
                             <img src="img/brownies.jpg" class="card-img" alt="Delicious plate of brownies">
                             <div class="card-img-overlay">
                                 <h5 class="card-title">Famous Fudgy Brownies</h5>
@@ -53,7 +55,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card item-card" style="width: 18rem;">
                             <img src="img/cookies.jpg" class="card-img" alt="Delicious plate of cookies">
                             <div class="card-img-overlay">
                                 <h5 class="card-title">Maria's Choc. Chip Cookies</h5>
@@ -61,7 +63,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card item-card" style="width: 18rem;">
                             <img src="img/pecan-pie.jpg" class="card-img" alt="Delicious pecan pie">
                             <div class="card-img-overlay">
                                 <h5 class="card-title">Pecan Pie</h5>
@@ -77,7 +79,7 @@
                     </button>
                 </a>
             </div>
-            
+
         </section>
         <span class="wave-divider landing-wave"></span>
 
@@ -92,14 +94,55 @@
                         <h3 class="episode-title">Basics of Baking</h3>
                         <p class="normal-text">
                             Lorem ipsum odor amet, consectetuer adipiscing elit. Vulputate quis lacinia dui habitasse
-                            facilisi posuere augue. Viverra sollicitudin vivamus consectetur primis habitant condimentum.
+                            facilisi posuere augue. Viverra sollicitudin vivamus consectetur primis habitant
+                            condimentum.
                         </p>
-                        <audio src="audio/temp-audio.mp3" type="audio/mpeg" controls>
+                        <audio src="audio/temp-audio.mp3" type="audio/mpeg" class="d-inline-block" controls>
                             Your browser does not support the audio element.
                         </audio>
+                        <span class="d-inline-block" id="pod-spacer"></span>
+                        <a href="podcasts.html">
+                            <button type="button" class="btn menu-btn position-absolute">
+                                See all episodes
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
+        <span class="wave-divider landing-wave-2"></span>
+        </section>
+
+        <section class="reviews pt-3">
+            <h2 class="header-text text-center mt-3">Reviews from past customers</h2>
+            <div class="container center-content">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card review-card">
+                            <p class="review normal-text card-body text-center">"It was delicious, 5 stars. The chocolate chip cookies were crispy on the outside and chewy on the inside"
+                                <br>
+                                Haria Muan
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card review-card">
+                            <p class="review normal-text card-body text-center">"The linzer cookies were amazing and super yummy. I will definitely order again!"
+                                <br>
+                                Mee Varinaccio
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card review-card">
+                            <p class="review normal-text card-body text-center">"Getting pastries from Humming Bee Bakes was the best day of my life! Their cookies were awesome!"
+                                <br>
+                                Rohan Arni
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
         </section>
     </div>
 
