@@ -45,58 +45,30 @@
 }
 
 .dropdown{
-    --bs-dropdown-bg: var(--orange); 
+    --bs-dropdown-bg: var(--orange); /*sets dropdown background color*/
 }
 
 
 .dropdown-menu{
     background-color: var(--orange);
-    --bs-dropdown-link-color: rgb(var(--pale-yellow));
-    --bs-dropdown-link-hover-color: rgb(var(--pale-yellow));
-    --bs-dropdown-link-hover-bg: var(--melon);
-    --bs-dropdown-link-active-color:rgb(var(--pale-yellow)) ;
-    --bs-dropdown-link-active-bg: var(--orange);
+    --bs-dropdown-link-color: rgb(var(--pale-yellow)); /*default font color*/
+    --bs-dropdown-link-hover-color: rgb(var(--pale-yellow)); /*font color when hover*/
+    --bs-dropdown-link-hover-bg: var(--melon); /*bg color when hover*/
+    --bs-dropdown-link-active-color:rgb(var(--pale-yellow)); /*font color when click*/
+    --bs-dropdown-link-active-bg: var(--orange); /*background color when click*/
 }
-
-.dropdown-menu{
-    background-color: var(--orange);
-    --bs-dropdown-link-color: rgb(var(--pale-yellow));
-    --bs-dropdown-link-hover-color: rgb(var(--pale-yellow));
-    --bs-dropdown-link-hover-bg: var(--melon);
-    --bs-dropdown-link-active-color:rgb(var(--pale-yellow)) ;
-    --bs-dropdown-link-active-bg: var(--orange);
-}
-
-
-#nav-menu{
-    color: rgb(rgb(var(--pale-yellow)));
-    background-color: var(--orange);
-    display:block;
-    right: 0;
-    top: 5px;
-    width: 100px;
-
-
-   /*
-    margin-top: 55px;
-    margin-right:15px;*/
-}
-
-
-.nav-button{
-    display: inline-block;
-}
-
 
 .dropdown-img{
-    transform: scale(0.025);
+    transform: scale(0.025); /*resizes logo*/
+    /*sets position of bee logo*/
     position: absolute;
     top:  -1017px;
     right: -1000px;
-    transition: all 300ms ease-out 100ms;
+    transition: all 300ms ease-out 100ms; /*transition for when you hover over logo*/
 }
 
 .dropdown-img:hover{
+    /*sets changes to logo when hover occurs*/
     top:-1016px;
     transform: scale(0.025) rotate(20deg);
 }
@@ -104,37 +76,26 @@
 .dropdown-btn{
     max-height: 50px;
     max-width: 75px;
+    /*sets bee button poistion*/
     position: absolute;
     right: 0px;
     top: -10px;
-    color: var(--orange);
 }
-
-
-.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
-    color: var(--orange);
-}
-
-
-.btn:hover{
-    color: var(--orange);
-}
-
 
 .nav-name{
-    font-family: Cookie, sans-serif;
-    display: inline-block;
-    color: rgb(var(--pale-yellow));
+    font-family: Cookie, sans-serif; /*sets navbar text font*/
+    display: inline-block; 
+    color: rgb(var(--pale-yellow)); /*font color*/
 }
 
-
 .dropdown-menu{
+    /*sets position of dropdown*/
     position: absolute;
     right: -15px;
 }
 
-
-.dropdown-menu[data-bs-popper]{
+.dropdown-menu[data-bs-popper]{ /*overwriting bootstrap default values*/
+    /*sets position of dropdown*/
     left: auto;
     top: 20px;
 }
