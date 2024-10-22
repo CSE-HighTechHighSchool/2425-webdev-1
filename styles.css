@@ -200,19 +200,19 @@
 }
 
 @media screen and (max-width: 1150px) { /* Fixes wave borders for med-lg width screens */
-    .landing-wave, .landing-wave-2 {
+    .landing-wave, .landing-wave-2, .podcast-header-border {
         margin-top: -1.5%;
     }
 }
 
 @media screen and (max-width: 870px) { /* Fixes wave borders for medium width screens */
-    .landing-wave, .landing-wave-2 {
+    .landing-wave, .landing-wave-2, .podcast-header-border {
         margin-top: -2%;
     }
 }
 
 @media screen and (max-width: 700px) { /* Fixes wave borders for narrow screens */
-    .landing-wave, .landing-wave-2 {
+    .landing-wave, .landing-wave-2, .podcast-header-border {
         margin-top: -2.5%
     }
 }
@@ -344,12 +344,14 @@
     --bs-accordion-border-width:0px; /*Get ride of accordion border*/
 }
 
-.menu-item:nth-of-type(4), .menu-item:nth-of-type(5) {
+.menu-item:nth-of-type(4), .menu-item:nth-of-type(5) { 
+    /* Pushes footer to bottom of page when no items in the two lower menu sections are open */
     margin-bottom: 175px;
 }
 
 
 .menu-item:nth-of-type(4):has(.accordion-button:not(.collapsed)), .menu-item:nth-of-type(5):has(.accordion-button:not(.collapsed)) {
+    /* Adjusts margin when user opens a menu item */
     margin-bottom: 25px;
 }
 
@@ -516,38 +518,36 @@
     z-index:-5; /*Set z index to -5*/
   }
 
-
-
 /* Podcast page styles */
 .episodes {
     background-color: rgb(var(--pale-yellow));
 }
 
-.episode-table {
+.episode-table { /* Styling for table of episodes */
     --bs-table-bg: rgba(var(--pale-yellow), 80%);
     --bs-table-border-color: var(--light-pink);
     font-family: "Comic Neue", cursive;
 }
 
-.ep-description {
+.ep-description { /* Adds borders on the inside of the table */
     border-right: var(--bs-border-width) solid var(--bs-table-border-color);
     border-left: var(--bs-border-width) solid var(--bs-table-border-color);
 }
 
-#ep-table-container {
+#ep-table-container { /* adds border around but slightly distanced from episode table */
     border: var(--bs-border-width) solid var(--light-pink);
     border-radius: 10px;
 }
 
-.podcast-th {
+.podcast-th { /* Podcast table header font sizing */
     font-size: calc(var(--sm-heading-size) / 1.25);
 }
 
-.table-group-divider {
+.table-group-divider { /* Line between header and episodes */
     border-top-color: var(--medium-pink);
 }
 
-.episode-title {
+.episode-title { /* Adds styling to episode titles */
     font-size: var(--sm-heading-size);
     font-family: "Comic Neue", cursive;
     font-weight: bold;
@@ -558,7 +558,7 @@
     background-color: var(--light-orange);
 }
 
-.podcast-header-border {
+.podcast-header-border { /* adds wave border below podcast header */
     background-image: url("img/light-orange-wave.svg");
     border-bottom: 1px solid rgb(var(--pale-yellow));
 }
@@ -623,8 +623,9 @@
 
 /*adjusting introduction card margins*/
 .about-cards{
-    margin:auto;
+    margin: auto;
 }
+
 /*adjusting introduction card margins*/
 .maya-intro, .vee-intro, .maria-intro{
     margin: 30px;
@@ -658,6 +659,7 @@
 .accordionFAQ .accordion-button::after{
    background-image: url(img/orange-arrow.png);
 }
+
 /*customizes accordion button arrow icon after clicked*/
 .accordionFAQ .accordion-button:not(.collapsed)::after{
     background-image: url(img/light-orange-arrow.png);
@@ -682,12 +684,7 @@
     overflow-x: hidden; /*Hide x overflow*/
 }
 
-
-.footer.footer-fix {
-    width: 102%;
-}
-
-.footer-fix {
+.footer.footer-fix { /* Properly formats footer on all pages except menu */
     width: 102%;
 }
 
@@ -697,13 +694,11 @@
     grid-template-columns: 1fr 1fr 1fr; /*Create three equally sized columns*/
 }
 
-
 /*Center footer image*/
 .footer-img{
     display:block; /*Set image display to grid*/
     margin: auto; /*Center image*/
 }
-
 
 /*Set footer image size, pad from top of the footer, add logo animation*/
 .footer-img-size{
@@ -726,14 +721,12 @@
 
 }
 
-
 /*Vertically center left footer text and align left*/
 .left-footer-text{
     display:block; /*Set display to block*/
     margin: auto 0; /*Center vertically and set horizontal margins to 0*/
     text-align: left; /*Align text left*/
 }
-
 
 /*Vertically center right footer text and align right*/
 .right-footer-text{
