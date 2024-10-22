@@ -530,35 +530,39 @@
 }
 
 /* About Us/FAQ page styles */
-.top-banner{
+.top-banner{  /*styles about us header*/
     width: 100%;
     height: 250px;
     text-align: center;
     position: static;
-    z-index: 5;
+    z-index: 5; /*sets about header in front of triangle button*/
     background-image: url(img/lindsor-cookie.jpg);
     background-size: cover;
     background-position: center;
+    /*creates a magenta low opacity box shadow over the background image*/
     box-shadow: inset 0 0 0 1000px rgba(162, 88, 119, 0.7);
 }
 
-.top-text{
+.top-text{ /*styles text in about us header*/
     font-family: 'Cookie', sans-serif;
     font-size:var(--title-size);
     display:inline-block;
     padding-top: 80px;
     color: rgb(var(--pale-yellow));
     position:static;
-    z-index: 6;
+    z-index: 6; /*sets text above header*/
 }
 
-.arrow-down {
+.arrow-down { /*stles about us triangle arrow*/
+    /*creates a 0 width 0 length box with borders*/
     width: 0; 
     height: 0; 
+    /*makes borders transparent*/
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     border-bottom: 20px solid transparent;
     margin: 0 0 0 0;
+    /*top border is magenta; border appears as a triangle*/
     border-top: 20px solid rgba(162, 88, 119, 0.8);
     position: relative;
     top: 250px;
@@ -567,17 +571,13 @@
     padding: 0px;
   }
 
+/*sets background color of about page*/
 .about-body{
     background-color: rgb(var(--pale-yellow));
     height: 100%;
 }
 
-.about-page{
-    background-color: rgb(var(--pale-yellow));
-    width: 100%;
-}
-
-.about-blurb{
+.about-blurb{ /*Styles collapsible blurb underneath About Us Header*/
     font-family: 'Comic Neue', sans-serif;
     font-size: var(--normal-text-size);
     background-color: var(--light-pink);
@@ -585,74 +585,49 @@
     --bs-card-border-color: rgba(0,0,0,0);
     line-height: 1.5;
     padding-top: 25px;
-    z-index: 0;
 }
 
-.faq-section{
+/*adjusting introduction card margins*/
+.about-cards{
+    margin:auto;
+}
+/*adjusting introduction card margins*/
+.maya-intro, .vee-intro, .maria-intro{
+    margin: 30px;
+}
+
+.faq-section{ /*styles faq block*/
     background-color: var(--light-orange);
-    border-radius: 10px;
+    border-radius: 10px; /*rounds corners*/
     padding-bottom: 20px;
     margin-bottom: 15px;
-    
 }
 
-.faq-title{
+.faq-title{ /*styles the faq heading*/
     color: var(--orange);
     font-family: Cookie, sans-serif;
     font-size: var(--lg-heading-size);
     text-shadow: var(--melon) 2px 2px;
 }
 
-.accordionFAQ{
-    --bs-accordion-bg: var(--light-orange);
-    --bs-accordion-btn-bg: var(--light-orange);
-    --bs-accordion-active-bg: var(--orange);
-    --bs-accordion-active-color: var(--light-orange);
-    --bs-accordion-btn-focus-box-shadow: none;
-    --bs-accordion-color: var(--orange);
-    --bs-accordion-btn-color: var(--orange);
+.accordionFAQ{ /*customizes faq accordion*/
+    --bs-accordion-bg: var(--light-orange); /*content bg color*/
+    --bs-accordion-btn-bg: var(--light-orange); /*bg of btn*/
+    --bs-accordion-active-bg: var(--orange); /*bg of btn when accordion expanded*/
+    --bs-accordion-active-color: var(--light-orange); /*font color of btn when accordion expanded*/
+    --bs-accordion-btn-focus-box-shadow: none; /*removes blue box shadow*/
+    --bs-accordion-color: var(--orange); /*font color of content*/
+    --bs-accordion-btn-color: var(--orange); /*font color of btn*/
 }
 
+/*customizes accordion button arrow icon before click*/
 .accordionFAQ .accordion-button::after{
    background-image: url(img/orange-arrow.png);
 }
-
+/*customizes accordion button arrow icon after clicked*/
 .accordionFAQ .accordion-button:not(.collapsed)::after{
     background-image: url(img/light-orange-arrow.png);
 }
-
-/*
-.blurb-btn{
-    border: none;
-    background-color: var(--magenta);
-    display: inline-block;
-    transform: rotate(45deg);
-    font-family:'Comic Neue', sans-serif;
-    font-size: var(--title-size);
-    margin: 4px 2px;
-    padding: 1px 30px;
-    text-align: center;
-    color: var(--magenta);
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    z-index: 3;
-    border-top: 50px solid;
-    margin: 2rem;
-    position: relative;
-    top: 142px;
-    right: 30px;
-}
-*/
-.about-cards{
-    margin:auto;
-}
-
-.maya-intro, .vee-intro, .maria-intro{
-    margin: 30px;
-}
-
 
 /* Footer styles*/
 .footer{
