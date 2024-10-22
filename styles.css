@@ -640,10 +640,10 @@
     color: var(--orange);
     font-family: Cookie, sans-serif;
     font-size: var(--lg-heading-size);
-    text-shadow: var(--melon) 2px 2px;
+    text-shadow: var(--melon) 2px 2px; /*adds a shadow to the text*/
 }
 
-.accordionFAQ{ /*customizes faq accordion*/
+.accordion-faq{ /*customizes faq accordion*/
     --bs-accordion-bg: var(--light-orange); /*content bg color*/
     --bs-accordion-btn-bg: var(--light-orange); /*bg of btn*/
     --bs-accordion-active-bg: var(--orange); /*bg of btn when accordion expanded*/
@@ -654,11 +654,11 @@
 }
 
 /*customizes accordion button arrow icon before click*/
-.accordionFAQ .accordion-button::after{
+.accordion-faq .accordion-button::after{
    background-image: url(img/orange-arrow.png);
 }
 /*customizes accordion button arrow icon after clicked*/
-.accordionFAQ .accordion-button:not(.collapsed)::after{
+.accordion-faq .accordion-button:not(.collapsed)::after{
     background-image: url(img/light-orange-arrow.png);
 }
 
