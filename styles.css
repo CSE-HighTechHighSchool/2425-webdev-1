@@ -1,5 +1,5 @@
+/* Import "Comic Neue" and "Cookie" font families */
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cookie&display=swap');
-
 
 /* Universal Styles */
 :root {
@@ -15,11 +15,11 @@
     --stripe-color: rgb(0,0,0);
     --title-size: calc(5vw + 2rem);
 
+    /* Standardized font sizes */
     --lg-heading-size: calc(5vw + .25rem);
     --md-heading-size: calc(2.5vw + .125rem);
     --sm-heading-size: calc(2.5vw + .125rem);
     --normal-text-size: 2vw;
-
 }
 
 .navbar{
@@ -120,71 +120,60 @@
 }
 
 /* Landing page styles */
-.landing-header {
+.landing-header { /* Styling for the header of the landing page */
     background-image: url("img/alt-awning.png");
     background-size: contain;
     background-position: bottom-right;
     background-color: var(--light-orange);
-    margin-top: 34px;
+    margin-top: 34px;  /* Fixes overlap with navbar */
 }
 
-
-.title-text {
+.title-text { /* Large text in "Cookie" font family */
     font-family: "Cookie", cursive;
     font-size: var(--title-size);
     color: rgb(var(--base-text));
 }
 
-
-.normal-text {
+.normal-text { /* Medium text in sans text size */
     font-family: "Comic Neue", sans-serif;
     font-size: var(--normal-text-size);
     color: rgb(var(--base-text));
 }
 
-
-.header-text {
+.header-text { /* Medium text in "Cookie" font family */
     font-family: "Cookie", cursive;
     font-size: var(--lg-heading-size);
     color: rgb(var(--base-text));
 }
 
-
-.featured-items {
+.featured-items { /* Section of featured items with 3 cards */
     background-color: var(--light-orange);
     padding-bottom: 3rem;
 }
 
-
-.center-content {
+.center-content { /* Center the content in the feature items section */
     display: flex;
     justify-content: center;
 }
 
-
-.card, .card-img-overlay {
+.card, .card-img-overlay { /* Style cards and set up hover animations */
     --bs-border-radius: 20px;
     transition: all 300ms 50ms;
 }
 
-
-
-.item-card:hover, .card:hover {
+.card:hover { /* Hover animation for cards */
     filter: drop-shadow(0px 0px 4px var(--magenta));
 }
 
-
-.item-card:hover .card-img-overlay, .card:hover .card-img-overlay {
+.card-img-overlay, .card:hover .card-img-overlay { /* Make name of item show up when image is hovered over */
     opacity: 1;
 }
 
-
-.card-img {
+.card-img { /* Sets height of image in cards */
     height: 18rem;
 }
 
-
-.card-img-overlay {
+.card-img-overlay { /* Style card image overlay with gradient and border-radius */
     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(var(--pale-yellow), .75) 20%, rgb(var(--pale-yellow), .8));
     height: 6rem;
     top: auto;
@@ -192,89 +181,88 @@
     opacity: 0;
 }
 
-
-.card-title {
+.card-title { /* Sets font style for color of cards */
     font-family: "Cookie", cursive;
     font-size: var(--md-heading-size);
     color: var(--base-text);
 }
 
-.landing-wave {
+.landing-wave { /* Adds wave border between featured items and podcast section of page */
     background-image: url("img/light-orange-wave.svg");
     margin-top: -1.1%;
     border-bottom: 1px solid rgb(var(--pale-yellow));
 }
 
-.landing-wave-2 {
+.landing-wave-2 { /* Adds wave border between podcast and reviews section */
     background-image: url("img/pale-yellow-wave.svg");
     margin-top: -1.1%;
     border-bottom: 1px solid var(--light-pink);
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1150px) { /* Fixes wave borders for med-lg width screens */
     .landing-wave, .landing-wave-2 {
         margin-top: -1.5%;
     }
 }
 
-@media screen and (max-width: 870px) {
+@media screen and (max-width: 870px) { /* Fixes wave borders for medium width screens */
     .landing-wave, .landing-wave-2 {
         margin-top: -2%;
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 700px) { /* Fixes wave borders for narrow screens */
     .landing-wave, .landing-wave-2 {
         margin-top: -2.5%
     }
 }
 
-.menu-btn {
-    --bs-btn-bg: var(--medium-pink);
-    --bs-btn-hover-bg: var(--magenta);
+.menu-btn { /* Styling for button that links to menu page */
+    --bs-btn-bg: var(--medium-pink); /* Override bootstrap default button bg */
+    --bs-btn-hover-bg: var(--magenta); /* Sets button hover bg color */
     --bs-btn-color: rgb(var(--pale-yellow));
     --bs-btn-hover-color: rgb(var(--pale-yellow));
     font-family: "Comic Neue", cursive;
     font-size: calc(var(--md-heading-size) * .75);
 }
 
-
-.podcast-cover {
+.podcast-cover { /* Style podcast cover on landing page */
     width: 100%;
     height:auto;
+    background-color: var(--light-pink);
+    border: 2px dotted var(--magenta);
 }
 
-
-.recent-podcasts {
+.recent-podcasts { /* Styling for recent podcast section */
     background-color: rgb(var(--pale-yellow));
     width: 100%;
     overflow-x: hidden;
 }
 
-#pod-spacer {
+#pod-spacer { /* Puts 2rem of space between podcast audio and button w/ link */
     width: 2rem;
 }
 
 .row {
-    --bs-gutter-x: 5rem;
+    --bs-gutter-x: 5rem; /* Overrides bootstrap to put more space between cards */
 }
 
-.reviews {
+.reviews { /* review section on landing page */
     background-color: var(--light-pink);
 }
 
-.review-card {
-    background-color: #0000;
-    border: none;
-    border: 1px dashed rgba(162, 88, 119, 0%);
+.review-card { /* Styling for reviews on landing page */
+    background-color: #0000; /* Makes background transparent */
+    border: 1px dashed rgba(162, 88, 119, 0%); /* Sets up invisible border for hover transition */
     transition: border 300ms 50ms;
 }
 
-.review-card:hover {
-    border: 1px dashed rgba(162, 88, 119, 100%)
+.review-card:hover { /* Review card hover transition */
+    border: 1px dashed rgba(162, 88, 119, 100%);
+    filter: none; /* Overrides general card  */
 }
 
-.review {
+.review { /* text of each review */
     font-size: calc(var(--normal-text-size) / 1.25);
     padding: .5rem;
 }
