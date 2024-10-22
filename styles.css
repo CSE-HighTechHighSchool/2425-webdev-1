@@ -284,7 +284,7 @@
     margin:auto; /*Center textbox*/
     font-size: var(--lg-heading-size); /*Set font size to lg heading size*/
     border-radius:30px; /*Round text box edges*/
-    border: solid 2px rgb(var(--base-text)); /*Add black border to text box*/
+    border: solid 1.5px rgb(var(--base-text)); /*Add black border to text box*/
 }
 
 /*Flexbox section of menu to hold accordions*/
@@ -304,7 +304,7 @@
     background-color: var(--light-pink); /*Set background color to light pink*/
     flex-basis: 30%; /*Set main size of the item to 30%*/
     border-radius: 30px; /*Round edges*/
-    border: solid 2px rgb(var(--base-text)); /*Create black border*/
+    border: solid 1.5px rgb(var(--base-text)); /*Create black border*/
 }
 
 /*Menu subheaders*/
@@ -317,10 +317,10 @@
 
 /*Menu image styles*/
 .menu-img{
-    width:300px; /*Set width to 300px*/
+    width:90%; /*Set width to 90%*/
     height:auto; /*Set height to auto*/
     border-radius: 30px; /*Round edges*/
-    border: solid 2px rgb(var(--base-text));  /*Add black border*/
+    border: solid 1.5px rgb(var(--base-text));  /*Add black border*/
 }
 
 /*Accordion Styles*/
@@ -349,14 +349,13 @@
 /*Base info for Melon colored stripe*/
 .melon-stripe{
     --stripe-color: var(--melon); /*Set stripe color to melon*/
-    top:20%; /*Offset 20% from top*/
     left:1%; /*Offset 1% from left*/
 }
 
 /*Base info for orange colored stripe*/
 .orange-stripe{
     --stripe-color: var(--orange); /*Set stripe color to orange*/
-    top:30%; /*Offset 30% from top*/
+    top:20%; /*Offset 20% from top*/
     left:-5%; /*Offset -5% from left*/
     z-index:1; /*Set z index to 1*/
 }
@@ -364,7 +363,7 @@
 /*Base info for magenta colored stripe*/
 .magenta-stripe{
     --stripe-color: var(--magenta); /*Set stripe color to magenta*/
-    top:60%; /*Offset 60% from top*/
+    top:50%; /*Offset 50% from top*/
     left:-10%; /*Offset -10% from left*/
     z-index:2; /*Set z index to 2*/
 }
@@ -372,7 +371,7 @@
 /*Base info for light pink colored stripe*/
 .light-pink-stripe{
     --stripe-color: var(--light-pink); /*Set stripe color to light pink*/
-    top:90%; /*Offset 90% from top*/
+    top:80%; /*Offset 80% from top*/
     left:-15%; /*Offset -15% from left*/
     z-index:3; /*Set z index to 3*/
 }
@@ -380,7 +379,7 @@
 /*Base info for pale yellow colored stripe*/
 .pale-yellow-stripe{
     --stripe-color: rgb(var(--pale-yellow)); /*Set stripe color to pale yellow*/
-    top:120%; /*Offset 120% from top*/
+    top:110%; /*Offset 110% from top*/
     left:-20%; /*Offset -20% from left*/
     z-index:4; /*Set z index to 4*/
 }
@@ -388,7 +387,7 @@
 /*Base info for light orange colored stripe*/
 .light-orange-stripe{
     --stripe-color: var(--light-orange); /*Set stripe color to light orange*/
-    top:150%; /*Offset 150% from top*/
+    top:140%; /*Offset 140% from top*/
     left:-25%; /*Offset -25% from left*/
     z-index:5; /*Set z index to 5*/
 }
@@ -430,7 +429,7 @@
 
 /*Fill in bottom of melon stripe*/
 .melon-rect{
-    top:30%; /*Set rectangle 30% from top*/
+    top:45%; /*Set rectangle 45% from top*/
     z-index:-6; /*Set z index to -6*/
     background-color: var(--melon); /*Set rectangle color to melon*/
 }
@@ -445,14 +444,14 @@
 /*Fill in bottom of magenta stripe*/
 .magenta-rect{
     top:90%; /*Set rectangle 90% from top*/
-    z-index:-5; /*Set z index to -5*/
+    z-index:-6; /*Set z index to -6*/
     background-color: var(--magenta); /*Set rectangle color to magenta*/
 }
 
 /*Fill in bottom of light pink stripe*/
 .light-pink-rect{
     top:120%; /*Set rectangle 120% from top*/
-    z-index:-5; /*Set z index to -5*/
+    z-index:-6; /*Set z index to -6*/
     background-color: var(--light-pink); /*Set rectangle color to light pink*/
 }
 
@@ -465,26 +464,26 @@
 
 /*Align circle-bottom with circles to create squiggly line*/
 .move-over{
-    left: 320px; /*Set rectangle 320px from the left*/
-    bottom:230px; /*Set rectangle 230px from the bottom*/
+    left: 160%; /*Set rectangle 160% from the left*/
+    bottom: 115%; /*Set rectangle 115% from the bottom*/
 }
 
 /*Align circle-bottom with circles to create squiggly line*/
 .move-over-two{
-    left: 640px; /*Set rectangle 640px from the left*/
-    bottom:460px; /*Set rectangle 460px from the bottom*/
+    left: 320%; /*Set rectangle 320% from the left*/
+    bottom: 230%; /*Set rectangle 230% from the bottom*/
 }
 
 /*Align circle-bottom with circles to create squiggly line*/
 .move-over-three{
-    left: 960px; /*Set rectangle 960px from the left*/
-    bottom:690px; /*Set rectangle 690px from the bottom*/
+    left: 480%; /*Set rectangle 960px from the left*/
+    bottom:345%; /*Set rectangle 690px from the bottom*/
 }
 
 /*Align circle-bottom with circles to create squiggly line*/
 .move-over-four{
-    left: 1280px; /*Set rectangle 1280px from the left*/
-    bottom:920px; /*Set rectangle 920px from the bottom*/
+    left: 640%; /*Set rectangle 1280px from the left*/
+    bottom:460%; /*Set rectangle 920px from the bottom*/
 }
 
 /*Cutout circle section of squiggly stripes*/
@@ -498,7 +497,7 @@
 }
 
 /*Rectangular bottom of cutout section of squiggly stripes*/
-.circle-bottom::before {
+.circle-bottom::before{
     content: ''; /*Set content to ''*/
     position: absolute; /*Set position to absolute*/
     bottom: 80%; /*Move 80% from bottom*/
