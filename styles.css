@@ -156,7 +156,11 @@
     justify-content: center;
 }
 
-.card, .card-img-overlay { /* Style cards and set up hover animations */
+.item-card{
+    margin-bottom: 10px;
+}
+
+.card, .card-img-overlay {
     --bs-border-radius: 20px;
     transition: all 300ms 50ms;
 }
