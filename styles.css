@@ -277,7 +277,7 @@
     width:100%; /*Make menu take up the full screen*/
     background-color: var(--light-orange); /*Set background color to light orange*/
     overflow-y: scroll; /*Make y overflow scroll*/
-    overflow-x:hidden; /*Hide x ocerflow*/
+    overflow-x:hidden; /*Hide x overflow*/
 }
 
 /*Menu page header styles*/
@@ -345,12 +345,11 @@
 }
 
 .menu-item:nth-of-type(4), .menu-item:nth-of-type(5) {
-    margin-bottom: 175px;
+    margin-bottom: 30px;
 }
 
-
 .menu-item:nth-of-type(4):has(.accordion-button:not(.collapsed)), .menu-item:nth-of-type(5):has(.accordion-button:not(.collapsed)) {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 /*Base info for Melon colored stripe*/
@@ -362,7 +361,7 @@
 /*Base info for orange colored stripe*/
 .orange-stripe{
     --stripe-color: var(--orange); /*Set stripe color to orange*/
-    top:20%; /*Offset 20% from top*/
+    top:22%; /*Offset 22% from top*/
     left:-5%; /*Offset -5% from left*/
     z-index:1; /*Set z index to 1*/
 }
@@ -370,7 +369,7 @@
 /*Base info for magenta colored stripe*/
 .magenta-stripe{
     --stripe-color: var(--magenta); /*Set stripe color to magenta*/
-    top:50%; /*Offset 50% from top*/
+    top:44%; /*Offset 44% from top*/
     left:-10%; /*Offset -10% from left*/
     z-index:2; /*Set z index to 2*/
 }
@@ -378,15 +377,15 @@
 /*Base info for light pink colored stripe*/
 .light-pink-stripe{
     --stripe-color: var(--light-pink); /*Set stripe color to light pink*/
-    top:80%; /*Offset 80% from top*/
-    left:-15%; /*Offset -15% from left*/
+    top:66%; /*Offset 66% from top*/
+    left:-14%; /*Offset -15% from left*/
     z-index:3; /*Set z index to 3*/
 }
 
 /*Base info for pale yellow colored stripe*/
 .pale-yellow-stripe{
     --stripe-color: rgb(var(--pale-yellow)); /*Set stripe color to pale yellow*/
-    top:110%; /*Offset 110% from top*/
+    top:88%; /*Offset 88% from top*/
     left:-20%; /*Offset -20% from left*/
     z-index:4; /*Set z index to 4*/
 }
@@ -394,7 +393,7 @@
 /*Base info for light orange colored stripe*/
 .light-orange-stripe{
     --stripe-color: var(--light-orange); /*Set stripe color to light orange*/
-    top:140%; /*Offset 140% from top*/
+    top:110%; /*Offset 110% from top*/
     left:-25%; /*Offset -25% from left*/
     z-index:5; /*Set z index to 5*/
 }
@@ -429,44 +428,9 @@
 /*Rectangles that fill space below squiggly stripe*/
 .rectangle{
     height:200px; /*Set height to 200px*/
-    width:110%; /*Set width to 100%*/
+    width:110%; /*Set width to 110%*/
     margin-left:-3%; /*Set left margin to -3%*/
     position:absolute; /*Set position to absolute*/
-}
-
-/*Fill in bottom of melon stripe*/
-.melon-rect{
-    top:45%; /*Set rectangle 45% from top*/
-    z-index:-6; /*Set z index to -6*/
-    background-color: var(--melon); /*Set rectangle color to melon*/
-}
-
-/*Fill in bottom of orange stripe*/
-.orange-rect{
-    top:60%; /*Set rectangle 60% from top*/
-    z-index:-6; /*Set z index to -6*/
-    background-color: var(--orange); /*Set rectangle color to orange*/
-}
-
-/*Fill in bottom of magenta stripe*/
-.magenta-rect{
-    top:90%; /*Set rectangle 90% from top*/
-    z-index:-6; /*Set z index to -6*/
-    background-color: var(--magenta); /*Set rectangle color to magenta*/
-}
-
-/*Fill in bottom of light pink stripe*/
-.light-pink-rect{
-    top:120%; /*Set rectangle 120% from top*/
-    z-index:-6; /*Set z index to -6*/
-    background-color: var(--light-pink); /*Set rectangle color to light pink*/
-}
-
-/*Fill in bottom of pale yellow stripe*/
-.pale-yellow-rect{
-    top:150%; /*Set rectangle 150% from top*/
-    z-index:-6; /*Set z index to -6*/
-    background-color: rgb(var(--pale-yellow)); /*Set rectangle color to pale yellow*/
 }
 
 /*Align circle-bottom with circles to create squiggly line*/
