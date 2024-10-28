@@ -119,6 +119,12 @@
 }
 
 /* Landing page styles */
+
+.container-full{
+    overflow-x: hidden;
+}
+
+
 .landing-header { /* Styling for the header of the landing page */
     background-image: url("img/alt-awning.png");
     background-size: contain;
@@ -218,7 +224,13 @@
 
 @media screen and (max-width: 700px) { /* Fixes wave borders for narrow screens */
     .landing-wave, .landing-wave-2, .podcast-header-border {
-        margin-top: -2.9%
+        margin-top: -2.9%;
+    }
+}
+
+@media screen and (max-width: 1000px) { /*Centers featured item cards for narrower screens*/
+    .item-card{
+        margin: auto auto 10px;
     }
 }
 
@@ -595,9 +607,29 @@
     margin: auto;
 }
 
+.card-text{
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 20px;
+}
+
 /*adjusting introduction card margins*/
 .maya-intro, .vee-intro, .maria-intro{
     margin: 30px;
+}
+
+.card-img-top{
+    margin-top: 15px;
+    border-radius: 15px;
+}
+
+@media only screen and (min-width:320px) and (max-width: 1000px), (orientation: portrait){
+    .about-cards{
+        display: block;
+        margin: auto auto 10px;
+    }
+    .card{
+        margin: 15px auto;
+    }
 }
 
 .faq-section{ /*styles faq block*/
