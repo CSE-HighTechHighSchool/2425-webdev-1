@@ -509,6 +509,7 @@
 
 .podcast-th { /* Podcast table header font sizing */
     font-size: calc(var(--sm-heading-size) / 1.25);
+    background-color: var(--light-pink);
 }
 
 .table-group-divider { /* Line between header and episodes */
