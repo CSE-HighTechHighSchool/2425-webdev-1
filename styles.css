@@ -593,6 +593,11 @@
     margin: auto;
 }
 
+.card-text{
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 20px;
+}
+
 /*adjusting introduction card margins*/
 .maya-intro, .vee-intro, .maria-intro{
     margin: 30px;
