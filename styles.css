@@ -195,29 +195,31 @@
     background-image: url("img/light-orange-wave.svg");
     margin-top: -1.1%;
     border-bottom: 1px solid rgb(var(--pale-yellow));
+    border-top: 1px solid var(--light-orange);
 }
 
 .landing-wave-2 { /* Adds wave border between podcast and reviews section */
     background-image: url("img/pale-yellow-wave.svg");
     margin-top: -1.1%;
     border-bottom: 1px solid var(--light-pink);
+    border-top: 1px solid rgb(var(--pale-yellow));
 }
 
 @media screen and (max-width: 1150px) { /* Fixes wave borders for med-lg width screens */
     .landing-wave, .landing-wave-2, .podcast-header-border {
-        margin-top: -1.5%;
+        margin-top: -1.6%;
     }
 }
 
 @media screen and (max-width: 870px) { /* Fixes wave borders for medium width screens */
     .landing-wave, .landing-wave-2, .podcast-header-border {
-        margin-top: -2%;
+        margin-top: -2.1%;
     }
 }
 
 @media screen and (max-width: 700px) { /* Fixes wave borders for narrow screens */
     .landing-wave, .landing-wave-2, .podcast-header-border {
-        margin-top: -2.5%
+        margin-top: -2.9%
     }
 }
 
