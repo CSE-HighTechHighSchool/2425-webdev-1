@@ -211,19 +211,19 @@
 }
 
 @media screen and (max-width: 1150px) { /* Fixes wave borders for med-lg width screens */
-    .landing-wave, .landing-wave-2, .podcast-header-border {
+    .landing-wave, .landing-wave-2 {
         margin-top: -1.6%;
     }
 }
 
 @media screen and (max-width: 870px) { /* Fixes wave borders for medium width screens */
-    .landing-wave, .landing-wave-2, .podcast-header-border {
+    .landing-wave, .landing-wave-2 {
         margin-top: -2.1%;
     }
 }
 
 @media screen and (max-width: 700px) { /* Fixes wave borders for narrow screens */
-    .landing-wave, .landing-wave-2, .podcast-header-border {
+    .landing-wave, .landing-wave-2  {
         margin-top: -2.9%;
     }
 }
