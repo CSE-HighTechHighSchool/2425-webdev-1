@@ -125,7 +125,7 @@
     background-size: contain;
     background-position: bottom-right;
     background-color: var(--light-orange);
-    padding-top: 40px;  /* Fixes overlap with navbar */
+    /*padding-top: 40px;  /* Fixes overlap with navbar */
 }
 
 .title-text { /* Large text in "Cookie" font family */
