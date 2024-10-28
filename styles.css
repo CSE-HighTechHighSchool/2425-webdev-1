@@ -119,6 +119,12 @@
 }
 
 /* Landing page styles */
+
+.container-full{
+    overflow-x: hidden;
+}
+
+
 .landing-header { /* Styling for the header of the landing page */
     background-image: url("img/alt-awning.png");
     background-size: contain;
@@ -218,7 +224,13 @@
 
 @media screen and (max-width: 700px) { /* Fixes wave borders for narrow screens */
     .landing-wave, .landing-wave-2, .podcast-header-border {
-        margin-top: -2.9%
+        margin-top: -2.9%;
+    }
+}
+
+@media screen and (max-width: 1000px) { /*Centers featured item cards for narrower screens*/
+    .item-card{
+        margin: auto auto 10px;
     }
 }
 
