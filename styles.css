@@ -535,6 +535,16 @@
     margin-bottom: 0;
 }
 
+.episodes h2 {
+    padding-top: 1rem;
+}
+
+@media screen and (max-width: 950px) {
+    .episodes h2 {
+        padding-top: 1.5rem;
+    }
+}
+
 .podcast-header {
     background-color: var(--light-orange);
 }
