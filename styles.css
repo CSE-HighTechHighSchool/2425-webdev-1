@@ -74,9 +74,9 @@
 }
 
 .dropdown-btn{
+    /*sets bee button position and size*/
     max-height: 50px;
     max-width: 75px;
-    /*sets bee button poistion*/
     position: absolute;
     right: 0px;
     top: -10px;
@@ -100,11 +100,13 @@
     top: 20px;
 }
 
+
 .below-navbar {
     padding-top: 70px;
 }
 
 .wave-divider {
+    /*Creates wavy border*/
     content: " ";
     position: absolute;
     right: 0;
@@ -622,6 +624,7 @@
     border-radius: 15px;
 }
 
+/*Centers cards when screen is resized*/
 @media only screen and (min-width:320px) and (max-width: 1000px), (orientation: portrait){
     .about-cards{
         display: block;
