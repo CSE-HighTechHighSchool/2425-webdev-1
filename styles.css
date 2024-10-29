@@ -630,6 +630,9 @@
     .card{
         margin: 15px auto;
     }
+    .about-title{
+        font-size: 30px;
+    }
 }
 
 .faq-section{ /*styles faq block*/
