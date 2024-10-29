@@ -248,6 +248,7 @@
     height:auto;
     background-color: var(--light-pink);
     border: 2px dotted var(--magenta);
+    justify-content: center;
 }
 
 .recent-podcasts { /* Styling for recent podcast section */
