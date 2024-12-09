@@ -34,7 +34,7 @@
         <!-- Menu Page-->
 
         <!--Create menu page container-->
-        <div class="container-full menu p-2">
+        <div class="container-full menu">
 
             <!--Create background of squiggly stripes-->
             <div class="stripes">
@@ -161,11 +161,12 @@
             <br>
             <h1 class="menu-header">Menu</h1>
             <br>
-            <!-- Create flexbox section of menu-->
-            <div class="menu-flex">
 
-                <!--Cookies section-->
-                <div class="menu-item">
+            <div class="menu-flex container-fluid">
+                <div class="container row">
+                    <div class="col">
+                        <!--Cookies section-->
+                        <div class="menu-item">
                     <!-- Menu Item Subheading-->
                     <h2 class="menu-subheader">Cookies</h2>
 
@@ -240,9 +241,10 @@
                     </div>
                     <br>
 
-                </div>
-
-                <!--Seasonal Items Section-->
+                        </div>
+                    </div>
+                        <div class="col">
+                        <!--Seasonal Items Section-->
                 <div class="menu-item">
                     <!-- Menu Item Subheading-->
                     <h2 class="menu-subheader">Seasonal Items</h2>
@@ -302,9 +304,10 @@
                     </div>
                     <br>
                 </div>
-
-                <!--Cakes Section-->
-                <div class="menu-item">
+                        </div>
+                    <div class="col">
+                        <!--Cakes Section-->
+                        <div class="menu-item">
 
                     <!-- Menu Item Subheading-->
                     <h2 class="menu-subheader">Cakes</h2>
@@ -385,10 +388,13 @@
 
                     <br>
 
+                        </div>         
+                    </div>
                 </div>
-
-                <!--Pies Section-->
-                <div class="menu-item">
+                <div class="container row">
+                    <div class="col" style="width: 16rem;">
+                        <!--Pies Section-->
+                        <div class="menu-item">
 
                     <!-- Menu Item Subheading-->
                     <h2 class="menu-subheader">Pies</h2>
@@ -468,10 +474,11 @@
                     </div>
 
                     <br>
-                </div>
-
-                <!--Cupcakes Section-->
-                <div class="menu-item">
+                        </div>
+                    </div>
+                    <div class="col" style="width: 16rem;">
+                        <!--Cupcakes Section-->
+                        <div class="menu-item">
 
                     <!-- Menu Item Subheading-->
                     <h2 class="menu-subheader">Cupcakes</h2>
@@ -547,23 +554,29 @@
                         </div>
                     </div>
                     <br>
+                        </div>  
+                    </div>
                 </div>
+                <div class="container-fluid p-0">
+                    <footer class="footer">
+                        <div class="container footer-grid">
+                            <!--Copyright info on left side of the footer-->
+                            <div class="left-footer-text">Copyright &copy; Humming Bee Bakes</div>
+            
+                            <!-- Image of logo in the center -->
+                            <div class="footer-img">
+                                <img class="footer-img-size img-fluid" src="img/bee-logo.png" alt="Logo"> 
+                            </div>
+            
+                            <!-- Contact info on right side of the footer-->
+                            <div class="right-footer-text">Contact us at XXX-XXX-XXXX</div> 
+                        </div>
+                    </footer>
+                </div>
+            </div>
         </div>
 
         <!-- Footer -->
-        <footer class="footer">
-            <div class="container footer-grid">
-                <!--Copyright info on left side of the footer-->
-                <div class="left-footer-text">Copyright &copy; Humming Bee Bakes</div>
-
-                <!-- Image of logo in the center -->
-                <div class="footer-img">
-                    <img class="footer-img-size img-fluid" src="img/bee-logo.png" alt="Logo"> 
-                </div>
-
-                <!-- Contact info on right side of the footer-->
-                <div class="right-footer-text">Contact us at XXX-XXX-XXXX</div> 
-            </div>
-        </footer>
+        
 </body>
 </html>
