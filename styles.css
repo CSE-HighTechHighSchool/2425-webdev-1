@@ -683,6 +683,12 @@
     background-image: url(img/light-orange-arrow.png);
 }
 
+/* Registration page styles */
+.signin-form {
+    margin: auto;
+}
+
+
 /* Footer styles*/
 .footer{
     position: relative; /*Set footer position to relative */
