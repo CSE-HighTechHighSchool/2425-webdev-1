@@ -557,6 +557,14 @@
     border-bottom: 1px solid rgb(var(--pale-yellow));
 }
 
+/* Reviews */
+.ratings{
+    margin: auto;
+    text-align: center;
+    background-color: rgb(var(--pale-yellow));
+    font-family: "Comic Neue", sans-serif;
+}
+
 /* About Us/FAQ page styles */
 .top-banner{  /*styles about us header*/
     width: 100%;
