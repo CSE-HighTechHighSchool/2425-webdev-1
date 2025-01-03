@@ -686,8 +686,12 @@
 /* Registration page styles */
 .signin-form {
     margin: auto;
+    background-color: rgb(var(--pale-yellow));
 }
 
+.register-body {
+    background-color: var(--light-orange);
+}
 
 /* Footer styles*/
 .footer{
