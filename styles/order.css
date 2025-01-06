@@ -1,0 +1,45 @@
+/* Import "Comic Neue" and "Cookie" font families */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cookie&display=swap');
+
+/* Universal Styles */
+:root {
+    /* Color palette variables here */
+    --base-text: 54, 55, 50;
+    --orange: rgb(232, 141, 102);
+    --melon: rgb(238, 174, 156);
+    --light-orange: rgb(255, 215, 191);
+    --pale-yellow: 255, 252, 228;
+    --light-pink: rgb(237, 197, 213);
+    --medium-pink: rgb(200, 143, 166);
+    --magenta: rgb(162, 88, 119);
+    --stripe-color: rgb(0,0,0);
+    --title-size: calc(5vw + 2rem);
+
+    /* Standardized font sizes */
+    --lg-heading-size: calc(5vw + .25rem);
+    --md-heading-size: calc(2.5vw + .125rem);
+    --sm-heading-size: calc(2.5vw + .125rem);
+    --normal-text-size: 2vw;
+}
+
+.order-btn {
+    display: inline-block;
+    padding: 0.5rem;
+    font-family: 'Comic Neue';
+    font-size: var(--bs-btn-font-size);
+    font-weight: 0.5rem;
+    line-height: var(--bs-btn-line-height);
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    border: 1.5px dashed var(--magenta);
+    border-radius: 10px;
+    background-color: transparent;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.order-btn:hover{
+    background-color: var(--magenta);
+    border: 1.5px dashed black;
+    color: var(--light-pink);
+}

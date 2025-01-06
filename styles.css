@@ -371,6 +371,10 @@
     --bs-accordion-border-width:0px; /*Get ride of accordion border*/
 }
 
+.accordion-heaeder{
+    display:inline-block;
+}
+
 .menu-item:nth-of-type(4), .menu-item:nth-of-type(5) {
     /*Adjusts margin when accordions are closed*/
     margin-bottom: 30px;
@@ -379,118 +383,6 @@
 .menu-item:nth-of-type(4):has(.accordion-button:not(.collapsed)), .menu-item:nth-of-type(5):has(.accordion-button:not(.collapsed)) {
     /*Adjusts margin while accordions are open*/
     margin-bottom: 20px;
-}
-
-/*Base info for Melon colored stripe*/
-.melon-stripe{
-    --stripe-color: var(--melon); /*Set stripe color to melon*/
-    left:1%; /*Offset 1% from left*/
-}
-
-/*Base info for orange colored stripe*/
-.orange-stripe{
-    --stripe-color: var(--orange); /*Set stripe color to orange*/
-    top:22%; /*Offset 22% from top*/
-    left:-5%; /*Offset -5% from left*/
-    z-index:1; /*Set z index to 1*/
-}
-
-/*Base info for magenta colored stripe*/
-.magenta-stripe{
-    --stripe-color: var(--magenta); /*Set stripe color to magenta*/
-    top:44%; /*Offset 44% from top*/
-    left:-10%; /*Offset -10% from left*/
-    z-index:2; /*Set z index to 2*/
-}
-
-/*Base info for light pink colored stripe*/
-.light-pink-stripe{
-    --stripe-color: var(--light-pink); /*Set stripe color to light pink*/
-    top:66%; /*Offset 66% from top*/
-    left:-14%; /*Offset -15% from left*/
-    z-index:3; /*Set z index to 3*/
-}
-
-/*Base info for pale yellow colored stripe*/
-.pale-yellow-stripe{
-    --stripe-color: rgb(var(--pale-yellow)); /*Set stripe color to pale yellow*/
-    top:88%; /*Offset 88% from top*/
-    left:-20%; /*Offset -20% from left*/
-    z-index:4; /*Set z index to 4*/
-}
-
-/*Base info for light orange colored stripe*/
-.light-orange-stripe{
-    --stripe-color: var(--light-orange); /*Set stripe color to light orange*/
-    top:110%; /*Offset 110% from top*/
-    left:-25%; /*Offset -25% from left*/
-    z-index:5; /*Set z index to 5*/
-}
-
-/*Top circles segment of squiggly stripes*/
-.circles{
-    height: 15vw; /*Set circle's height to 200px*/
-    width: 15vw; /*Set circle's width to 200px*/
-    background-color: var(--stripe-color); /*Set initial circle color to stripe color variable*/
-    border-radius: 50%; /*Round edges to be circlular*/
-    display: inline-block; /*Set display to inline block*/
-    position:absolute; /*Set position to absolute*/
-    z-index:-5; /*Set z index to -5*/
-    margin-top:5vw; /*Place circles 100px from the top*/
-    margin-left:-2vw; /*Place circles -20px from the left of the screen*/
-}
-
-/*Cutout circle section of squiggly stripes*/
-.circle-bottom{
-    width: 50%; /*Set width to 220px*/
-    height: 100%; /*Set height to 200px*/
-    margin-left:10%; /*Set left margin to 150px*/
-    position: relative; /*Set position to relative*/
-    overflow: hidden; /*Hide overflow to circle cutouts*/
-}
-
-/*Rectangular bottom of cutout section of squiggly stripes*/
-.circle-bottom::before{
-    content: ''; /*Set content to ''*/
-    position: absolute; /*Set position to absolute*/
-    bottom: 80%;
-    width: 100%; 
-    height: 100%;
-    border-radius: 100%; /*Round circular segment*/
-    box-shadow: 0px 250px 0px 250px var(--stripe-color); /*Create bottom cuout as a box shadow*/
-    z-index:-5; /*Set z index to -5*/
-  }
-
-/*Rectangles that fill space below squiggly stripe*/
-.rectangle{
-    height:200px; /*Set height to 200px*/
-    width:110%; /*Set width to 110%*/
-    margin-left:-3%; /*Set left margin to -3%*/
-    position:absolute; /*Set position to absolute*/
-}
-
-/*Align circle-bottom with circles to create squiggly line*/
-.move-over{
-    left: 160%; /*Set rectangle 160% from the left*/
-    bottom: 115%; /*Set rectangle 115% from the bottom*/
-}
-
-/*Align circle-bottom with circles to create squiggly line*/
-.move-over-two{
-    left: 320%; /*Set rectangle 320% from the left*/
-    bottom: 230%; /*Set rectangle 230% from the bottom*/
-}
-
-/*Align circle-bottom with circles to create squiggly line*/
-.move-over-three{
-    left: 480%; /*Set rectangle 960px from the left*/
-    bottom:345%; /*Set rectangle 690px from the bottom*/
-}
-
-/*Align circle-bottom with circles to create squiggly line*/
-.move-over-four{
-    left: 640%; /*Set rectangle 1280px from the left*/
-    bottom:460%; /*Set rectangle 920px from the bottom*/
 }
 
 /* Podcast page styles */
