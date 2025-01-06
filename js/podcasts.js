@@ -2,6 +2,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+import { getDatabase, ref, set, update, child, get, remove} from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -28,6 +30,10 @@ function checkInput(){
     star3.setAttribute('disabled', '');
     star4.setAttribute('disabled', '');
     star5.setAttribute('disabled', '');
+
+    //console.log(star5.value);
+
+    //set(ref(db, 'users/' + userID + '/rating/epOne/' + //value))
 }
 
 async function getData(){
