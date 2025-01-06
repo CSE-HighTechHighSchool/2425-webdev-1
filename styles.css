@@ -675,16 +675,6 @@
     background-image: url(img/light-orange-arrow.png);
 }
 
-/* Registration page styles */
-.signin-form {
-    margin: auto;
-    background-color: rgb(var(--pale-yellow));
-}
-
-.register-body {
-    background-color: var(--light-orange);
-}
-
 /* Footer styles*/
 .footer{
     position: relative; /*Set footer position to relative */
