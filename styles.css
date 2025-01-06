@@ -565,8 +565,15 @@
     font-family: "Comic Neue", sans-serif;
 }
 
-.review-but{
-    align-items: center;
+#submit-but{
+    position: relative;
+    left: 10%;
+}
+
+.rating{
+    position: relative;
+    left: -50%;
+    top: -8px;
 }
 
 .rating:not(:checked) > input {

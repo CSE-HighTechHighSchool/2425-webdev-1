@@ -10,5 +10,25 @@ function checkInput(){
     star3.setAttribute('disabled', '');
     star4.setAttribute('disabled', '');
     star5.setAttribute('disabled', '');
-    
+}
+
+async function getData(){
+    const response = await fetch('');
+    const data = await response.text();
+
+    //figure this out!
+    return response;
+}
+
+async function createChart(){
+    const data = await getData();
+    const episodeOne = document.getElementById('ep-one-rating');
+    const episodeTwo = document.getElementById('ep-two-rating');
+
+    Chart.defaults.font.family = "Comic Neue";
+    Chart.defaults.color = '#000';
+
+    const epOneChart = new Chart (episodeOne, {
+        type: ''
+    })
 }
