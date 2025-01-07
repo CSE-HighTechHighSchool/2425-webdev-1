@@ -3,7 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebas
 // TODO: Add SDKs for Firebase products that you want to use
 import { getDatabase, ref, set, update, child, get } 
     from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
-import { getAuth, createUserWithEmailAndPassword }
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword }
     from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -55,7 +55,6 @@ document.getElementById('submitData').onclick = function() {
         .then(() => {
             // Data saved successfully!
             alert('User created successfully')
-            window.location = 'index.html';
         })
         .catch((error) => {
             // Data write failed...
@@ -67,6 +66,47 @@ document.getElementById('submitData').onclick = function() {
         const errorMessage = error.message;
         alert(errorMessage);
     });
+
+    // Attempt to sign user in
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        // Create user credential and store userID
+        const user = userCredential.user;
+
+        // Log sign-in in db
+        // update - will only add the last_login info and won't overwrite anything
+        let logDate = new Date();
+        update(ref(db, 'users/' + user.uid + "/accountInfo"), {
+            last_login: logDate,
+        })
+        .then(() => {
+            // user signed in successfully
+            alert("User signed in successfully")
+
+            // get snapshot of all tbe user info (including uid)
+            // to pass to the login() function and store in session or local storage
+            get(ref(db, 'users/' + user.uid + "/accountInfo")).then((snapshot) => {
+                if (snapshot.exists()) {
+                    console.log(snapshot.val())
+                    logIn(snapshot.val())
+                } else {
+                    console.log('user does not exist')
+                }
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+            window.location = "index.html";
+        })
+        .catch((error) => {
+            alert(error)
+        })
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(errorMessage)
+    })
 }
 
 /* --------------- Check for null, empty ("") or all spaces only ------------*/
@@ -110,3 +150,27 @@ function encryptPass(password) {
     let encrypted = CryptoJS.AES.encrypt(password, password);
     return encrypted.toString();
 }
+
+// ---------------- Keep User Logged In ----------------------------------//
+function logIn(user) {
+    let keepLoggedIn = document.getElementById('keepLoggedInSwitch').ariaChecked;
+    console.log(user)
+    
+    // Session storage is temporary (only while session is active)
+    // Info saved as a string (must convert JS object to a string)
+    // session storage will be cleared with a signOut() function in home.js
+    if (!keepLoggedIn) {
+        sessionStorage.setItem('user', JSON.stringify(user))
+        window.location = 'home.html';
+    } 
+    
+    // Local storage will stay even if browser is closed
+    // Local storage will be cleared with "signOut()" function
+    else {
+        localStorage.setItem('keepLoggedIn', 'yes');
+        localStorage.setItem('user', JSON.stringify(user));
+        console.log(localStorage.getItem('user'))
+        window.location = 'home.html';
+    }
+}
+
