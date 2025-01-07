@@ -27,6 +27,7 @@
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: var(--magenta);
     --bs-btn-hover-border-color: var(--magenta);
+    width: 100%;
 }
 
 .user-input {
