@@ -45,7 +45,13 @@ function checkInput(){
         value = 1;
     }
 
-    set(ref(db, 'users/' + userID + '/rating/epOne/' + value))
+    set(ref(db, 'users/' + userID + '/accountInfo/rating'), {
+        [epOne]: value
+        }).then(() => {
+          alert('Data stored successfully.');
+        }).catch((error) => {
+          alert('There was an error. Error: ' + error);
+        });
 }
 
 async function getData(){
