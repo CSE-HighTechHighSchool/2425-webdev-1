@@ -560,6 +560,9 @@
 #submit-but{
     position: relative;
     left: 100px;
+    background-color: var(--light-pink);
+    border-radius: 10px;
+    border-color: var(--medium-pink);
 }
 
 #submit-but-two{
@@ -585,6 +588,12 @@
     color: #666;
 }
   
+  
+  .rating:not(:checked) > label:before {
+    content: '★';
+}
+  
+
   .rating:not(:checked) > label:before {
     content: '★';
 }
@@ -606,24 +615,51 @@
     color: #ffa723;
 }  
 
-/*
-input[type="range"]::-webkit-slider-runnable-track {
-    background: #053a5f;
-    height: 0.5rem;
-    border-radius: 10px;
+
+.rating-two{
+    position: relative;
+    left: -50%;
+    top: -8px;
 }
 
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    /*
+.rating-two:not(:checked) > input {
+    position: absolute;
     appearance: none;
-    margin-top: -4px; /* Centers thumb on the track */
-    /*
-    background-color: #5cd5eb;
-    height: 2rem;
-    width: 1rem;    
 }
-*/
+  
+.rating-two:not(:checked) > label {
+    float: right;
+    cursor: pointer;
+    font-size: 30px;
+    color: #666;
+}
+  
+  
+  .rating-two:not(:checked) > label:before {
+    content: '★';
+}
+  
+
+  .rating-two:not(:checked) > label:before {
+    content: '★';
+}
+  
+  .rating-two > input:checked + label:hover,
+  .rating-two > input:checked + label:hover ~ label,
+  .rating-two > input:checked ~ label:hover,
+  .rating-two > input:checked ~ label:hover ~ label,
+  .rating-two > label:hover ~ input:checked ~ label {
+    color: #e58e09;
+}
+  
+  .rating-two:not(:checked) > label:hover,
+  .rating-two:not(:checked) > label:hover ~ label {
+    color: #ff9e0b;
+}
+  
+  .rating-two > input:checked ~ label {
+    color: #ffa723;
+}  
 
 /* About Us/FAQ page styles */
 .top-banner{  /*styles about us header*/
