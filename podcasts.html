@@ -11,7 +11,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
-    <script src="js/podcasts.js"></script>
+    <script type="module" src="js/podcasts.js"></script>
     <link rel="icon" type="image/x-icon" href="img/bee-logo.png">
 </head>
 <body>
@@ -104,7 +104,7 @@
             <input value="1" name="rate" id="star1" type="radio">
             <label title="text" for="star1"></label>
             </div>
-            <button type="button" id="submit-but" onclick="checkInput()">Submit</button>
+            <button type="button" id="submit-but">Submit</button>
         </div>
         <canvas id="ep-one-rating"></canvas>
         <!-- Graph -->
