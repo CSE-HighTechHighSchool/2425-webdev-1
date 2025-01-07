@@ -1,0 +1,125 @@
+/* Menu page styles */
+
+/*General styles for menu page*/
+.menu{
+    position:fixed; /*Set position to fixed*/
+    height:94%; /*Set height to 94%*/
+    top:6%; /*Offset 6% from the top so there is no overlap with navbar*/
+    width:100%; /*Make menu take up the full screen*/
+    background-color: rgb(var(--pale-yellow)); /*Set background color to pale yellow*/
+    overflow-y: scroll; /*Make y overflow scroll*/
+    overflow-x:hidden; /*Hide x overflow*/
+    background-image: url("../img/cropped-final-drip.svg");
+    background-size: 125%;
+    background-repeat: repeat-y;
+    background-position-y:-5vw;
+    background-position-x:-25vw;
+}
+
+/*Menu page header styles*/
+.menu-header{
+    display:block; /*Set display type to block*/
+    color: var(--light-pink); /*Set text color to light pink*/
+    background-color: var(--magenta); /*Set text box color to magenta*/
+    font-family: 'Cookie'; /*Set font to Cookie*/
+    text-align: center; /*Align text to the cetner*/
+    width: 25%; /*Set width to 25%*/
+    margin:auto; /*Center textbox*/
+    font-size: var(--lg-heading-size); /*Set font size to lg heading size*/
+    border-radius:30px; /*Round text box edges*/
+    border: solid 1.5px rgb(var(--base-text)); /*Add black border to text box*/
+}
+
+/*Flexbox section of menu to hold accordions*/
+.menu-flex{
+    display:inline-flex; /*Set display type to inline-flex*/
+    flex-flow: row wrap; /*Set flow to row wrap*/
+    text-align:center; /*Align text center*/
+    align-items:center; /*Align items center on the cross axis*/
+    justify-content:center; /*Align items center on the main axis*/
+    gap:15px; /*Set gap between items of 15px*/
+    align-self:stretch; /*Stretch to align items on the cross axis*/
+    width:100%; /*Set width to 100%*/
+}
+
+/*Base styles for sections of menu items*/
+.menu-item{
+    background-color: var(--light-pink); /*Set background color to light pink*/
+    flex-basis: 30%; /*Set main size of the item to 30%*/
+    border-radius: 30px; /*Round edges*/
+    border: solid 1.5px rgb(var(--base-text)); /*Create black border*/
+}
+
+/*Menu subheaders*/
+.menu-subheader{
+    color: rgb(var(--base-text)); /*Set text color to base text*/
+    font-family: 'Cookie'; /*Set font family to Cookie*/
+    padding: 3px; /*Set padding to 3px*/
+    size: var(--md-heading-size); /*Set text size to md heading size*/
+}
+
+/*Menu image styles*/
+.menu-img{
+    width:90%; /*Set width to 90%*/
+    min-width: 250px; /*Set minimum width to 200px*/
+    height:auto; /*Set height to auto*/
+    border-radius: 30px; /*Round edges*/
+    border: solid 1.5px rgb(var(--base-text));  /*Add black border*/
+    margin: 3px 10px;
+}
+
+/*Accordion Styles*/
+.accordion{
+    --bs-accordion-active-color: var(--light-pink); /*Set accordion text color when active to light pink*/
+    --bs-accordion-active-bg: var(--magenta); /*Set accordion background color when active to magenta*/
+    --bs-accordion-color: var(--magenta); /*Set default accordion text color to magenta*/
+    --bs-accordion-bg: var(--light-pink); /*Set default accordion background color to light pink*/
+    --bs-accordion-btn-bg: var(--light-pink); /*Set accordion button background color to light pink*/
+    --bs-accordion-btn-color: rgb(var(--base-text)); /*Set accordion button text color to base text*/
+    font-family: 'Comic Neue'; /*Set font to Comic Neue*/
+    --bs-accordion-border-radius: 0px; /*Set border radius to 0px*/
+    --bs-accordion-inner-border-radius:0px; /*Set inner border radius to 0px*/
+    --bs-accordion-border-width:0px; /*Get ride of accordion border*/
+}
+
+.accordion:hover{
+    --bs-accordion-btn-color: var(--light-pink); /*Set accordion text color when active to light pink*/
+    --bs-accordion-btn-bg: var(--magenta); /*Set accordion background color when active to magenta*/
+}
+
+.accordion-heaeder{
+    display:inline-block;
+}
+
+.menu-item:nth-of-type(4), .menu-item:nth-of-type(5) {
+    /*Adjusts margin when accordions are closed*/
+    margin-bottom: 30px;
+}
+
+.menu-item:nth-of-type(4):has(.accordion-button:not(.collapsed)), .menu-item:nth-of-type(5):has(.accordion-button:not(.collapsed)) {
+    /*Adjusts margin while accordions are open*/
+    margin-bottom: 20px;
+}
+
+.order-btn {
+    display: inline-flex;
+    padding: 0.5rem;
+    margin:0.5rem;
+    font-family: 'Comic Neue';
+    font-size: var(--bs-btn-font-size);
+    font-weight: 0.5rem;
+    line-height: var(--bs-btn-line-height);
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    border: 1.5px dashed var(--magenta);
+    border-radius: 10px;
+    background-color: transparent;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.order-btn:hover{
+    background-color: var(--magenta);
+    border: 1.5px dashed black;
+    color: var(--light-pink);
+}
