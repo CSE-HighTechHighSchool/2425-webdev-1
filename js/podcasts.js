@@ -16,14 +16,15 @@ appId: "1:626309569524:web:45a224c3f6ddf8ea76f7a1"
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-document.getElementById("submit-but").onclick = function(){checkInput()};
+document.getElementById("submit-but").onclick = function(){checkInput("one")};
+document.getElementById("submit-but-two").onclick = function(){checkInput("two")};
 
-function checkInput(){
-    let star1 = document.getElementById("star1");
-    let star2 = document.getElementById("star2");
-    let star3 = document.getElementById("star3");
-    let star4 = document.getElementById("star4");
-    let star5 = document.getElementById("star5");
+function checkInput(episode){
+    let star1 = document.getElementById(episode+"-star1");
+    let star2 = document.getElementById(episode+"-star2");
+    let star3 = document.getElementById(episode+"-star3");
+    let star4 = document.getElementById(episode+"-star4");
+    let star5 = document.getElementById(episode+"-star5");
     let value = 0;
 
     star1.setAttribute('disabled', '');
@@ -45,13 +46,14 @@ function checkInput(){
         value = 1;
     }
 
-    set(ref(db, 'users/' + userID + '/accountInfo/rating'), {
-        [epOne]: value
-        }).then(() => {
-          alert('Data stored successfully.');
-        }).catch((error) => {
-          alert('There was an error. Error: ' + error);
-        });
+    console.log(value);
+    // set(ref(db, 'users/' + userID + '/accountInfo/rating'), {
+    //     [ep+episode]: value
+    //     }).then(() => {
+    //       alert('Data stored successfully.');
+    //     }).catch((error) => {
+    //       alert('There was an error. Error: ' + error);
+    //     });
 }
 
 async function getData(){
