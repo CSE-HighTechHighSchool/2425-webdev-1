@@ -559,7 +559,12 @@
 
 #submit-but{
     position: relative;
-    left: 10%;
+    left: 100px;
+}
+
+#submit-but-two{
+    position: relative;
+    left: 100px;
 }
 
 .rating{
