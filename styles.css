@@ -478,7 +478,7 @@
     bottom:0; /*Set to bottom of screen*/
     left:0; /*Set to left of screen*/
     padding: 0.5% 2%; /*Set vertical padding to 0.5% and horizontal padding to 2%*/
-    width: 103%; /*Set footer width to entire screen*/
+    width: 102%; /*Set footer width to entire screen*/
     height:14%; /*Set footer height and minimum height */
     min-height:75px; /*Set minimum height to 75px*/
     background-color: var(--magenta); /*Set background color of footer*/
@@ -486,10 +486,6 @@
     font-family: 'Comic Neue'; /*Set font of the footer*/
     font-size: 1.6vw; /*Set font size to 1.6 vw*/
     overflow-x: hidden; /*Hide x overflow*/
-}
-
-.footer.footer-fix { /* Properly formats footer on all pages except menu */
-    width: 102%;
 }
 
 /*Display elements of the footer in a grid with 3 equal columns*/

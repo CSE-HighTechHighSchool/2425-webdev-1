@@ -2,18 +2,14 @@
 
 /*General styles for menu page*/
 .menu{
-    position:fixed; /*Set position to fixed*/
-    height:94%; /*Set height to 94%*/
-    top:6%; /*Offset 6% from the top so there is no overlap with navbar*/
-    width:100%; /*Make menu take up the full screen*/
     background-color: rgb(var(--pale-yellow)); /*Set background color to pale yellow*/
-    overflow-y: scroll; /*Make y overflow scroll*/
     overflow-x:hidden; /*Hide x overflow*/
     background-image: url("../img/cropped-final-drip.svg");
-    background-size: 125%;
+    background-size: 130%;
     background-repeat: repeat-y;
     background-position-y:-5vw;
     background-position-x:-25vw;
+    overflow-y:hidden;
 }
 
 /*Menu page header styles*/
@@ -22,7 +18,7 @@
     color: var(--light-pink); /*Set text color to light pink*/
     background-color: var(--magenta); /*Set text box color to magenta*/
     font-family: 'Cookie'; /*Set font to Cookie*/
-    text-align: center; /*Align text to the cetner*/
+    text-align: center; /*Align text to the center*/
     width: 25%; /*Set width to 25%*/
     margin:auto; /*Center textbox*/
     font-size: var(--lg-heading-size); /*Set font size to lg heading size*/
@@ -40,6 +36,7 @@
     gap:15px; /*Set gap between items of 15px*/
     align-self:stretch; /*Stretch to align items on the cross axis*/
     width:100%; /*Set width to 100%*/
+    overflow-x: hidden; /*Hide x overflow*/
 }
 
 /*Base styles for sections of menu items*/
@@ -114,7 +111,9 @@
     border: 1.5px dashed var(--magenta);
     border-radius: 10px;
     background-color: transparent;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: background-color .15s ease-in-out,
+                border-color .15s ease-in-out,
+                color .15s ease-in-out;
 }
 
 .order-btn:hover{
@@ -140,7 +139,9 @@
     background-size: 16px 12px;
     border: 1.5px dashed var(--light-orange);
     border-radius: 10px;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: background-color .15s ease-in-out,
+                border-color .15s ease-in-out,
+                color .15s ease-in-out;
     text-align:center;
 }
 
@@ -156,7 +157,8 @@
     background-color: var(--orange);
     border: 1.5px dashed var(--light-orange);
     border-radius: 10px;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: background-color .15s ease-in-out,
+                color .15s ease-in-out;
     text-align:center;
 }
 
@@ -167,4 +169,43 @@
     font-family: 'Comic Neue';
     font-weight: 0.5rem;
     color: black;
+}
+
+.checkout-button{
+    display:block; /*Set display type to block*/
+    color: black; /*Set text color to light pink*/
+    background-color: var(--light-pink); /*Set text box color to magenta*/
+    font-family: 'Cookie'; /*Set font to Cookie*/
+    text-align: center; /*Align text to the center*/
+    width: 25%; /*Set width to 25%*/
+    margin:auto; /*Center textbox*/
+    font-size: var(--md-heading-size); /*Set font size to lg heading size*/
+    border-radius:15px; /*Round text box edges*/
+    border: solid 1.5px rgb(var(--base-text)); /*Add black border to text box*/
+    text-decoration: none;
+}
+
+.checkout-button:hover{
+    color: var(--light-pink); /*Set text color to light pink*/
+    background-color: var(--magenta); /*Set text box color to magenta*/
+    transition: background-color .15s ease-in-out,
+                color .15s ease-in-out;
+}
+
+.cart{
+    background-color: rgb(var(--pale-yellow)); /*Set background color to pale yellow*/
+    overflow-x:hidden; /*Hide x overflow*/
+}
+
+.cart-header{
+    display:block; /*Set display type to block*/
+    color: var(--orange); /*Set text color to light pink*/
+    background-color: var(--light-orange); /*Set text box color to magenta*/
+    font-family: 'Cookie'; /*Set font to Cookie*/
+    text-align: center; /*Align text to the center*/
+    width: 25%; /*Set width to 25%*/
+    margin:auto; /*Center textbox*/
+    font-size: var(--lg-heading-size); /*Set font size to lg heading size*/
+    border-radius:30px; /*Round text box edges*/
+    border: solid 1.5px rgb(var(--base-text)); /*Add black border to text box*/
 }
