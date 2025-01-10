@@ -563,11 +563,16 @@
     background-color: var(--light-pink);
     border-radius: 10px;
     border-color: var(--medium-pink);
+    color: var(--magenta);
 }
 
 #submit-but-two{
     position: relative;
     left: 100px;
+    background-color: var(--light-pink);
+    border-radius: 10px;
+    border-color: var(--medium-pink);
+    color: var(--magenta);
 }
 
 .rating{
@@ -615,19 +620,38 @@
     color: #ffa723;
 }  
 
+.rating:not(:checked) > input:disabled{
+    color: #666 !important;
+}
 
-.rating-two{
+.rating:not(:checked)> input:disabled + label:hover,
+  .rating:not(:checked)> input:disabled + label:hover ~ label,
+  .rating:not(:checked)> input:disabled ~ label:hover,
+  .rating:not(:checked)> input:disabled ~ label:hover ~ label,
+  .rating:not(:checked)> label:hover ~ input:disabled ~ label{
+    color: #666 !important;
+}
+
+.rating> input:checked:disabled + label:hover,
+  .rating> input:checked:disabled + label:hover ~ label,
+  .rating> input:checked:disabled ~ label:hover,
+  .rating> input:checked:disabled ~ label:hover ~ label,
+  .rating> label:hover ~ input:checked:disabled ~ label{
+    color: #ffa723 !important;
+  }
+
+.two-rating{
     position: relative;
     left: -50%;
     top: -8px;
 }
 
-.rating-two:not(:checked) > input {
+.two-rating:not(:checked) > input {
     position: absolute;
     appearance: none;
 }
   
-.rating-two:not(:checked) > label {
+.two-rating:not(:checked) > label {
     float: right;
     cursor: pointer;
     font-size: 30px;
@@ -635,31 +659,52 @@
 }
   
   
-  .rating-two:not(:checked) > label:before {
+  .two-rating:not(:checked) > label:before {
     content: '★';
 }
   
 
-  .rating-two:not(:checked) > label:before {
+  .two-rating:not(:checked) > label:before {
     content: '★';
 }
   
-  .rating-two > input:checked + label:hover,
-  .rating-two > input:checked + label:hover ~ label,
-  .rating-two > input:checked ~ label:hover,
-  .rating-two > input:checked ~ label:hover ~ label,
-  .rating-two > label:hover ~ input:checked ~ label {
+  .two-rating> input:checked + label:hover,
+  .two-rating> input:checked + label:hover ~ label,
+  .two-rating> input:checked ~ label:hover,
+  .two-rating> input:checked ~ label:hover ~ label,
+  .two-rating> label:hover ~ input:checked ~ label {
     color: #e58e09;
 }
   
-  .rating-two:not(:checked) > label:hover,
-  .rating-two:not(:checked) > label:hover ~ label {
+  .two-rating:not(:checked) > label:hover,
+  .two-rating:not(:checked) > label:hover ~ label {
     color: #ff9e0b;
 }
   
-  .rating-two > input:checked ~ label {
+  .two-rating> input:checked ~ label {
     color: #ffa723;
 }  
+
+.two-rating:not(:checked) > input:disabled{
+    color: #666 !important;
+}
+
+.two-rating:not(:checked)> input:disabled + label:hover,
+  .two-rating:not(:checked)> input:disabled + label:hover ~ label,
+  .two-rating:not(:checked)> input:disabled ~ label:hover,
+  .two-rating:not(:checked)> input:disabled ~ label:hover ~ label,
+  .two-rating:not(:checked)> label:hover ~ input:disabled ~ label{
+    color: #666 !important;
+}
+
+.two-rating> input:checked:disabled + label:hover,
+  .two-rating> input:checked:disabled + label:hover ~ label,
+  .two-rating> input:checked:disabled ~ label:hover,
+  .two-rating> input:checked:disabled ~ label:hover ~ label,
+  .two-rating> label:hover ~ input:checked:disabled ~ label{
+    color: #ffa723 !important;
+  }
+
 
 /* About Us/FAQ page styles */
 .top-banner{  /*styles about us header*/
