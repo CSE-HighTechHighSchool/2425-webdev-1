@@ -51,8 +51,17 @@ function checkInput(episode){
     }
 
     console.log(value);
-     update(ref(db, 'users/' + '6qHY4Gwr5vTGL3jHrQvNzjvHuzh1' + '/accountInfo/rating'), {
+    update(ref(db, 'users/' + userID + '/accountInfo/rating'), {
          ['ep'+episode]: value
+         }).then(() => {
+           alert('Data stored successfully.');
+         }).catch((error) => {
+           alert('There was an error. Error: ' + error);
+         });
+
+        // think ok?
+    update(ref(db, 'ratings/ep' + episode), {
+         ['']: value
          }).then(() => {
            alert('Data stored successfully.');
          }).catch((error) => {
@@ -63,7 +72,7 @@ function checkInput(episode){
 async function getData(){
     let epOneRatings = []
     let epTwoRatings = []
-    get(ref(db, 'users/' + '6qHY4Gwr5vTGL3jHrQvNzjvHuzh1' + '/accountInfo/rating/epone')).then((snapshot) => {
+    get(ref(db, 'users/' + userID + '/accountInfo/rating/epone')).then((snapshot) => {
         if (snapshot.exists()){
             console.log(snapshot.val());
             epOneRatings.push(snapshot.val());
@@ -74,7 +83,7 @@ async function getData(){
         console.log(error);
     })
 
-    get(ref(db, 'users/' + '6qHY4Gwr5vTGL3jHrQvNzjvHuzh1' + '/accountInfo/rating/eptwo')).then((snapshot) => {
+    get(ref(db, 'users/' + userID + '/accountInfo/rating/eptwo')).then((snapshot) => {
         if (snapshot.exists()){
             console.log(snapshot.val());
             epTwoRatings.push(snapshot.val());
