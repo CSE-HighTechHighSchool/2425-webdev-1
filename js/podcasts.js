@@ -51,7 +51,7 @@ function checkInput(episode){
     }
 
     console.log(value);
-     set(ref(db, 'users/' + userID + '/accountInfo/rating'), {
+     update(ref(db, 'users/' + '6qHY4Gwr5vTGL3jHrQvNzjvHuzh1' + '/accountInfo/rating'), {
          ['ep'+episode]: value
          }).then(() => {
            alert('Data stored successfully.');
@@ -61,11 +61,32 @@ function checkInput(episode){
 }
 
 async function getData(){
-    const response = await fetch('');
-    const data = await response.text();
+    let epOneRatings = []
+    let epTwoRatings = []
+    get(ref(db, 'users/' + '6qHY4Gwr5vTGL3jHrQvNzjvHuzh1' + '/accountInfo/rating/epone')).then((snapshot) => {
+        if (snapshot.exists()){
+            console.log(snapshot.val());
+            epOneRatings.push(snapshot.val());
+        } else {
+            console.log('No rating.');
+        }
+    }).catch((error) => {
+        console.log(error);
+    })
+
+    get(ref(db, 'users/' + '6qHY4Gwr5vTGL3jHrQvNzjvHuzh1' + '/accountInfo/rating/eptwo')).then((snapshot) => {
+        if (snapshot.exists()){
+            console.log(snapshot.val());
+            epTwoRatings.push(snapshot.val());
+        } else {
+            console.log('No rating.');
+        }
+    }).catch((error) => {
+        console.log(error);
+    })
 
     //figure this out!
-    return epOneRatings, epTwoRatings;
+    //return epOneRatings, epTwoRatings;
 }
 
 async function createChart(){
@@ -102,3 +123,5 @@ async function createChart(){
         }
     })
 }
+
+getData();
