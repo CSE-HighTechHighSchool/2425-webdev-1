@@ -33,3 +33,11 @@
 .user-input {
     font-size: 1.5vw;
 }
+
+#keepLoggedInSwitch:checked {
+    background-color: var(--magenta);
+}
+
+#keepLoggedInSwitch {
+    border-color: var(--light-pink);
+}

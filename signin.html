@@ -47,7 +47,11 @@
                     <form class="m-auto">
                         <input type="email" placeholder="Email" id="userEmail" class="d-block mb-2 user-input">
                         <input type="password" placeholder="password" id="userPass" class="d-block mb-2 user-input">
-                        <button type = "button" id="submitData" name="submitData" class="btn btn-primary btn-register m-auto mb-2 d-block">Sign In</button>
+                        <div class="form-check form-switch mb-3 small-text">
+                            <input class="form-check-input" type="checkbox" role="switch" id="keepLoggedInSwitch">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Keep me signed in</label>
+                        </div>
+                        <button type = "button" id="signin" name="signin" class="btn btn-primary btn-register m-auto mb-2 d-block">Sign In</button>
                     </form>
                 </div>
             </section>

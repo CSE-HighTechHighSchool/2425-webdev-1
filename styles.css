@@ -155,6 +155,12 @@
     color: rgb(var(--base-text));
 }
 
+.small-text {
+    font-family: "Comic Neue", sans-serif;
+    font-size: calc(var(--normal-text-size) / 1.25);
+    color: rgb(var(--base-text));
+}
+
 .header-text { /* Medium text in "Cookie" font family */
     font-family: "Cookie", cursive;
     font-size: var(--lg-heading-size);
