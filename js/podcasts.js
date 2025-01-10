@@ -2,6 +2,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+import { getDatabase, ref, set, update, child, get } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -15,6 +17,8 @@ appId: "1:626309569524:web:45a224c3f6ddf8ea76f7a1"
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+const db = getDatabase(app);
 
 document.getElementById("submit-but").onclick = function(){checkInput("one")};
 document.getElementById("submit-but-two").onclick = function(){checkInput("two")};
@@ -47,13 +51,13 @@ function checkInput(episode){
     }
 
     console.log(value);
-    // set(ref(db, 'users/' + userID + '/accountInfo/rating'), {
-    //     [ep+episode]: value
-    //     }).then(() => {
-    //       alert('Data stored successfully.');
-    //     }).catch((error) => {
-    //       alert('There was an error. Error: ' + error);
-    //     });
+     set(ref(db, 'users/' + userID + '/accountInfo/rating'), {
+         ['ep'+episode]: value
+         }).then(() => {
+           alert('Data stored successfully.');
+         }).catch((error) => {
+           alert('There was an error. Error: ' + error);
+         });
 }
 
 async function getData(){
