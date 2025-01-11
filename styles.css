@@ -90,6 +90,10 @@
     top: -10px;
 }
 
+.acct-btn {
+    font-size: 1rem !important;
+}
+
 .nav-name{
     font-family: Cookie, sans-serif; /*sets navbar text font*/
     display: inline-block; 
