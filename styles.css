@@ -44,6 +44,14 @@
     --bs-border-width: 0;
 }
 
+.register-btn {
+    font-size: 1.25vw !important;
+}
+
+.nav-btn-container {
+    display: inline-block;
+}
+
 .dropdown{
     --bs-dropdown-bg: var(--orange); /*sets dropdown background color*/
 }
@@ -144,6 +152,12 @@
 .normal-text { /* Medium text in sans text size */
     font-family: "Comic Neue", sans-serif;
     font-size: var(--normal-text-size);
+    color: rgb(var(--base-text));
+}
+
+.small-text {
+    font-family: "Comic Neue", sans-serif;
+    font-size: calc(var(--normal-text-size) / 1.25);
     color: rgb(var(--base-text));
 }
 

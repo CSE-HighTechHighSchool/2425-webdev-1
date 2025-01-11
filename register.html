@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="styles/register.css">
     <link rel="icon" type="image/x-icon" href="img/bee-logo.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" 
+            defer integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="js/register.js" defer></script>
     <style>
     </style>
@@ -37,16 +40,16 @@
                 </div>
             </div>
         </nav>
-        <div class="container-full">
+        <div class="container-full normal-text">
             <section id="register position-relative">
                 <div class="signin-form d-flex flex-column position-absolute top-50 start-50 translate-middle p-4 rounded-3">
                     <h1 class="header-text">Create An Account</h1>
                     <form class="m-auto">
-                        <input type="text" placeholder="First Name" id="firstName" class="d-block mb-2">
-                        <input type="text" placeholder="Last Name" id="lastName" class="d-block mb-2">
-                        <input type="email" placeholder="Email" id="userEmail" class="d-block mb-2">
-                        <input type="password" placeholder="password" id="userPass" class="d-block mb-2">
-                        <button type = "button" id="submitData" name="submitData" class="btn btn-outline-primary m-auto mb-2 d-block">Register</button>
+                        <input type="text" placeholder="First Name" id="firstName" class="d-block mb-2 user-input">
+                        <input type="text" placeholder="Last Name" id="lastName" class="d-block mb-2 user-input">
+                        <input type="email" placeholder="Email" id="userEmail" class="d-block mb-2 user-input">
+                        <input type="password" placeholder="password" id="userPass" class="d-block mb-2 user-input">
+                        <button type = "button" id="submitData" name="submitData" class="btn btn-primary btn-register m-auto mb-2 d-block">Register</button>
                     </form>
                 </div>
             </section>
