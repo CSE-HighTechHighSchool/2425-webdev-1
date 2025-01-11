@@ -394,7 +394,7 @@ async function storeOrder (userID){
             price += 4.00*quantity[i];
           }
         else{
-            price = 4.00*quantity[i];
+            price += 4.00*quantity[i];
         }
         update(ref(db, 'users/' + userID + '/accountInfo/orders/'+date), {
             [items[i]]: quantity[i]
