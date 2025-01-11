@@ -40,16 +40,21 @@ function getUserName(){
   }
 
 function addItemToOrder(userID, item, quantity){
-    //Must use brackets around variable name to use it as a key
-    update(ref(db, 'users/' + userID + '/accountInfo/cart'), {
-      [item]: quantity
-    })
-    .then(()=>{
-      alert('Added to Cart!');
-    })
-    .catch((error)=>{
-      alert('Error: item could not be added')
-    });
+
+    if(quantity>0){
+        update(ref(db, 'users/' + userID + '/accountInfo/cart'), {
+        [item]: quantity
+      })
+      .then(()=>{
+        alert('Added to Cart!');
+      })
+      .catch((error)=>{
+        alert('Error: item could not be added')
+      });
+    }
+    else{
+      alert('Error: Must add at least 1 item');
+    }
 }
 
 window.onload=function(){

@@ -42,19 +42,66 @@
         <br>
         <br>
         
-        <p class="cart-header" id="cart-welcome"></p>
+        <p class="cart-header p-2" id="cart-welcome"></p>
+        <br>
+        <br>
+        <div id="cart-functions">
+        <p class="cart-subheader"><strong>Your Cart:</strong></p>
+        <br>
+        <table class="cart-table">
+            <tbody id = "cart-table">
+            </tbody>
+            <tfoot id="price-total">
+            </tfoot>
+        </table>
+        
+        <br>
+        <p class="cart-subheader"><strong>Edit Cart:</strong></p>
+        <br>
 
+        <div class="edit-select p-1">
+            <p class="edit-subheader">Add or Change Items</p>
+            <form>
+                <p class="edit-text">Item:</p>
+                <select class="edit-form" aria-label="Item Select" id="itemSelect">
+                    <option value="pumpkinPie">Pumpkin Pie</option>
+                    <option value="appleCiderDonuts">Apple Cider Donuts</option>
+                    <option value="chocolateChipCookie">Chocolate Chip Cookie</option>
+                    <option value="sugarCookie">Sugar Cookie</option>
+                    <option value="smoreCookie">S'more Cookie</option>
+                    <option value="chocolateCake">Chocolate Cake</option>
+                    <option value="vanillaCake">Vanilla Cake</option>
+                    <option value="carrotCake">Carrot Cake</option>
+                    <option value="chocolateCupcake">Chocolate Cupcake</option>
+                    <option value="vanillaCupcake">Vanilla Cupcake</option>
+                    <option value="redVelvetCupcake">Red Velvet Cupcake</option>
+                    <option value="applePie">Apple Pie</option>
+                    <option value="blueberryPie">Blueberry Pie</option>
+                    <option value="pecanPie">Pecan Pie</option>
+                </select>
+                <p class="edit-text">Quantity:</p>
+                <input type="number" class="edit-input" id="itemNum">
+                <button type="button" class="edit-btn" id="orderItem">Update Cart</button>
+            </form>
+            <br>
+            <p class="edit-subheader">Delete Items</p>
+            <form>
+                <p class="edit-text">Item:</p>
+                <select class="edit-form" aria-label="Item Select" id="deleteItemSelect">
+                    
+                </select>
+                <button type="button" class="edit-btn" id="deleteItem">Delete Item</button>
+                <button type="button" class="edit-btn" id="deleteAll">Delete All</button>
+            </form>
+            <br>
+        </div>
         <br>
+        <button type="button" class="final-order-btn" id="placeOrder"><strong>Place Order!</strong></button>
         <br>
-        <br>
-        <section>
-            <table class="cart-table">
-                <tbody id = "cart-table">
-                </tbody>
-            </table>
-        </section>
-        <br>
+        </div>
     </div>
+
+
 
     <!-- Footer -->
     <footer class="footer">
