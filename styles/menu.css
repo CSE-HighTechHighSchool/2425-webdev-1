@@ -210,3 +210,52 @@
     border-radius:30px; /*Round text box edges*/
     border: solid 1.5px rgb(var(--base-text)); /*Add black border to text box*/
 }
+
+.cart-table{
+    font-family:'Comic Neue';
+    background-color:var(--light-pink);
+    color:(--magenta);
+    width:80%;
+    justify-content:center;
+    margin:auto;
+    font-size:150%;
+    border: solid 1.5px var(--magenta); /*Add black border to text box*/
+}
+
+.cart-items-header{
+    text-align:center;
+    width:60%;
+    border: solid 1.5px var(--magenta);
+}
+
+.cart-quant-header{
+    text-align:center;
+    width:40%;
+    border: solid 1.5px var(--magenta);
+}
+
+.cart-items-col{
+    text-align:left;
+    width:60%;
+    border: dashed 1.5px var(--magenta);
+    transition: background-color .15s ease-in-out,
+                color .15s ease-in-out;
+}
+
+.cart-quant-col{
+    text-align:right;
+    width:40%;
+    border: dashed 1.5px var(--magenta);
+    transition: background-color .15s ease-in-out,
+                color .15s ease-in-out;
+}
+
+.cart-items-col:hover,
+.cart-quant-col:hover{
+    background-color:var(--magenta);
+    color:var(--light-pink);
+}
+
+.cart-empty{
+    text-align:center;
+}

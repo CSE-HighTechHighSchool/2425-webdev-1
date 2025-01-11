@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebas
 import { getAuth } 
   from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 
-import { getDatabase, ref, set, update, child, get, remove} 
+import { getDatabase, ref, update} 
   from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
 
   // Your web app's Firebase configuration
@@ -24,6 +24,20 @@ const auth = getAuth();
 // Return an instance of your app's database
 const db = getDatabase(app);
 
+let currentUser = null;
+
+function getUserName(){
+    //Grab value for the 'keep logged in' switch
+    let keepLoggedIn = localStorage.getItem('keepLoggedIn');
+  
+    //Grab user information from the signIn.JS
+    if(keepLoggedIn == 'yes'){
+      currentUser = JSON.parse(localStorage.getItem('user'));
+    }
+    else{
+      currentUser = JSON.parse(sessionStorage.getItem('user'));
+    }
+  }
 
 function addItemToOrder(userID, item, quantity){
     //Must use brackets around variable name to use it as a key
@@ -38,13 +52,17 @@ function addItemToOrder(userID, item, quantity){
     });
 }
 
+window.onload=function(){
+    getUserName();
+    console.log(currentUser);
+}
 
 document.getElementById('orderCookies').onclick = function(){
-      const item = document.getElementById('cookieSelect').value;
-      const quantity = document.getElementById('cookieNum').value;
-      const userID = currentUser.uid;
+    const item = document.getElementById('cookieSelect').value;
+    const quantity = document.getElementById('cookieNum').value;
+    const userID = currentUser.uid;
       
-      addItemToOrder(userID, item, quantity);
+    addItemToOrder(userID, item, quantity);
       
 };
 
@@ -67,7 +85,7 @@ document.getElementById('orderCake').onclick = function(){
 document.getElementById('orderPie').onclick = function(){
     const item = document.getElementById('pieSelect').value;
     const quantity = document.getElementById('pieNum').value;
-    const userID = '6qHY4Gwr5vTGL3jHrQvNzjvHuzh1';//currentUser.uid;
+    const userID = currentUser.uid;
 
     addItemToOrder(userID, item, quantity);
 };
