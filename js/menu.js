@@ -55,6 +55,15 @@ function addItemToOrder(userID, item, quantity){
 window.onload=function(){
     getUserName();
     console.log(currentUser);
+
+    if(!currentUser){
+      const orderElements = document.querySelectorAll(".order-select");
+      orderElements.forEach((element) => {
+        element.style.display = "none";
+    })
+      const checkout = document.getElementById("checkout-button");
+      checkout.style.display= "none";
+  }
 }
 
 document.getElementById('orderCookies').onclick = function(){

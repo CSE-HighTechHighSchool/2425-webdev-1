@@ -171,7 +171,7 @@
     color: black;
 }
 
-.checkout-button{
+#checkout-button{
     display:block; /*Set display type to block*/
     color: black; /*Set text color to light pink*/
     background-color: var(--light-pink); /*Set text box color to magenta*/
@@ -185,7 +185,7 @@
     text-decoration: none;
 }
 
-.checkout-button:hover{
+#checkout-button:hover{
     color: var(--light-pink); /*Set text color to light pink*/
     background-color: var(--magenta); /*Set text box color to magenta*/
     transition: background-color .15s ease-in-out,
