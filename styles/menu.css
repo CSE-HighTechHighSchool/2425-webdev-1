@@ -195,17 +195,18 @@
 .cart{
     background-color: rgb(var(--pale-yellow)); /*Set background color to pale yellow*/
     overflow-x:hidden; /*Hide x overflow*/
+    min-height:42.2vw;
 }
 
 .cart-header{
     display:block; /*Set display type to block*/
     color: var(--orange); /*Set text color to light pink*/
     background-color: var(--light-orange); /*Set text box color to magenta*/
-    font-family: 'Cookie'; /*Set font to Cookie*/
+    font-family: 'Comic Neue'; /*Set font to Cookie*/
     text-align: center; /*Align text to the center*/
-    width: 25%; /*Set width to 25%*/
+    max-width: 70%; /*Set width to 25%*/
     margin:auto; /*Center textbox*/
-    font-size: var(--lg-heading-size); /*Set font size to lg heading size*/
+    font-size: var(--md-heading-size); /*Set font size to lg heading size*/
     border-radius:30px; /*Round text box edges*/
     border: solid 1.5px rgb(var(--base-text)); /*Add black border to text box*/
 }
