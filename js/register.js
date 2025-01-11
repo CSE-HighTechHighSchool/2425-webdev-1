@@ -55,6 +55,7 @@ document.getElementById('submitData').onclick = function() {
         .then(() => {
             // Data saved successfully!
             alert('User created successfully')
+            window.location = "signin.html";
         })
         .catch((error) => {
             // Data write failed...
@@ -67,46 +68,7 @@ document.getElementById('submitData').onclick = function() {
         alert(errorMessage);
     });
 
-    // Attempt to sign user in
-    signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-        // Create user credential and store userID
-        const user = userCredential.user;
-
-        // Log sign-in in db
-        // update - will only add the last_login info and won't overwrite anything
-        let logDate = new Date();
-        update(ref(db, 'users/' + user.uid + "/accountInfo"), {
-            last_login: logDate,
-        })
-        .then(() => {
-            // user signed in successfully
-            alert("User signed in successfully")
-
-            // get snapshot of all tbe user info (including uid)
-            // to pass to the login() function and store in session or local storage
-            get(ref(db, 'users/' + user.uid + "/accountInfo")).then((snapshot) => {
-                if (snapshot.exists()) {
-                    console.log(snapshot.val())
-                    logIn(snapshot.val())
-                } else {
-                    console.log('user does not exist')
-                }
-            })
-            .catch((error) => {
-                console.log(error)
-            })
-            window.location = "index.html";
-        })
-        .catch((error) => {
-            alert(error)
-        })
-    })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorMessage)
-    })
+   
 }
 
 /* --------------- Check for null, empty ("") or all spaces only ------------*/

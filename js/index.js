@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
 // TODO: Add SDKs for Firebase products that you want to use
-import { getAuth }
+import { getAuth, signOut }
     from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -23,7 +23,6 @@ const auth = getAuth();
 // ---------------------// Get reference values -----------------------------
 let userLink = document.getElementById('account-button'); // User name for navbar
 let signOutLink = document.getElementById('signOut');   // Sign out link
-let welcome = document.getElementById('welcome');   // Welcome header
 let currentUser = null;
 
 // ----------------------- Get User's Name'Name ------------------------------
@@ -42,27 +41,32 @@ function getUserName() {
 window.onload = function() {
     getUserName();  // Get current user's first name
     if (currentUser == null) {
-        userLink.innerText = 'Create New Account';
-        userLink.classList.replace('none', 'btn');
-        userLink.classList.add('menu-btn');
-        userLink.classList.add('register-btn')
-        userLink.href = 'register.html' ;
-
-        signOutLink.innerText = 'Sign In'
-        signOutLink.classList.replace('nav-link', 'btn');
-        signOutLink.classList.add('btn-success')
-        signOutLink.href = 'signIn.html'
+        userLink.innerHTML = `
+            <a class="btn menu-btn acct-btn" href="register.html">Create New Account</a>
+            <a class="btn menu-btn acct-btn" href="signin.html">Sign in</a>
+        `
     } else {
-        userLink.innerText = currentUser.firstname;
-        welcome.innerText = 'Welcome ' + currentUser.firstname;
-        userLink.classList.replace('none', 'example-div');
-        userLink.href = '#';
+        userLink.innerHTML = `
+            <a class="btn menu-btn small-text" id="signOut">Sign Out</a>
+        `
 
-        signOutLink.innerText = 'Sign Out';
-        signOutLink.classList.replace('btn', 'nav-link');
-        signOutLink.classList.add('btn-success');
         document.getElementById('signOut').onclick = () => {
         signOutUser();
         }
     }
+}
+
+function signOutUser() {
+    sessionStorage.removeItem('user');
+    localStorage.removeItem('user');
+    localStorage.removeItem('keepLoggedIn');
+
+    signOut(auth).then(() => {
+        // Sign out successful
+
+    }).catch((error) => {
+        // error occured
+    });
+
+    window.location = 'index.html'
 }
