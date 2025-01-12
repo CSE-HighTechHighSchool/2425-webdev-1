@@ -195,31 +195,36 @@
 .cart{
     background-color: rgb(var(--pale-yellow)); /*Set background color to pale yellow*/
     overflow-x:hidden; /*Hide x overflow*/
+    /* Add your background pattern here */
+    background-image: radial-gradient(var(--light-orange) 10%, transparent 10%),
+                        radial-gradient(var(--light-orange) 10%, transparent 10%);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
 }
 
 .cart-header{
     display:block; 
-    color: var(--orange); 
+    color: rgb(var(--base-text)); 
     background-color: var(--light-orange);
     font-family: 'Comic Neue';
     text-align: center; 
     max-width: 50%; 
-    margin:auto; 
+    margin: auto; 
     font-size: var(--md-heading-size); 
-    border-radius:30px; 
-    border: solid 1.5px rgb(var(--base-text)); 
+    border-radius: 20px; 
+    border: solid 1.5px var(--orange); 
 }
 
 .cart-subheader{
     display:block; 
-    color: black; 
+    color: rgb(var(--base-text)); 
     background-color: var(--light-pink); 
     font-family: 'Comic Neue'; 
     text-align: center; 
     width: 70%; 
     margin:auto; 
     font-size: 2.3vw; 
-    border-radius:30px; 
+    border-radius: 10px; 
     border: solid 1.5px var(--magenta); 
 }
 
@@ -284,6 +289,10 @@
     border: dashed 1.5px var(--magenta);
     transition: background-color .15s ease-in-out,
                 color .15s ease-in-out;
+}
+
+.cart-box {
+    border-radius: 20px;
 }
 
 .cart-empty{
