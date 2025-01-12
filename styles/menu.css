@@ -218,16 +218,15 @@
 .cart-subheader{
     display:block; 
     color: rgb(var(--base-text)); 
-    background-color: var(--light-pink); 
     font-family: 'Comic Neue'; 
     text-align: center; 
-    width: 70%; 
     margin:auto; 
     font-size: 2.3vw; 
-    border-radius: 10px; 
-    border: solid 1.5px var(--magenta); 
 }
 
+#cart-table-header {
+    border: none;
+}
 
 .cart-table{
     font-family:'Comic Neue';
@@ -292,7 +291,12 @@
 }
 
 .cart-box {
+    width: 80%;
+    margin: auto;
     border-radius: 20px;
+    background-color: var(--light-pink);
+    border: solid 1.5px var(--magenta); 
+    padding: 10px;
 }
 
 .cart-empty{
