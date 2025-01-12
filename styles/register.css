@@ -19,3 +19,25 @@
     background-size: 160px 100%;
     background-repeat: repeat;
 }
+
+.btn-register {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--medium-pink);
+    --bs-btn-border-color: var(--magenta);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--magenta);
+    --bs-btn-hover-border-color: var(--magenta);
+    width: 100%;
+}
+
+.user-input {
+    font-size: 1.5vw;
+}
+
+#keepLoggedInSwitch:checked {
+    background-color: var(--magenta);
+}
+
+#keepLoggedInSwitch {
+    border-color: var(--light-pink);
+}

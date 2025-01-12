@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Humming Bee Bakery</title>
     <!-- Bootstrap 5 import -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/menu.css">
     <link rel="icon" type="image/x-icon" href="img/bee-logo.png">
+    <script type="module" src="js/menu.js" defer></script>
 </head>
     <body>
         <nav class="navbar navbar-lg">
@@ -25,6 +30,7 @@
                       <li><a class="dropdown-item" href="menu.html">Menu</a></li>
                       <li><a class="dropdown-item" href="podcasts.html">Podcasts</a></li>
                       <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                      <li><a class="dropdown-item" href="cart.html">My Cart</a></li>
                     </ul>
                 </div>
             </div>
@@ -34,9 +40,11 @@
         <!-- Menu Page-->
 
         <!--Create menu page container-->
-        <div class="container-full menu p-2">
+        <div class="container-fluid menu p-2">
            
             <!--Create page header-->
+            <br>
+            <br>
             <br>
             <h1 class="menu-header">Menu</h1>
             <br>
@@ -62,7 +70,7 @@
                                 <button id="chocolate-chip" class="accordion-button collapsed" 
                                 type="button" data-bs-toggle="collapse" data-bs-target="#chocolate-chip-desc" 
                                 aria-expanded="false" aria-controls="collapseOne">
-                                Chocolate Chip // $1.50
+                                Chocolate Chip // $1.50                 
                                 </button>
                             </h2>
                             <!--Accordion extra info: Ingredients-->
@@ -117,6 +125,20 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    
+                    <div class="order-select p-1">
+                        <form>
+                            <p class="order-text">Cookie Type:</p>
+                            <select class="order-form" aria-label="Cookie Types" id="cookieSelect">
+                                <option value="chocolateChipCookie">Chocolate Chip</option>
+                                <option value="sugarCookie">Sugar</option>
+                                <option value="smoreCookie">S'more</option>
+                            </select>
+                            <p class="order-text">Quantity:</p>
+                            <input type="number" class="order-input" id="cookieNum">
+                            <button type="button" class="order-btn" id="orderCookies">Add To Cart</button>
+                        </form>
                     </div>
                     <br>
 
@@ -179,6 +201,19 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="order-select p-1">
+                        <form>
+                            <p class="order-text">Seasonal Item:</p>
+                            <select class="order-form" aria-label="Seasonal Types" id="seasonalSelect">
+                                <option value="pumpkinPie">Pumpkin Pie</option>
+                                <option value="appleCiderDonuts">Apple Cider Donuts</option>
+                            </select>
+                            <p class="order-text">Quantity:</p>
+                            <input type="number" class="order-input" id="seasonalNum">
+                            <button type="button" class="order-btn" id="orderSeasonal">Add To Cart</button>
+                        </form>
                     </div>
                     <br>
                 </div>
@@ -263,6 +298,20 @@
                         </div>
                     </div>
 
+                    
+                    <div class="order-select p-1">
+                        <form>
+                            <p class="order-text">Cake Type:</p>
+                            <select class="order-form" aria-label="Cake Types" id="cakeSelect">
+                                <option value="chocolateCake">Chocolate</option>
+                                <option value="vanillaCake">Vanilla</option>
+                                <option value="carrotCake">Carrot</option>
+                            </select>
+                            <p class="order-text">Quantity:</p>
+                            <input type="number" class="order-input" id="cakeNum">
+                            <button type="button" class="order-btn" id="orderCake">Add To Cart</button>
+                        </form>
+                    </div>
                     <br>
 
                 </div>
@@ -346,8 +395,22 @@
                             </div>
                         </div>
                     </div>
-
+                    
+                    <div class="order-select p-1">
+                        <form>
+                            <p class="order-text">Pie Type:</p>
+                            <select class="order-form" aria-label="Pie Types" id="pieSelect">
+                                <option value="applePie">Apple</option>
+                                <option value="blueberryPie">Blueberry</option>
+                                <option value="pecanPie">Pecan</option>
+                            </select>
+                            <p class="order-text">Quantity:</p>
+                            <input type="number" class="order-input" id="pieNum">
+                            <button type="button" class="order-btn" id="orderPie">Add To Cart</button>
+                        </form>
+                    </div>
                     <br>
+
                 </div>
 
                 <!--Cupcakes Section-->
@@ -426,10 +489,31 @@
                             </div>
                         </div>
                     </div>
-                    <br>
-                </div>
-        </div>
 
+                    <div class="order-select p-1">
+                        <form>
+                            <p class="order-text">Cupcake Type:</p>
+                            <select class="order-form" aria-label="Cupcake Types" id="cupcakeSelect">
+                                <option value="chocolateCupcake">Chocolate</option>
+                                <option value="vanillaCupcake">Vanilla</option>
+                                <option value="redVelvetCupcake">Red Velvet</option>
+                            </select>
+                            <p class="order-text">Quantity:</p>
+                            <input type="number" class="order-input" id="cupcakeNum">
+                            <button type="button" class="order-btn" id="orderCupcake">Add To Cart</button>
+                        </form>
+                    </div>
+                    <br>
+
+            </div>
+
+        </div>
+        <div>
+            <br>
+            <a id="checkout-button" href="cart.html">Click Here to Checkout!</a></li>
+            <br>
+        </div>
+    </div>
         <!-- Footer -->
         <footer class="footer">
             <div class="container footer-grid">

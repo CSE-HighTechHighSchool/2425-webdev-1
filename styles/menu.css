@@ -1,0 +1,419 @@
+/* Menu page styles */
+
+/*General styles for menu page*/
+.menu{
+    background-color: rgb(var(--pale-yellow)); /*Set background color to pale yellow*/
+    overflow-x:hidden; /*Hide x overflow*/
+    background-image: url("../img/cropped-final-drip.svg");
+    background-size: 130%;
+    background-repeat: repeat-y;
+    background-position-y:-5vw;
+    background-position-x:-25vw;
+    overflow-y:hidden;
+}
+
+/*Menu page header styles*/
+.menu-header{
+    display:block; /*Set display type to block*/
+    color: var(--light-pink); /*Set text color to light pink*/
+    background-color: var(--magenta); /*Set text box color to magenta*/
+    font-family: 'Cookie'; /*Set font to Cookie*/
+    text-align: center; /*Align text to the center*/
+    width: 25%; /*Set width to 25%*/
+    margin:auto; /*Center textbox*/
+    font-size: var(--lg-heading-size); /*Set font size to lg heading size*/
+    border-radius:30px; /*Round text box edges*/
+    border: solid 1.5px rgb(var(--base-text)); /*Add black border to text box*/
+}
+
+/*Flexbox section of menu to hold accordions*/
+.menu-flex{
+    display:inline-flex; /*Set display type to inline-flex*/
+    flex-flow: row wrap; /*Set flow to row wrap*/
+    text-align:center; /*Align text center*/
+    align-items:center; /*Align items center on the cross axis*/
+    justify-content:center; /*Align items center on the main axis*/
+    gap:15px; /*Set gap between items of 15px*/
+    align-self:stretch; /*Stretch to align items on the cross axis*/
+    width:100%; /*Set width to 100%*/
+    overflow-x: hidden; /*Hide x overflow*/
+}
+
+/*Base styles for sections of menu items*/
+.menu-item{
+    background-color: var(--light-pink); /*Set background color to light pink*/
+    flex-basis: 30%; /*Set main size of the item to 30%*/
+    border-radius: 30px; /*Round edges*/
+    border: solid 1.5px rgb(var(--base-text)); /*Create black border*/
+    min-width:20rem;
+}
+
+/*Menu subheaders*/
+.menu-subheader{
+    color: rgb(var(--base-text)); /*Set text color to base text*/
+    font-family: 'Cookie'; /*Set font family to Cookie*/
+    padding: 3px; /*Set padding to 3px*/
+    size: var(--md-heading-size); /*Set text size to md heading size*/
+}
+
+/*Menu image styles*/
+.menu-img{
+    width:90%; /*Set width to 90%*/
+    min-width: 250px; /*Set minimum width to 200px*/
+    height:auto; /*Set height to auto*/
+    border-radius: 30px; /*Round edges*/
+    border: solid 1.5px rgb(var(--base-text));  /*Add black border*/
+    margin: 3px 10px;
+}
+
+/*Accordion Styles*/
+.accordion{
+    --bs-accordion-active-color: var(--light-pink); /*Set accordion text color when active to light pink*/
+    --bs-accordion-active-bg: var(--magenta); /*Set accordion background color when active to magenta*/
+    --bs-accordion-color: var(--magenta); /*Set default accordion text color to magenta*/
+    --bs-accordion-bg: var(--light-pink); /*Set default accordion background color to light pink*/
+    --bs-accordion-btn-bg: var(--light-pink); /*Set accordion button background color to light pink*/
+    --bs-accordion-btn-color: rgb(var(--base-text)); /*Set accordion button text color to base text*/
+    font-family: 'Comic Neue'; /*Set font to Comic Neue*/
+    --bs-accordion-border-radius: 0px; /*Set border radius to 0px*/
+    --bs-accordion-inner-border-radius:0px; /*Set inner border radius to 0px*/
+    --bs-accordion-border-width:0px; /*Get ride of accordion border*/
+}
+
+.accordion:hover{
+    --bs-accordion-btn-color: var(--light-pink); /*Set accordion text color when active to light pink*/
+    --bs-accordion-btn-bg: var(--magenta); /*Set accordion background color when active to magenta*/
+}
+
+.accordion-item{
+    font-weight:0.5rem;
+}
+
+.menu-item:nth-of-type(4), .menu-item:nth-of-type(5) {
+    /*Adjusts margin when accordions are closed*/
+    margin-bottom: 30px;
+}
+
+.menu-item:nth-of-type(4):has(.accordion-button:not(.collapsed)), .menu-item:nth-of-type(5):has(.accordion-button:not(.collapsed)) {
+    /*Adjusts margin while accordions are open*/
+    margin-bottom: 20px;
+}
+
+.order-btn {
+    display: inline-block;
+    padding: 0.5rem;
+    margin:0.5rem;
+    font-family: 'Comic Neue';
+    font-weight: 0.5rem;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    border: 1.5px dashed var(--magenta);
+    border-radius: 10px;
+    background-color: transparent;
+    transition: background-color .15s ease-in-out,
+                border-color .15s ease-in-out,
+                color .15s ease-in-out;
+}
+
+.order-btn:hover{
+    background-color: var(--magenta);
+    border: 1.5px dashed black;
+    color: var(--light-pink);
+}
+
+.order-form{
+    --bs-form-select-bg-img: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e);
+    display: inline-block;
+    width: 50%;
+    padding: .3rem;
+    font-size: 1rem;
+    font-family: 'Comic Neue';
+    font-weight: 0.5rem;
+    line-height: 1.5;
+    color: var(--light-orange);
+    background-color: var(--orange);
+    background-image: var(--bs-form-select-bg-img), var(--bs-form-select-bg-icon, none);
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 16px 12px;
+    border: 1.5px dashed var(--light-orange);
+    border-radius: 10px;
+    transition: background-color .15s ease-in-out,
+                border-color .15s ease-in-out,
+                color .15s ease-in-out;
+    text-align:center;
+}
+
+.order-input{
+    display: inline-block;
+    width: 50%;
+    padding: .3rem;
+    font-size: 1rem;
+    font-family: 'Comic Neue';
+    font-weight: 0.5rem;
+    line-height: 1.5;
+    color: var(--light-orange);
+    background-color: var(--orange);
+    border: 1.5px dashed var(--light-orange);
+    border-radius: 10px;
+    transition: background-color .15s ease-in-out,
+                color .15s ease-in-out;
+    text-align:center;
+}
+
+.order-text{
+    display: inline-block;
+    margin:0.5rem;
+    padding: 0.5rem;
+    font-family: 'Comic Neue';
+    font-weight: 0.5rem;
+    color: black;
+}
+
+#checkout-button{
+    display:block; /*Set display type to block*/
+    color: black; /*Set text color to light pink*/
+    background-color: var(--light-pink); /*Set text box color to magenta*/
+    font-family: 'Cookie'; /*Set font to Cookie*/
+    text-align: center; /*Align text to the center*/
+    width: 25%; /*Set width to 25%*/
+    margin:auto; /*Center textbox*/
+    font-size: var(--md-heading-size); /*Set font size to lg heading size*/
+    border-radius:15px; /*Round text box edges*/
+    border: solid 1.5px rgb(var(--base-text)); /*Add black border to text box*/
+    text-decoration: none;
+}
+
+#checkout-button:hover{
+    color: var(--light-pink); /*Set text color to light pink*/
+    background-color: var(--magenta); /*Set text box color to magenta*/
+    transition: background-color .15s ease-in-out,
+                color .15s ease-in-out;
+}
+
+.cart{
+    background-color: rgb(var(--pale-yellow)); /*Set background color to pale yellow*/
+    overflow-x:hidden; /*Hide x overflow*/
+    /* Add your background pattern here */
+    background-image: radial-gradient(var(--light-orange) 10%, transparent 10%),
+                        radial-gradient(var(--light-orange) 10%, transparent 10%);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+}
+
+.cart-header{
+    display:block; 
+    color: rgb(var(--base-text)); 
+    background-color: var(--light-orange);
+    font-family: 'Comic Neue';
+    text-align: center; 
+    max-width: 50%; 
+    margin: auto; 
+    font-size: var(--md-heading-size); 
+    border-radius: 20px; 
+    border: solid 1.5px var(--orange); 
+}
+
+.cart-subheader{
+    display:block; 
+    color: rgb(var(--base-text)); 
+    background-color: var(--light-pink); 
+    font-family: 'Comic Neue'; 
+    text-align: center; 
+    width: 70%; 
+    margin:auto; 
+    font-size: 2.3vw; 
+    border-radius: 10px; 
+    border: solid 1.5px var(--magenta); 
+}
+
+
+.cart-table{
+    font-family:'Comic Neue';
+    background-color:var(--light-pink);
+    color:(--magenta);
+    width:80%;
+    justify-content:center;
+    margin:auto;
+    font-size: 1.7vw;
+    border: solid 1.5px var(--magenta); 
+}
+
+.cart-items-header{
+    text-align:center;
+    width:50%;
+    border: solid 1.5px var(--magenta);
+    font-size:2vw;
+}
+
+.cart-quant-header, 
+.cart-price-header{
+    text-align:center;
+    width:25%;
+    border: solid 1.5px var(--magenta);
+    font-size: 2vw;
+}
+
+@media screen and (max-width: 900px) { 
+    .cart-header{
+        font-size: 4.5vw; 
+    }
+    
+    .cart-subheader, 
+    .order-btn{
+        font-size: 4vw; 
+    }
+    
+    .cart-table{
+        font-size: 3vw;
+    }
+    
+    .cart-items-header,
+    .cart-quant-header,
+    .cart-price-header{
+        font-size: 3.4vw;
+    }
+}
+
+.cart-items-col{
+    text-align:left;
+    border: dashed 1.5px var(--magenta);
+    transition: background-color .15s ease-in-out,
+                color .15s ease-in-out;
+}
+
+.cart-quant-col,
+.cart-price-col{
+    text-align:center;
+    border: dashed 1.5px var(--magenta);
+    transition: background-color .15s ease-in-out,
+                color .15s ease-in-out;
+}
+
+.cart-box {
+    border-radius: 20px;
+}
+
+.cart-empty{
+    text-align:center;
+}
+
+.edit-select{
+    width:80%;
+    margin:auto;
+    background-color: var(--light-pink);
+    border: solid 1.5px var(--magenta); 
+    text-align:center;
+}
+
+.edit-text{
+    display: inline-block;
+    margin: 0rem 0.25rem 0.25rem;
+    padding: 0.5rem;
+    font-family: 'Comic Neue';
+    font-weight: 0.5rem;
+    color: black;
+}
+
+.edit-subheader{
+    display: block;
+    font-family: 'Comic Neue';
+    font-weight: 0.7rem;
+    margin-top:.25rem;
+    text-decoration:underline;
+    color: black;
+}
+
+.edit-btn {
+    display: inline-block;
+    padding: 0.25rem;
+    margin: 0rem 0.25rem 0.25rem;
+    font-family: 'Comic Neue';
+    font-weight: 0.5rem;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    border: 1.5px dashed var(--magenta);
+    border-radius: 10px;
+    background-color: transparent;
+    transition: background-color .15s ease-in-out,
+                border-color .15s ease-in-out,
+                color .15s ease-in-out;
+}
+
+.edit-btn:hover{
+    background-color: var(--magenta);
+    border: 1.5px dashed black;
+    color: var(--light-pink);
+}
+
+.edit-form{
+    --bs-form-select-bg-img: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e);
+    display: inline-block;
+    width: 30%;
+    padding: .3rem;
+    font-size: 1rem;
+    font-family: 'Comic Neue';
+    font-weight: 0.5rem;
+    line-height: 1.5;
+    color: var(--light-orange);
+    background-color: var(--orange);
+    background-image: var(--bs-form-select-bg-img), var(--bs-form-select-bg-icon, none);
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 16px 12px;
+    border: 1.5px dashed var(--light-orange);
+    border-radius: 10px;
+    transition: background-color .15s ease-in-out,
+                border-color .15s ease-in-out,
+                color .15s ease-in-out;
+    text-align:center;
+}
+
+.edit-input{
+    display: inline-block;
+    width: 30%;
+    padding: .25rem;
+    font-size: 1rem;
+    font-family: 'Comic Neue';
+    font-weight: 0.5rem;
+    line-height: 1.5;
+    color: var(--light-orange);
+    background-color: var(--orange);
+    border: 1.5px dashed var(--light-orange);
+    border-radius: 10px;
+    transition: background-color .15s ease-in-out,
+                color .15s ease-in-out;
+    text-align:center;
+}
+
+#deleteAll{
+    display:block;
+    margin:auto;
+}
+
+.final-order-btn{
+    display:block; /*Set display type to block*/
+    color: black; /*Set text color to light pink*/
+    background-color: var(--light-pink); /*Set text box color to magenta*/
+    font-family: 'Comic Neue'; /*Set font to Cookie*/
+    text-align: center; /*Align text to the center*/
+    width: 25%; /*Set width to 25%*/
+    margin:auto; /*Center textbox*/
+    font-size: 2.3vw; /*Set font size to lg heading size*/
+    border-radius:30px; /*Round text box edges*/
+    border: solid 1.5px var(--magenta); /*Add black border to text box*/
+    padding:0px;
+}
+
+.final-order-btn:hover{
+    color: var(--light-pink); /*Set text color to light pink*/
+    background-color: var(--magenta); /*Set text box color to magenta*/
+    transition: background-color .15s ease-in-out,
+                color .15s ease-in-out;
+}
+
+.tfooter-value{
+    text-align:center;
+}

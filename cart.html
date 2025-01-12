@@ -3,9 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Humming Bee Bakes</title>
+    <!-- Bootstrap 5 import -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/menu.css">
+    <link rel="icon" type="image/x-icon" href="img/bee-logo.png">
+    <script type="module" src="js/cart.js" defer></script>
 </head>
+
 <body>
-    
+    <nav class="navbar navbar-lg">
+        <div class="container-fluid navbar-menu">
+            <!-- Website Name -->
+             <h1 class="nav-name">Humming Bee Bakes</h1>
+            <!-- Navbar -->
+            <div class="dropdown">
+                <button class="btn dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img class="dropdown-img" src="img/bee-logo.png">
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="index.html">Home</a></li>
+                  <li><a class="dropdown-item" href="menu.html">Menu</a></li>
+                  <li><a class="dropdown-item" href="podcasts.html">Podcasts</a></li>
+                  <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                  <li><a class="dropdown-item" href="cart.html">My Cart</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid cart">
+        <br>
+        <br>
+
+        
+        <p class="cart-header p-2" id="cart-welcome"></p>
+        <br>
+        <div id="cart-functions">
+        <p class="cart-subheader"><strong>Your Cart:</strong></p>
+        <br>
+        <div class="cart-box">
+            <table class="cart-table">
+                <tbody id = "cart-table">
+                </tbody>
+                <tfoot id="price-total">
+                </tfoot>
+            </table>
+        </div>
+        
+        <br>
+        <p class="cart-subheader"><strong>Edit Cart:</strong></p>
+        <br>
+
+        <div class="edit-select p-1 cart-box">
+            <p class="edit-subheader">Add or Change Items</p>
+            <form>
+                <p class="edit-text">Item:</p>
+                <select class="edit-form" aria-label="Item Select" id="itemSelect">
+                    <option value="pumpkinPie">Pumpkin Pie</option>
+                    <option value="appleCiderDonuts">Apple Cider Donuts</option>
+                    <option value="chocolateChipCookie">Chocolate Chip Cookie</option>
+                    <option value="sugarCookie">Sugar Cookie</option>
+                    <option value="smoreCookie">S'more Cookie</option>
+                    <option value="chocolateCake">Chocolate Cake</option>
+                    <option value="vanillaCake">Vanilla Cake</option>
+                    <option value="carrotCake">Carrot Cake</option>
+                    <option value="chocolateCupcake">Chocolate Cupcake</option>
+                    <option value="vanillaCupcake">Vanilla Cupcake</option>
+                    <option value="redVelvetCupcake">Red Velvet Cupcake</option>
+                    <option value="applePie">Apple Pie</option>
+                    <option value="blueberryPie">Blueberry Pie</option>
+                    <option value="pecanPie">Pecan Pie</option>
+                </select>
+                <p class="edit-text">Quantity:</p>
+                <input type="number" class="edit-input" id="itemNum">
+                <button type="button" class="edit-btn" id="orderItem">Update Cart</button>
+            </form>
+            <br>
+            <p class="edit-subheader">Delete Items</p>
+            <form>
+                <p class="edit-text">Item:</p>
+                <select class="edit-form" aria-label="Item Select" id="deleteItemSelect">
+                    
+                </select>
+                <button type="button" class="edit-btn" id="deleteItem">Delete Item</button>
+                <button type="button" class="edit-btn" id="deleteAll">Delete All</button>
+            </form>
+            <br>
+        </div>
+        <br>
+        <button type="button" class="final-order-btn" id="placeOrder"><strong>Place Order!</strong></button>
+        <br>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <!-- Copyright info on left side of  footer-->
+            <div class="left-footer-text">Copyright &copy; Humming Bee Bakes</div>
+
+            <!-- Image of logo in the center -->
+            <div class="footer-img">
+                <img class="footer-img-size img-fluid" src="img/bee-logo.png" alt="Logo">
+            </div>
+
+            <!-- Contact info on right side of the footer-->
+            <div class="right-footer-text">Contact us at XXX-XXX-XXXX</div>
+        </div>
+    </footer>
 </body>
+
 </html>
