@@ -47,7 +47,7 @@ window.onload = function() {
         `
     } else {
         userLink.innerHTML = `
-            <a class="btn menu-btn small-text" id="signOut">Sign Out</a>
+            <a class="btn menu-btn acct-btn" id="signOut">Sign Out</a>
         `
 
         document.getElementById('signOut').onclick = () => {

@@ -114,7 +114,7 @@
 
 
 .below-navbar {
-    padding-top: 70px;
+    margin-top: 30px;
 }
 
 .wave-divider {
@@ -133,6 +133,10 @@
 }
 
 /* Landing page styles */
+#account-wrapper {
+    width: 100%;
+    height: 36px;
+}
 
 .container-full{
     overflow-x: hidden;
