@@ -37,15 +37,20 @@
         </div>
     </nav>
 
+    <!--Cart Page-->
+
+    <!--Create Cart Container-->
     <div class="container-fluid cart">
         <br>
         <br>
+        <!-- Welcome Message -->
         <p class="cart-header p-2" id="cart-welcome"></p>
 
         <br>
-
+        <!--All Cart Functions-->
         <div id="cart-functions">
             <div class="">
+                <!--Dynamic Table containing order information-->
                 <p class="cart-subheader" id="cart-table-header"><strong>Your Cart:</strong></p>
                 <table class="cart-table">
                     <tbody id = "cart-table">
@@ -56,10 +61,11 @@
             </div>
         
             <br>
-            
+            <!--Edit Cart section-->
             <p class="cart-subheader"><strong>Edit Cart:</strong></p>
             <div class="cart-select p-1 cart-box">
-                <p class="cart-subheader">Add or Change Items</p>
+                <!--Add or Change Items Form-->
+                <p class="cart-subheader text-decoration-underline">Add or Change Items</p>
                 <form>
                     <p class="cart-text">Item:</p>
                     <select class="cart-form" aria-label="Item Select" id="itemSelect">
@@ -83,25 +89,30 @@
                     <button type="button" class="cart-btn" id="orderItem">Update Cart</button>
                 </form>
                 <br>
-                <p class="cart-subheader">Delete Items</p>
+                <!--Delete Single Items Form-->
+                <p class="cart-subheader text-decoration-underline">Delete Items</p>
                 <form>
                     <p class="cart-text">Item:</p>
                     <select class="cart-form" aria-label="Item Select" id="deleteItemSelect">
                         
                     </select>
                     <button type="button" class="cart-btn" id="deleteItem">Delete Item</button>
+                    <!--Delete All Items Button-->
                     <button type="button" class="cart-btn" id="deleteAll">Delete All</button>
                 </form>
                 <br>
             </div>
             <br>
+            <!--Place Order button-->
             <button type="button" class="final-order-btn" id="placeOrder"><strong>Place Order!</strong></button>
             <br>
 
+            <!--View previous orders-->
             <p class="cart-subheader"><strong>View Previous Orders:</strong></p>
             <div class="cart-select p-1 cart-box">
                 <form>
-                    <p class="cart-subheader">Get Specific Item</p>
+                    <!--Get specific item from a specific order-->
+                    <p class="cart-subheader text-decoration-underline">Get Specific Item</p>
                     <p class="cart-text">Select Order:</p>
                     <select class="cart-form" aria-label="Item Select" id="prevOrderSelectSpecific">
                     </select>
@@ -112,8 +123,8 @@
                     <p class="cart-text" id="prevOrderSpecificView">
 
                     </p>
-                    
-                    <p class="cart-subheader">Get Full Order</p>
+                    <!--Get full order-->
+                    <p class="cart-subheader text-decoration-underline">Get Full Order</p>
                     <p class="cart-text">Select Order:</p>
                     <select class="cart-form" aria-label="Item Select" id="prevOrderSelectFull">
                     </select>
