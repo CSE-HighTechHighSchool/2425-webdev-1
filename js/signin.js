@@ -1,3 +1,10 @@
+/*
+    File: index.js
+    Purpose: Allow users to sign in using their email and password
+    Date: 1/12/25
+    Created by: Maria, Maya, and Vee
+*/
+
 // ----------------- User Sign-In Page --------------------------------------//
 
 /* ----------------- Firebase Setup & Initialization ------------------------*/

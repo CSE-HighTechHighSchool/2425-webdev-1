@@ -1,3 +1,11 @@
+/*
+    File: index.js
+    Purpose: Show buttons to create an account, sign in, or sign out depending on whether a user is currently
+    logged in
+    Date: 1/12/25
+    Created by: Maria, Maya, and Vee
+*/
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
 // TODO: Add SDKs for Firebase products that you want to use
