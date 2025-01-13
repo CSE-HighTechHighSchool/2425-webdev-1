@@ -373,7 +373,7 @@
     font-family: "Comic Neue", sans-serif;
 }
 
-#submit-but{
+#submit-but{ /* styles rating submit button */
     position: relative;
     left: 100px;
     background-color: var(--light-pink);
@@ -391,7 +391,7 @@
     color: var(--magenta);
 }
 
-.rating{
+.rating{ /* styles star rating thing*/
     position: relative;
     left: -50%;
     top: -8px;
