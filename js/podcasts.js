@@ -1,3 +1,10 @@
+/*
+    File: podcasts.js
+    Purpose: Let users rate podcasts and display ratings using pie charts
+    Date: 1/13/25
+    Created by: Maria, Maya, and Vee
+*/
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
 // TODO: Add SDKs for Firebase products that you want to use
