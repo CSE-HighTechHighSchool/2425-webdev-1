@@ -20,8 +20,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getDatabase(app);
 
-document.getElementById("submit-but").onclick = function(){checkInput("one")};
-document.getElementById("submit-but-two").onclick = function(){checkInput("two")};
 let user = null;
 
 let navList = document.getElementById("nav-list");
@@ -40,6 +38,7 @@ function getUserName(){
       user = JSON.parse(sessionStorage.getItem('user'));
     }
 }
+
 
 const dbref = ref(db);
 
@@ -63,6 +62,7 @@ async function getValue(episode, rating){
 }
 
 async function checkInput(episode){
+
     let star1 = document.getElementById(episode+"-star1");
     let star2 = document.getElementById(episode+"-star2");
     let star3 = document.getElementById(episode+"-star3");
@@ -89,9 +89,9 @@ async function checkInput(episode){
         value = 1;
     }
 
-    console.log(value);
+    //console.log(value);
     update(ref(db, 'users/' + user.uid + '/accountInfo/rating'), {
-         [user.uid]: value
+         ['ep'+episode]: value
          }).then(() => {
            alert('Thank you for rating!');
          }).catch((error) => {
@@ -151,9 +151,70 @@ async function getData(){
    return {epOneRatings, epTwoRatings};
 }
 
+function checkRatingExist(episode){
+    const dbref = ref(db);
+
+    get(child(dbref, 'users/' + user.uid + '/accountInfo/rating/ep' + episode)).then((snapshot) => {
+        if (snapshot.exists()){
+            //console.log(snapshot.val());
+            disableStars(episode, snapshot.val());
+            alert('You already gave a rating!');
+        }
+        else {
+            if (episode === "one"){
+                document.getElementById("submit-but").onclick = function(){checkInput("one")};
+                console.log('one triggered');
+            } else {
+                document.getElementById("submit-but-two").onclick = function(){checkInput("two")};
+            }
+        }
+      }).catch((error) => {
+        alert('unsuccessful, error' + error);
+      });
+    }
+
+function disableStars(episode, value){
+    let star1 = document.getElementById(episode+"-star1");
+    let star2 = document.getElementById(episode+"-star2");
+    let star3 = document.getElementById(episode+"-star3");
+    let star4 = document.getElementById(episode+"-star4");
+    let star5 = document.getElementById(episode+"-star5");
+
+    if (value === 2) {
+       
+        star2.checked = true;
+    } else if (value === 3) {
+     
+        star2.checked = true;
+        star3.checked = true;
+    } else if (value === 4) {
+    
+        star2.checked = true;
+        star3.checked = true;
+        star4.checked = true;
+    } else {
+        //console.log('i made it here!');
+   
+        star2.checked = true;
+        star3.checked = true;
+        star4.checked = true;
+        star5.checked = true;
+    }
+
+    star1.setAttribute('disabled', '');
+    star2.setAttribute('disabled', '');
+    star3.setAttribute('disabled', '');
+    star4.setAttribute('disabled', '');
+    star5.setAttribute('disabled', '');
+
+
+    //console.log(star5.checked);
+    
+}
+
 async function createChart(){
     const data = await getData();
-    console.log(data.epOneRatings);
+    //console.log(data.epOneRatings);
     const episodeOne = document.getElementById('ep-one-rating');
     const episodeTwo = document.getElementById('ep-two-rating');
 
@@ -172,7 +233,7 @@ async function createChart(){
             }]
         }, 
         options: {
-            responsive: false
+            aspectRatio: 3
         }
     })
 
@@ -188,12 +249,13 @@ async function createChart(){
             }]
         },
         options: {
-            responsive: false
+            aspectRatio: 3
         }
     })
 }
 
 window.onload = function(){
+
     getUserName();
 
     getData();
@@ -203,6 +265,10 @@ window.onload = function(){
     if (!user) {
         navList.removeChild(cartLink)
     }
+
+    checkRatingExist("one");
+    checkRatingExist("two");
+
 }
 
 //
