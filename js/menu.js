@@ -53,7 +53,7 @@ function addItemToOrder(userID, item, quantity){
 
 //Onload functions
 window.onload = function(){
-  getUserName();  //Grab user information
+  currentUser = getUserName();  //Grab user information
   let userLink = document.getElementById("account-button")
 
   if(!currentUser){ //if logged out, hide order elements
