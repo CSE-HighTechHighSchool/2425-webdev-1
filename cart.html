@@ -31,7 +31,7 @@
                   <li><a class="dropdown-item" href="menu.html">Menu</a></li>
                   <li><a class="dropdown-item" href="podcasts.html">Podcasts</a></li>
                   <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                  <li id="nav-cart"><a class="dropdown-item" href="cart.html">My Cart</a></li>
+                  <li><a class="dropdown-item" href="cart.html" id="nav-cart">My Cart</a></li>
                 </ul>
             </div>
         </div>
@@ -45,59 +45,92 @@
         <br>
 
         <div id="cart-functions">
-        <div class="">
-            <p class="cart-subheader" id="cart-table-header"><strong>Your Cart:</strong></p>
-            <table class="cart-table">
-                <tbody id = "cart-table">
-                </tbody>
-                <tfoot id="price-total">
-                </tfoot>
-            </table>
-        </div>
+            <div class="">
+                <p class="cart-subheader" id="cart-table-header"><strong>Your Cart:</strong></p>
+                <table class="cart-table">
+                    <tbody id = "cart-table">
+                    </tbody>
+                    <tfoot id="price-total">
+                    </tfoot>
+                </table>
+            </div>
         
-        <br>
-        
-        <p class="cart-subheader"><strong>Edit Cart:</strong></p>
-        <div class="edit-select p-1 cart-box">
-            <p class="edit-subheader">Add or Change Items</p>
-            <form>
-                <p class="edit-text">Item:</p>
-                <select class="edit-form" aria-label="Item Select" id="itemSelect">
-                    <option value="pumpkinPie">Pumpkin Pie</option>
-                    <option value="appleCiderDonuts">Apple Cider Donuts</option>
-                    <option value="chocolateChipCookie">Chocolate Chip Cookie</option>
-                    <option value="sugarCookie">Sugar Cookie</option>
-                    <option value="smoreCookie">S'more Cookie</option>
-                    <option value="chocolateCake">Chocolate Cake</option>
-                    <option value="vanillaCake">Vanilla Cake</option>
-                    <option value="carrotCake">Carrot Cake</option>
-                    <option value="chocolateCupcake">Chocolate Cupcake</option>
-                    <option value="vanillaCupcake">Vanilla Cupcake</option>
-                    <option value="redVelvetCupcake">Red Velvet Cupcake</option>
-                    <option value="applePie">Apple Pie</option>
-                    <option value="blueberryPie">Blueberry Pie</option>
-                    <option value="pecanPie">Pecan Pie</option>
-                </select>
-                <p class="edit-text">Quantity:</p>
-                <input type="number" class="edit-input" id="itemNum">
-                <button type="button" class="edit-btn" id="orderItem">Update Cart</button>
-            </form>
             <br>
-            <p class="edit-subheader">Delete Items</p>
-            <form>
-                <p class="edit-text">Item:</p>
-                <select class="edit-form" aria-label="Item Select" id="deleteItemSelect">
+            
+            <p class="cart-subheader"><strong>Edit Cart:</strong></p>
+            <div class="cart-select p-1 cart-box">
+                <p class="cart-subheader">Add or Change Items</p>
+                <form>
+                    <p class="cart-text">Item:</p>
+                    <select class="cart-form" aria-label="Item Select" id="itemSelect">
+                        <option value="pumpkinPie">Pumpkin Pie</option>
+                        <option value="appleCiderDonuts">Apple Cider Donuts</option>
+                        <option value="chocolateChipCookie">Chocolate Chip Cookie</option>
+                        <option value="sugarCookie">Sugar Cookie</option>
+                        <option value="smoreCookie">S'more Cookie</option>
+                        <option value="chocolateCake">Chocolate Cake</option>
+                        <option value="vanillaCake">Vanilla Cake</option>
+                        <option value="carrotCake">Carrot Cake</option>
+                        <option value="chocolateCupcake">Chocolate Cupcake</option>
+                        <option value="vanillaCupcake">Vanilla Cupcake</option>
+                        <option value="redVelvetCupcake">Red Velvet Cupcake</option>
+                        <option value="applePie">Apple Pie</option>
+                        <option value="blueberryPie">Blueberry Pie</option>
+                        <option value="pecanPie">Pecan Pie</option>
+                    </select>
+                    <p class="cart-text">Quantity:</p>
+                    <input type="number" class="cart-input" id="itemNum">
+                    <button type="button" class="cart-btn" id="orderItem">Update Cart</button>
+                </form>
+                <br>
+                <p class="cart-subheader">Delete Items</p>
+                <form>
+                    <p class="cart-text">Item:</p>
+                    <select class="cart-form" aria-label="Item Select" id="deleteItemSelect">
+                        
+                    </select>
+                    <button type="button" class="cart-btn" id="deleteItem">Delete Item</button>
+                    <button type="button" class="cart-btn" id="deleteAll">Delete All</button>
+                </form>
+                <br>
+            </div>
+            <br>
+            <button type="button" class="final-order-btn" id="placeOrder"><strong>Place Order!</strong></button>
+            <br>
+
+            <p class="cart-subheader"><strong>View Previous Orders:</strong></p>
+            <div class="cart-select p-1 cart-box">
+                <form>
+                    <p class="cart-subheader">Get Specific Item</p>
+                    <p class="cart-text">Select Order:</p>
+                    <select class="cart-form" aria-label="Item Select" id="prevOrderSelectSpecific">
+                    </select>
+                    <p class="cart-text">Select Item:</p>
+                    <select class="cart-form" aria-label="Item Select" id="prevItemSelect">
+                    </select>
+                    <button type="button" class="cart-btn" id="seePrevOrderSpecific">View Item</button>
+                    <p class="cart-text" id="prevOrderSpecificView">
+
+                    </p>
                     
-                </select>
-                <button type="button" class="edit-btn" id="deleteItem">Delete Item</button>
-                <button type="button" class="edit-btn" id="deleteAll">Delete All</button>
-            </form>
+                    <p class="cart-subheader">Get Full Order</p>
+                    <p class="cart-text">Select Order:</p>
+                    <select class="cart-form" aria-label="Item Select" id="prevOrderSelectFull">
+                    </select>
+                    <button type="button" class="cart-btn" id="seePrevOrderFull">See Order</button>
+                    <table class="cart-table">
+                        <tbody id = "order-table">
+                        </tbody>
+                        <tfoot id="order-price-total">
+                        </tfoot>
+                    </table>
+                </form>
+            </div>
+
             <br>
+
         </div>
-        <br>
-        <button type="button" class="final-order-btn" id="placeOrder"><strong>Place Order!</strong></button>
-        <br>
-        </div>
+
     </div>
 
 

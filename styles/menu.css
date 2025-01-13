@@ -303,7 +303,7 @@
     text-align:center;
 }
 
-.edit-select{
+.cart-select{
     width:80%;
     margin:auto;
     background-color: var(--light-pink);
@@ -311,7 +311,7 @@
     text-align:center;
 }
 
-.edit-text{
+.cart-text{
     display: inline-block;
     margin: 0rem 0.25rem 0.25rem;
     padding: 0.5rem;
@@ -320,7 +320,7 @@
     color: black;
 }
 
-.edit-subheader{
+.cart-subheader{
     display: block;
     font-family: 'Comic Neue';
     font-weight: 0.7rem;
@@ -329,7 +329,7 @@
     color: black;
 }
 
-.edit-btn {
+.cart-btn {
     display: inline-block;
     padding: 0.25rem;
     margin: 0rem 0.25rem 0.25rem;
@@ -346,13 +346,13 @@
                 color .15s ease-in-out;
 }
 
-.edit-btn:hover{
+.cart-btn:hover{
     background-color: var(--magenta);
     border: 1.5px dashed black;
     color: var(--light-pink);
 }
 
-.edit-form{
+.cart-form{
     --bs-form-select-bg-img: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e);
     display: inline-block;
     width: 30%;
@@ -375,7 +375,7 @@
     text-align:center;
 }
 
-.edit-input{
+.cart-input{
     display: inline-block;
     width: 30%;
     padding: .25rem;
