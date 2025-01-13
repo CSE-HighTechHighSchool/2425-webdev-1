@@ -35,7 +35,7 @@ let navList = document.getElementById("nav-list");
 let cartLink = document.getElementById("nav-cart");
 let currentUser = null;
 
-// ----------------------- Get User's Name'Name ------------------------------
+// ----------------------- Get User's Name ------------------------------
 function getUserName() {
     // Grab value for "the keep logged in" switch
     let keepLoggedIn = localStorage.getItem('keepLoggedIn');

@@ -85,11 +85,13 @@
     --bs-accordion-border-width:0px; /*Get ride of accordion border*/
 }
 
+/*Accordion hover animation*/
 .accordion:hover{
     --bs-accordion-btn-color: var(--light-pink); /*Set accordion text color when active to light pink*/
     --bs-accordion-btn-bg: var(--magenta); /*Set accordion background color when active to magenta*/
 }
 
+/*Set font weight for accordion item*/
 .accordion-item{
     font-weight:0.5rem;
 }
@@ -104,6 +106,7 @@
     margin-bottom: 20px;
 }
 
+/*Styles for 'Add to Cart' buttons on menu page*/
 .order-btn {
     display: inline-block;
     padding: 0.5rem;
@@ -121,12 +124,14 @@
                 color .15s ease-in-out;
 }
 
+/*'Add to Cart' button hover animation*/
 .order-btn:hover{
     background-color: var(--magenta);
     border: 1.5px dashed black;
     color: var(--light-pink);
 }
 
+/*Item type selector styles*/
 .order-form{
     --bs-form-select-bg-img: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e);
     display: inline-block;
@@ -150,6 +155,7 @@
     text-align:center;
 }
 
+/*Item quantity input styles*/
 .order-input{
     display: inline-block;
     width: 50%;
@@ -167,6 +173,7 @@
     text-align:center;
 }
 
+/*styling for text in order section of menu page*/
 .order-text{
     display: inline-block;
     margin:0.5rem;
@@ -176,6 +183,7 @@
     color: black;
 }
 
+/*Checkout Button Styles*/
 #checkout-button{
     display:block; /*Set display type to block*/
     color: black; /*Set text color to light pink*/
@@ -190,6 +198,7 @@
     text-decoration: none;
 }
 
+/*Checkout Button hover animation*/
 #checkout-button:hover{
     color: var(--light-pink); /*Set text color to light pink*/
     background-color: var(--magenta); /*Set text box color to magenta*/
@@ -197,19 +206,18 @@
                 color .15s ease-in-out;
 }
 
+/*General styles for cart page*/
 .cart{
     background-color: rgb(var(--pale-yellow)); /*Set background color to pale yellow*/
     overflow-x:hidden; /*Hide x overflow*/
-    /* Add your background pattern here */
-    /* Dotted background */
     background-image: radial-gradient(var(--light-orange) 10%, transparent 10%),
                         radial-gradient(var(--light-orange) 10%, transparent 10%);
     background-size: 50px 50px;
     background-position: 0 0, 25px 25px;
 }
 
-/* "Welcome" banner at top of page */
-.cart-header {
+/*Cart header bubbles styles*/
+.cart-header{
     display:block; 
     color: rgb(var(--base-text)); 
     background-color: var(--light-orange);
@@ -223,7 +231,7 @@
     margin-top: -25px;
 }
 
-/* Headers above cart and edit-cart boxes */
+/*Cart subheader text styles*/
 .cart-subheader{
     display:block; 
     color: rgb(var(--base-text)); 
@@ -233,10 +241,12 @@
     font-size: 3vw; 
 }
 
+/*Remove border from cart table header*/
 #cart-table-header {
     border: none;
 }
 
+/*Cart table styles*/
 .cart-table{
     font-family:'Comic Neue';
     background-color:var(--light-pink);
@@ -248,6 +258,7 @@
     border: solid 1.5px var(--magenta); 
 }
 
+/*Styles for "Items" header of the table*/
 .cart-items-header{
     text-align:center;
     width:50%;
@@ -255,6 +266,7 @@
     font-size:2vw;
 }
 
+/*Styles for "Quantity" and "Price" headers of the table*/
 .cart-quant-header, 
 .cart-price-header{
     text-align:center;
@@ -263,6 +275,7 @@
     font-size: 2vw;
 }
 
+/*Adjust table font sizes when screen is small*/
 @media screen and (max-width: 900px) { 
     .cart-header{
         font-size: 4.5vw; 
@@ -284,6 +297,7 @@
     }
 }
 
+/*Styles for items column of cart table*/
 .cart-items-col{
     text-align:left;
     border: dashed 1.5px var(--magenta);
@@ -291,6 +305,7 @@
                 color .15s ease-in-out;
 }
 
+/*Styles for quantity and price columns of cart table*/
 .cart-quant-col,
 .cart-price-col{
     text-align:center;
@@ -299,7 +314,7 @@
                 color .15s ease-in-out;
 }
 
-/* Box around sections on cart page */
+/*Styles for Edit Cart and Delete Cart segments*/
 .cart-box {
     width: 80%;
     margin: auto;
@@ -307,20 +322,15 @@
     background-color: var(--light-pink);
     border: solid 1.5px var(--magenta); 
     padding: 10px;
+    text-align:center;
 }
 
+/*Center text when cart is empty*/
 .cart-empty{
     text-align:center;
 }
 
-.cart-select{
-    width:80%;
-    margin:auto;
-    background-color: var(--light-pink);
-    border: solid 1.5px var(--magenta); 
-    text-align:center;
-}
-
+/*Style basic text on cart page*/
 .cart-text{
     display: inline-block;
     margin: 0rem 0.25rem 0.25rem;
@@ -330,15 +340,7 @@
     color: black;
 }
 
-.cart-subheader{
-    display: block;
-    font-family: 'Comic Neue';
-    font-weight: 0.7rem;
-    margin-top:.25rem;
-    text-decoration:underline;
-    color: black;
-}
-
+/*Styling for buttons in cart*/
 .cart-btn {
     display: inline-block;
     padding: 0.25rem;
@@ -356,12 +358,14 @@
                 color .15s ease-in-out;
 }
 
+/*Hover animations for buttons in cart*/
 .cart-btn:hover{
     background-color: var(--magenta);
     border: 1.5px dashed black;
     color: var(--light-pink);
 }
 
+/*Styles for dropdown boxes*/
 .cart-form{
     --bs-form-select-bg-img: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e);
     display: inline-block;
@@ -385,6 +389,7 @@
     text-align:center;
 }
 
+/*Styles for input boxes*/
 .cart-input{
     display: inline-block;
     width: 30%;
@@ -402,11 +407,13 @@
     text-align:center;
 }
 
+/*Center Delete All on a separate line*/
 #deleteAll{
     display:block;
     margin:auto;
 }
 
+/*Styles for Place Order Button*/
 .final-order-btn{
     display:block; /*Set display type to block*/
     color: black; /*Set text color to light pink*/
@@ -421,6 +428,7 @@
     padding:0px;
 }
 
+/*Hover animation for Place Order Button*/
 .final-order-btn:hover{
     color: var(--light-pink); /*Set text color to light pink*/
     background-color: var(--magenta); /*Set text box color to magenta*/
@@ -428,6 +436,7 @@
                 color .15s ease-in-out;
 }
 
+/*Center text in table footer*/
 .tfooter-value{
     text-align:center;
 }

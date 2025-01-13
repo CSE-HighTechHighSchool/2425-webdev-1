@@ -1,3 +1,10 @@
+/*
+    File: podcasts.js
+    Purpose: Let users rate podcasts and display ratings using pie charts
+    Date: 1/13/25
+    Created by: Maria, Maya, and Vee
+*/
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -22,8 +29,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getDatabase(app);
 
-document.getElementById("submit-but").onclick = function(){checkInput("one")};
-document.getElementById("submit-but-two").onclick = function(){checkInput("two")};
 let user = null;
 
 let navList = document.getElementById("nav-list");
@@ -51,6 +56,8 @@ async function getValue(episode, rating){
 }
 
 async function checkInput(episode){
+
+    // grabs star values
     let star1 = document.getElementById(episode+"-star1");
     let star2 = document.getElementById(episode+"-star2");
     let star3 = document.getElementById(episode+"-star3");
@@ -58,6 +65,7 @@ async function checkInput(episode){
     let star5 = document.getElementById(episode+"-star5");
     let value = 0;
 
+    // disables star rating selection
     star1.setAttribute('disabled', '');
     star2.setAttribute('disabled', '');
     star3.setAttribute('disabled', '');
@@ -65,6 +73,7 @@ async function checkInput(episode){
     star5.setAttribute('disabled', '');
 
     //console.log(star5.checked);
+    // sets value based on which star is selected
     if (star5.checked){
         value = 5;
     } else if (star4.checked){
@@ -77,19 +86,21 @@ async function checkInput(episode){
         value = 1;
     }
 
-    console.log(value);
+    //console.log(value);
+    // adds rating to user's information in firebase
     update(ref(db, 'users/' + user.uid + '/accountInfo/rating'), {
-         [user.uid]: value
+         ['ep'+episode]: value
          }).then(() => {
            alert('Thank you for rating!');
          }).catch((error) => {
            alert('There was an error. Error: ' + error);
          });
 
+    
     let newVal = await getValue(episode, value);
-
     // console.log(newVal);
 
+    // adds one to the rating count for pie chart
     update(ref(db, 'ratings/ep' + episode), {
          [value]: newVal+1
          }).then(() => {
@@ -103,10 +114,10 @@ async function getData(){
     let epOneRatings = []
     let epTwoRatings = []
 
+    // grabs ratings for episode 1
     await get(child(dbref, 'ratings/epone')).then((snapshot) => {
         if (snapshot.exists()){
           //console.log(snapshot.val());
-    
           snapshot.forEach(child => {
             //console.log(child.key, child.val());
             // Push key value pairs to correspond to their arrays
@@ -120,6 +131,7 @@ async function getData(){
       });
 
 
+      // grabs ratings for episode 2
       await get(child(dbref, 'ratings/eptwo')).then((snapshot) => {
         if (snapshot.exists()){
           //console.log(snapshot.val());
@@ -135,18 +147,73 @@ async function getData(){
       }).catch((error) => {
         alert('unsuccessful, error' + error);
       });
-    //figure this out!
+   // returns number of people who gave 1 star ratings, 2 star ratings, etc. for each episode
    return {epOneRatings, epTwoRatings};
+}
+
+function checkRatingExist(episode){
+    const dbref = ref(db);
+
+    // if user already rated, doesn't let them rate again
+    get(child(dbref, 'users/' + user.uid + '/accountInfo/rating/ep' + episode)).then((snapshot) => {
+        if (snapshot.exists()){
+            //console.log(snapshot.val());
+            disableStars(episode, snapshot.val());
+        }
+        else { // if user didn't rate, let them select a rating
+            if (episode === "one"){
+                document.getElementById("submit-but").onclick = function(){checkInput("one")};
+                console.log('one triggered');
+            } else {
+                document.getElementById("submit-but-two").onclick = function(){checkInput("two")};
+            }
+        }
+      }).catch((error) => {
+        alert('unsuccessful, error' + error);
+      });
+    }
+
+function disableStars(episode, value){
+    let star1 = document.getElementById(episode+"-star1");
+    let star2 = document.getElementById(episode+"-star2");
+    let star3 = document.getElementById(episode+"-star3");
+    let star4 = document.getElementById(episode+"-star4");
+    let star5 = document.getElementById(episode+"-star5");
+
+    // checks what rating the user already gave so we can set it back to that
+    if (value === 2) {
+        star2.checked = true;
+    } else if (value === 3) {
+        star2.checked = true;
+        star3.checked = true;
+    } else if (value === 4) {
+        star2.checked = true;
+        star3.checked = true;
+        star4.checked = true;
+    } else {
+        //console.log('i made it here!');
+        star2.checked = true;
+        star3.checked = true;
+        star4.checked = true;
+        star5.checked = true;
+    }
+
+    // disables stars so user can't rate again
+    star1.setAttribute('disabled', '');
+    star2.setAttribute('disabled', '');
+    star3.setAttribute('disabled', '');
+    star4.setAttribute('disabled', '');
+    star5.setAttribute('disabled', '');
+    //console.log(star5.checked);
 }
 
 async function createChart(){
     const data = await getData();
-    console.log(data.epOneRatings);
+    //console.log(data.epOneRatings);
     const episodeOne = document.getElementById('ep-one-rating');
     const episodeTwo = document.getElementById('ep-two-rating');
 
     Chart.defaults.font.family = "Comic Neue";
-    Chart.defaults.color = '#000';
 
     const epOneChart = new Chart (episodeOne, {
         type: 'pie',
@@ -160,7 +227,7 @@ async function createChart(){
             }]
         }, 
         options: {
-            responsive: false
+            aspectRatio: 3 // makes chart smaller
         }
     })
 
@@ -176,7 +243,7 @@ async function createChart(){
             }]
         },
         options: {
-            responsive: false
+            aspectRatio: 3 // makes chart smaller
         }
     })
 }
@@ -186,9 +253,11 @@ window.onload = function(){
 
     getData();
 
+    // draws pie charts
     createChart();
 
     let userLink = document.getElementById("account-button");
+    // deletes cart page if user is not signed in
     if (!user) {
         navList.removeChild(cartLink)
         userLink.innerHTML = `
@@ -203,6 +272,9 @@ window.onload = function(){
           signOutUser("podcasts.html");
       }
     }
-}
 
-//
+    // checks if user already rated
+    checkRatingExist("one");
+    checkRatingExist("two");
+
+}
