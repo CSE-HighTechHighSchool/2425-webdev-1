@@ -304,7 +304,7 @@ async function deleteAll(userID){
         }
     })
     .then(()=>{
-        alert('Data deleted!');
+        alert('Order removed');
     })
     .catch((error)=> {
         alert('unsuccessful, error'+error);
