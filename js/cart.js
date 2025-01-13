@@ -28,6 +28,78 @@ let welcome = document.getElementById('cart-welcome');
 let table = document.getElementById('menu-table-section');
 let currentUser = null;
 
+const menu = {
+    'chocolateChipCookie':
+    {
+        name: 'Chocolate Chip Cookie', 
+        price: 1.50
+    },
+    'sugarCookie':
+    {
+        name:'Sugar Cookie', 
+        price:1.50
+    },
+    'smoreCookie':
+    {
+        name: "S'more Cookie", 
+        price:2.00
+    },
+    'pumpkinPie':
+    {
+        name:"Pumpkin Pie", 
+        price:24.00
+    },
+    'appleCiderDonuts':
+    {
+        name: "Apple Cider Donuts", 
+        price: 12.00
+    },
+    'chocolateCake':
+    {
+        name:'Chocolate Cake',
+        price:20.00
+    },
+    'vanillaCake':
+    {
+        name:"Vanilla Cake", 
+        price:20.00
+    },
+    'carrotCake':
+    {
+        name:"Carrot Cake", 
+        price:20.00},
+    'applePie':
+    {
+        name:"Apple Pie",
+        price:18.00
+    },
+    'pecanPie':
+    {
+        name:"Pecan Pie",
+        price:18.00
+    },
+    'blueberryPie':
+    {
+        name:"Blueberry Pie", 
+        price:18.00
+    },
+    'chocolateCupcake':
+    {
+        name:'Chocolate Cupcake',
+        price:4.00
+    },
+    'vanillaCupcake':
+    {
+        name:"Vanilla Cupcake",
+        price:4.00
+    },
+    'redVelvetCupcake':
+    {
+        name:"Red Velvet Cupcake",
+        price:4.00
+    }
+};
+
 function getUserName(){
     //Grab value for the 'keep logged in' switch
     let keepLoggedIn = localStorage.getItem('keepLoggedIn');
@@ -51,7 +123,9 @@ async function getDataSet(userID){
     let totalPrice = 0;
 
     tbodyEl.innerHTML='';   //Clear any existing table
-    itemList.innerHTML='';
+    itemList.innerHTML=`
+                <option disabled selected value="">Select an option</option>
+            `;
     tFooter.innerHTML = '';
 
     const dbref = ref(db);
@@ -130,6 +204,8 @@ function addItemToTable(item, quantity, tbodyEl, totalPrice){
 
   //console.log(item, quantity);
 
+  let menuItem=menu[item];
+
   let tableRow = document.createElement("tr");
   let td1 = document.createElement("td");
   td1.className="cart-items-col p-2"
@@ -138,76 +214,9 @@ function addItemToTable(item, quantity, tbodyEl, totalPrice){
   let td3 = document.createElement("td");
   td3.className="cart-price-col p-2"
 
-    if(item=='chocolateChipCookie'){
-        td1.innerHTML = 'Chocolate Chip Cookie';
-        td3.innerHTML = 1.50*quantity;
-        totalPrice+= 1.50*quantity;
-    }
-    else if(item=='sugarCookie'){
-        td1.innerHTML = 'Sugar Cookie';
-        td3.innerHTML = 1.50*quantity;
-        totalPrice+= 1.50*quantity;
-    }
-    else if(item=='smoreCookie'){
-        td1.innerHTML = "S'more Cookie";
-        td3.innerHTML = 2.00*quantity;
-        totalPrice+= 2.00*quantity;
-    }
-    else if(item=='pumpkinPie'){
-        td1.innerHTML = 'Pumpkin Pie';
-        td3.innerHTML = 24.00*quantity; 
-        totalPrice+= 24.00*quantity; 
-    }
-    else if(item=='appleCiderDonuts'){
-        td1.innerHTML = "Apple Cider Donuts";
-        td3.innerHTML = 12.00*quantity;
-        totalPrice+= 12.00*quantity; 
-    }
-    else if(item=='chocolateCake'){
-        td1.innerHTML = 'Chocolate Cake';
-        td3.innerHTML = 20.00*quantity;
-        totalPrice+= 20.00*quantity; 
-    }
-    else if(item=='vanillaCake'){
-        td1.innerHTML = "Vanilla Cake";
-        td3.innerHTML = 20.00*quantity;
-        totalPrice+= 20.00*quantity; 
-    }
-    else if(item=='carrotCake'){
-        td1.innerHTML = "Carrot Cake";
-        td3.innerHTML = 20.00*quantity;
-        totalPrice+= 20.00*quantity;
-    }
-    else if(item=='applePie'){
-        td1.innerHTML = "Apple Pie";
-        td3.innerHTML = 18.00*quantity;
-        totalPrice+= 18.00*quantity;
-    }
-    else if(item=='pecanPie'){
-        td1.innerHTML = "Pecan Pie";
-        td3.innerHTML = 18.00*quantity;
-        totalPrice+= 18.00*quantity;
-    }
-    else if(item=='blueberryPie'){
-        td1.innerHTML = "Blueberry Pie";
-        td3.innerHTML = 18.00*quantity;
-        totalPrice+= 18.00*quantity;
-    }
-    else if(item=='chocolateCupcake'){
-        td1.innerHTML = 'Chocolate Cupcake';
-        td3.innerHTML = 4.00*quantity;
-        totalPrice+= 4.00*quantity;
-    }
-    else if(item=='vanillaCupcake'){
-        td1.innerHTML = "Vanilla Cupcake";
-        td3.innerHTML = 4.00*quantity;
-        totalPrice+= 4.00*quantity;
-    }
-    else{
-        td1.innerHTML = "Red Velvet Cupcake";
-        td3.innerHTML = 4.00*quantity;
-        totalPrice+= 4.00*quantity;
-    }
+  td1.innerHTML = menuItem['name'];
+  td3.innerHTML = menuItem['price']*quantity;
+  totalPrice += menuItem['price']*quantity;
   td2.innerHTML = quantity;
 
   tableRow.appendChild(td1);
@@ -225,49 +234,8 @@ function addItemToList(item, itemList){
     let listItem = document.createElement("option");
     listItem.value=item;
 
-    if(item=='chocolateChipCookie'){
-        listItem.innerHTML = 'Chocolate Chip Cookie';
-    }
-    else if(item=='sugarCookie'){
-        listItem.innerHTML = 'Sugar Cookie';
-    }
-    else if(item=='smoreCookie'){
-        listItem.innerHTML = "S'more Cookie";
-    }
-    else if(item=='pumpkinPie'){
-        listItem.innerHTML = 'Pumpkin Pie';
-    }
-    else if(item=='appleCiderDonuts'){
-        listItem.innerHTML = "Apple Cider Donuts";
-    }
-    else if(item=='chocolateCake'){
-        listItem.innerHTML = 'Chocolate Cake';
-    }
-    else if(item=='vanillaCake'){
-        listItem.innerHTML = "Vanilla Cake";
-    }
-    else if(item=='carrotCake'){
-        listItem.innerHTML = "Carrot Cake";
-    }
-    else if(item=='applePie'){
-        listItem.innerHTML = "Apple Pie";
-    }
-    else if(item=='pecanPie'){
-        listItem.innerHTML = "Pecan Pie";
-    }
-    else if(item=='blueberryPie'){
-        listItem.innerHTML = "Blueberry Pie";
-    }
-    else if(item=='chocolateCupcake'){
-        listItem.innerHTML = 'Chocolate Cupcake';
-    }
-    else if(item=='vanillaCupcake'){
-        listItem.innerHTML = "Vanilla Cupcake";
-    }
-    else{
-        listItem.innerHTML = "Red Velvet Cupcake";
-    }
-
+    let menuItem=menu[item];
+    listItem.innerHTML =menuItem['name'];
     itemList.append(listItem);
 }
 
@@ -354,48 +322,8 @@ async function storeOrder (userID){
         }
     });
     for(let i = 0; i<items.length; i++){
-        if(items[i]=='chocolateChipCookie'){
-            price += 1.50*quantity[i];
-          }
-        else if(items[i]=='sugarCookie'){
-            price += 1.50*quantity[i];
-          }
-        else if(items[i]=='smoreCookie'){
-            price += 2.00*quantity[i];
-          }
-        else if(items[i]=='pumpkinPie'){
-            price += 24.00*quantity[i];
-          }
-        else if(items[i]=='appleCiderDonuts'){
-            price += 12.00*quantity[i];
-          }
-        else if(items[i]=='chocolateCake'){
-            price += 20.00*quantity[i];
-          }
-        else if(items[i]=='vanillaCake'){
-            price += 20.00*quantity[i];
-          }
-        else if(items[i]=='carrotCake'){
-            price += 20.00*quantity[i];
-          }
-        else if(items[i]=='applePie'){
-            price += 18.00*quantity[i];
-          }
-        else if(items[i]=='pecanPie'){
-            price += 18.00*quantity[i];
-          }
-        else if(items[i]=='blueberryPie'){
-            price += 18.00*quantity[i];
-          }
-        else if(items[i]=='chocolateCupcake'){
-            price += 4.00*quantity[i];
-          }
-        else if(items[i]=='vanillaCupcake'){
-            price += 4.00*quantity[i];
-          }
-        else{
-            price += 4.00*quantity[i];
-        }
+        let menuItem = menu[items[i]]
+        price+=menuItem['price']*quantity[i];
         update(ref(db, 'users/' + userID + '/accountInfo/orders/'+date), {
             [items[i]]: quantity[i]
         })
@@ -413,6 +341,200 @@ async function storeOrder (userID){
       });
 }
 
+async function getPrevOrderItem(userID,order){
+    
+    let itemList = document.getElementById('prevItemSelect');
+    const items = [];
+    itemList.innerHTML= `<option disabled selected value="">Select an option</option>
+            `;
+
+    const dbref = ref(db);
+    
+    await get(child(dbref, 'users/'+userID+'/accountInfo/orders/'+order)).then((snapshot)=> {
+
+        if(snapshot.exists()){
+
+            snapshot.forEach(child => {
+            //console.log(child.key, child.val());
+
+            //Push key: value pairs to corresponding arrays
+            if(child.key!='price'){
+                items.push(child.key);
+            }
+            });
+            for(let i=0; i<items.length; i++){
+                let listItem = document.createElement("option");
+                listItem.value=items[i];
+                let menuItem=menu[items[i]];
+                listItem.innerHTML =menuItem['name'];
+                itemList.append(listItem);
+            }
+        }
+    })
+    .catch((error)=> {
+        alert('unsuccessful, error'+error);
+    });
+}
+
+async function getPrevOrderSpecific(userID, order, item){
+    let viewItem= document.getElementById('prevOrderSpecificView');
+    viewItem.innerHTML=`
+    <option disabled selected value="">Select an option</option>
+`;
+
+    const dbref = ref(db);
+    
+    await get(child(dbref, 'users/'+userID+'/accountInfo/orders/'+order)).then((snapshot)=> {
+        console.log(snapshot)
+        if(snapshot.exists()){
+            snapshot.forEach(child => {;
+                if(child.key==item){
+                    console.log(child.val());
+                    let menuItem = menu[item];
+                    viewItem.innerHTML=`The order has ${child.val()} order(s) of ${menuItem['name']}.`;   
+                };
+        })}
+    })
+    .catch((error)=> {
+        alert('unsuccessful, error'+error);
+    });
+}
+
+async function getPrevOrderFull(userID,order){
+    
+    const items = [];
+    const quantities = [];
+    let tbodyEl = document.getElementById('order-table'); 
+    let tFooter = document.getElementById('order-price-total')
+    let totalPrice=0;
+
+    tbodyEl.innerHTML='';   //Clear any existing table
+    tFooter.innerHTML = '';
+
+    const dbref = ref(db);
+
+  //Wait for all data to be pulled from the FB
+  //Must provide the path through the nodes to the data
+    await get(child(dbref, 'users/'+userID+'/accountInfo/orders/'+order)).then((snapshot)=> {
+
+        if(snapshot.exists()){
+
+            snapshot.forEach(child => {
+            //console.log(child.key, child.val());
+
+            //Push key: value pairs to corresponding arrays
+            items.push(child.key);
+            quantities.push(child.val());
+            });
+
+            //Dynamically add table rows to HTML using string interpolation
+
+            let th1=document.createElement("th");
+            th1.className="cart-items-header";
+            let th2=document.createElement("th");
+            th2.className="cart-quant-header";
+            let th3=document.createElement("th");
+            th3.className="cart-price-header";
+            th1.innerHTML = 'Item';
+            th2.innerHTML = 'Quantity';
+            th3.innerHTML = 'Price';
+
+            tbodyEl.appendChild(th1);
+            tbodyEl.appendChild(th2);
+            tbodyEl.appendChild(th3);
+
+            
+            for(let i = 0; i<items.length; i++){
+                if(items[i]=='price'){
+                    totalPrice=quantities[i];
+                }
+                else{   
+                    addOrderToTable(items[i], quantities[i], tbodyEl);
+                }
+            }
+            
+            let tFootRow = document.createElement("tr");
+            let tf1 = document.createElement("td");
+            let tf2 = document.createElement("td");
+            let tf3 = document.createElement("td");
+            
+            tf1.innerHTML = 'Total Price: ';
+            tf1.className="p-2"
+            tf2.innerHTML = '';
+            tf3.innerHTML = totalPrice;
+            tf3.className="tfooter-value p-2"
+            tFootRow.appendChild(tf1);
+            tFootRow.appendChild(tf2);
+            tFootRow.appendChild(tf3);
+            tFooter.appendChild(tFootRow);
+        }
+    })
+    .catch((error)=> {
+        alert('unsuccessful, error'+error);
+    });
+}
+
+function addOrderToTable(item, quantity, tbodyEl){
+
+    //console.log(item, quantity);
+  
+    let menuItem=menu[item];
+  
+    let tableRow = document.createElement("tr");
+    let td1 = document.createElement("td");
+    td1.className="cart-items-col p-2"
+    let td2 = document.createElement("td");
+    td2.className="cart-quant-col p-2"
+    let td3 = document.createElement("td");
+    td3.className="cart-price-col p-2"
+  
+    td1.innerHTML = menuItem['name'];
+    td3.innerHTML = menuItem['price']*quantity;
+    td2.innerHTML = quantity;
+  
+    tableRow.appendChild(td1);
+    tableRow.appendChild(td2);
+    tableRow.appendChild(td3);
+  
+    tbodyEl.appendChild(tableRow);
+  }
+
+async function getPrevOrders(userID, elementID){
+    let orderList = document.getElementById(elementID); 
+    let orders=[];
+    orderList.innerHTML=`
+    <option disabled selected value="">Select an option</option>
+`;
+
+    const dbref = ref(db);
+
+  //Wait for all data to be pulled from the FB
+  //Must provide the path through the nodes to the data
+    await get(child(dbref, 'users/'+userID+'/accountInfo/orders')).then((snapshot)=> {
+
+        if(snapshot.exists()){
+
+            snapshot.forEach(child => {
+            //console.log(child.key, child.val());
+
+            //Push key: value pairs to corresponding arrays
+            orders.push(child.key);
+            });
+
+
+            for(let i = 0; i<orders.length; i++){
+                let listOrder = document.createElement("option");
+                listOrder.value=orders[i];
+                listOrder.innerHTML=orders[i];
+                orderList.append(listOrder);
+            }
+        }
+    })
+    .catch((error)=> {
+        alert('unsuccessful, error'+error);
+    });
+}
+
 window.onload = function(){
     
     getUserName()
@@ -424,8 +546,9 @@ window.onload = function(){
     else{
         welcome.innerText = 'Welcome '+currentUser.firstname+'!';
         const userID = currentUser.uid;
-
         getDataSet(userID);
+        getPrevOrders(userID, 'prevOrderSelectSpecific');
+        getPrevOrders(userID, 'prevOrderSelectFull');
     }
 
 }
@@ -461,7 +584,30 @@ document.getElementById('placeOrder').onclick = function(){
     storeOrder(userID).then(()=>{
         deleteAll(userID).then(()=>{    
             getDataSet(userID);
+            getPrevOrders(userID, 'prevOrderSelectSpecific');
+            getPrevOrders(userID, 'prevOrderSelectFull');
         });
     });
     
+}
+
+document.getElementById('seePrevOrderFull').onclick=function(){
+    const userID = currentUser.uid;
+    const order = document.getElementById('prevOrderSelectFull').value;
+
+    getPrevOrderFull(userID, order);
+}
+
+document.getElementById('prevOrderSelectSpecific').onchange=function(){
+    const userID = currentUser.uid;
+    const order = document.getElementById('prevOrderSelectSpecific').value;
+    getPrevOrderItem(userID, order);
+}
+
+document.getElementById('seePrevOrderSpecific').onclick=function(){
+    const userID = currentUser.uid;
+    const order = document.getElementById('prevOrderSelectSpecific').value;
+    const item = document.getElementById('prevItemSelect').value;
+
+    getPrevOrderSpecific(userID, order, item);
 }
