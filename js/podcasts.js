@@ -63,6 +63,7 @@ async function getValue(episode, rating){
 
 async function checkInput(episode){
 
+    // grabs star values
     let star1 = document.getElementById(episode+"-star1");
     let star2 = document.getElementById(episode+"-star2");
     let star3 = document.getElementById(episode+"-star3");
@@ -70,6 +71,7 @@ async function checkInput(episode){
     let star5 = document.getElementById(episode+"-star5");
     let value = 0;
 
+    // disables star rating selection
     star1.setAttribute('disabled', '');
     star2.setAttribute('disabled', '');
     star3.setAttribute('disabled', '');
@@ -77,6 +79,7 @@ async function checkInput(episode){
     star5.setAttribute('disabled', '');
 
     //console.log(star5.checked);
+    // sets value based on which star is selected
     if (star5.checked){
         value = 5;
     } else if (star4.checked){
@@ -90,6 +93,7 @@ async function checkInput(episode){
     }
 
     //console.log(value);
+    // adds rating to user's information in firebase
     update(ref(db, 'users/' + user.uid + '/accountInfo/rating'), {
          ['ep'+episode]: value
          }).then(() => {
@@ -98,10 +102,11 @@ async function checkInput(episode){
            alert('There was an error. Error: ' + error);
          });
 
+    
     let newVal = await getValue(episode, value);
-
     // console.log(newVal);
 
+    // adds one to the rating count for pie chart
     update(ref(db, 'ratings/ep' + episode), {
          [value]: newVal+1
          }).then(() => {
@@ -115,10 +120,10 @@ async function getData(){
     let epOneRatings = []
     let epTwoRatings = []
 
+    // grabs ratings for episode 1
     await get(child(dbref, 'ratings/epone')).then((snapshot) => {
         if (snapshot.exists()){
           //console.log(snapshot.val());
-    
           snapshot.forEach(child => {
             //console.log(child.key, child.val());
             // Push key value pairs to correspond to their arrays
@@ -132,6 +137,7 @@ async function getData(){
       });
 
 
+      // grabs ratings for episode 2
       await get(child(dbref, 'ratings/eptwo')).then((snapshot) => {
         if (snapshot.exists()){
           //console.log(snapshot.val());
@@ -147,20 +153,20 @@ async function getData(){
       }).catch((error) => {
         alert('unsuccessful, error' + error);
       });
-    //figure this out!
+   // returns number of people who gave 1 star ratings, 2 star ratings, etc. for each episode
    return {epOneRatings, epTwoRatings};
 }
 
 function checkRatingExist(episode){
     const dbref = ref(db);
 
+    // if user already rated, doesn't let them rate again
     get(child(dbref, 'users/' + user.uid + '/accountInfo/rating/ep' + episode)).then((snapshot) => {
         if (snapshot.exists()){
             //console.log(snapshot.val());
             disableStars(episode, snapshot.val());
-            alert('You already gave a rating!');
         }
-        else {
+        else { // if user didn't rate, let them select a rating
             if (episode === "one"){
                 document.getElementById("submit-but").onclick = function(){checkInput("one")};
                 console.log('one triggered');
@@ -180,36 +186,31 @@ function disableStars(episode, value){
     let star4 = document.getElementById(episode+"-star4");
     let star5 = document.getElementById(episode+"-star5");
 
+    // checks what rating the user already gave so we can set it back to that
     if (value === 2) {
-       
         star2.checked = true;
     } else if (value === 3) {
-     
         star2.checked = true;
         star3.checked = true;
     } else if (value === 4) {
-    
         star2.checked = true;
         star3.checked = true;
         star4.checked = true;
     } else {
         //console.log('i made it here!');
-   
         star2.checked = true;
         star3.checked = true;
         star4.checked = true;
         star5.checked = true;
     }
 
+    // disables stars so user can't rate again
     star1.setAttribute('disabled', '');
     star2.setAttribute('disabled', '');
     star3.setAttribute('disabled', '');
     star4.setAttribute('disabled', '');
     star5.setAttribute('disabled', '');
-
-
     //console.log(star5.checked);
-    
 }
 
 async function createChart(){
@@ -219,7 +220,6 @@ async function createChart(){
     const episodeTwo = document.getElementById('ep-two-rating');
 
     Chart.defaults.font.family = "Comic Neue";
-    Chart.defaults.color = '#000';
 
     const epOneChart = new Chart (episodeOne, {
         type: 'pie',
@@ -233,7 +233,7 @@ async function createChart(){
             }]
         }, 
         options: {
-            aspectRatio: 3
+            aspectRatio: 3 // makes chart smaller
         }
     })
 
@@ -249,26 +249,28 @@ async function createChart(){
             }]
         },
         options: {
-            aspectRatio: 3
+            aspectRatio: 3 // makes chart smaller
         }
     })
 }
 
 window.onload = function(){
 
+    // gets user information
     getUserName();
 
     getData();
 
+    // draws pie charts
     createChart();
 
+    // deletes cart page if user is not signed in
     if (!user) {
         navList.removeChild(cartLink)
     }
 
+    // checks if user already rated
     checkRatingExist("one");
     checkRatingExist("two");
 
 }
-
-//
