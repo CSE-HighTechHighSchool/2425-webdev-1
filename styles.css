@@ -521,6 +521,17 @@
     color: #ffa723 !important;
   }
 
+#ep-one-rating{
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+}
+
+#ep-two-rating{
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+}
 
 /* About Us/FAQ page styles */
 .top-banner{  /*styles about us header*/

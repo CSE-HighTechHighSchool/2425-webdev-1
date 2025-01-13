@@ -166,11 +166,12 @@ async function getData(){
     // })
 
     //figure this out!
-   return epOneRatings, epTwoRatings;
+   return {epOneRatings, epTwoRatings};
 }
 
 async function createChart(){
     const data = await getData();
+    console.log(data.epOneRatings);
     const episodeOne = document.getElementById('ep-one-rating');
     const episodeTwo = document.getElementById('ep-two-rating');
 
@@ -184,9 +185,12 @@ async function createChart(){
             datasets: [{
                 label: 'Episode One Ratings',
                 data: data.epOneRatings,
-                backgroundColor: ['#fff', '#fff', '#fff', '#fff', '#fff'],
-                hoverOffset: 4
+                backgroundColor: ['#ffeac4', '#f5cd84', '#fccb68', '#ffbb54', '#e6a365'],
+                hoverOffset: 4,
             }]
+        }, 
+        options: {
+            responsive: false
         }
     })
 
@@ -197,9 +201,12 @@ async function createChart(){
             datasets: [{
                 label: 'Episode Two Ratings',
                 data: data.epTwoRatings,
-                backgroundColor: ['#fff', '#fff', '#fff', '#fff', '#fff'],
+                backgroundColor:['#ffeac4', '#f5cd84', '#fccb68', '#ffbb54', '#e6a365'],
                 hoverOffset: 4
             }]
+        },
+        options: {
+            responsive: false
         }
     })
 }
@@ -211,3 +218,5 @@ window.onload = function(){
 
     createChart();
 }
+
+//
