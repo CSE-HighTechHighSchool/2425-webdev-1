@@ -25,7 +25,7 @@ document.getElementById("submit-but-two").onclick = function(){checkInput("two")
 let user = null;
 
 let navList = document.getElementById("nav-list");
-let cartLink = document.getElementById("cart-link");
+let cartLink = document.getElementById("nav-cart");
 
 
 function getUserName(){
@@ -93,7 +93,7 @@ async function checkInput(episode){
     update(ref(db, 'users/' + user.uid + '/accountInfo/rating'), {
          [user.uid]: value
          }).then(() => {
-           alert('Data stored successfully.');
+           alert('Thank you for rating!');
          }).catch((error) => {
            alert('There was an error. Error: ' + error);
          });
@@ -105,7 +105,7 @@ async function checkInput(episode){
     update(ref(db, 'ratings/ep' + episode), {
          [value]: newVal+1
          }).then(() => {
-           alert('Data stored successfully.');
+           console.log('data stored successfully.');
          }).catch((error) => {
            alert('There was an error. Error: ' + error);
          });
@@ -147,28 +147,6 @@ async function getData(){
       }).catch((error) => {
         alert('unsuccessful, error' + error);
       });
-    // get(ref(db, 'users/' + user.uid + '/accountInfo/rating/epone')).then((snapshot) => {
-    //     if (snapshot.exists()){
-    //         //console.log("This is snap" + snapshot.val());
-    //         epOneRatings.push(snapshot.val());
-    //     } else {
-    //         console.log('No rating.');
-    //     }
-    // }).catch((error) => {
-    //     console.log(error);
-    // })
-
-    // get(ref(db, 'users/' + user.uid + '/accountInfo/rating/eptwo')).then((snapshot) => {
-    //     if (snapshot.exists()){
-    //         //console.log(snapshot.val());
-    //         epTwoRatings.push(snapshot.val());
-    //     } else {
-    //         console.log('No rating.');
-    //     }
-    // }).catch((error) => {
-    //     console.log(error);
-    // })
-
     //figure this out!
    return {epOneRatings, epTwoRatings};
 }
