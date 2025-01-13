@@ -144,7 +144,7 @@
 
 
 .landing-header { /* Styling for the header of the landing page */
-    background-image: url("img/alt-awning.png");
+    background-image: url("../img/alt-awning.png");
     background-size: contain;
     background-position: bottom-right;
     background-color: var(--light-orange);
@@ -221,14 +221,14 @@
 }
 
 .landing-wave { /* Adds wave border between featured items and podcast section of page */
-    background-image: url("img/light-orange-wave.svg");
+    background-image: url("../img/light-orange-wave.svg");
     margin-top: -1.1%;
     border-bottom: 1px solid rgb(var(--pale-yellow));
     border-top: 1px solid var(--light-orange);
 }
 
 .landing-wave-2 { /* Adds wave border between podcast and reviews section */
-    background-image: url("img/pale-yellow-wave.svg");
+    background-image: url("../img/pale-yellow-wave.svg");
     margin-top: -1.1%;
     border-bottom: 1px solid var(--light-pink);
     border-top: 1px solid rgb(var(--pale-yellow));
@@ -540,7 +540,7 @@
     text-align: center;
     position: static;
     z-index: 5; /*sets about header in front of triangle button*/
-    background-image: url(img/lindsor-cookie.jpg);
+    background-image: url(../img/lindsor-cookie.jpg);
     background-size: cover;
     background-position: center;
     /*creates a magenta low opacity box shadow over the background image*/
@@ -651,12 +651,12 @@
 
 /*customizes accordion button arrow icon before click*/
 .accordion-faq .accordion-button::after{
-   background-image: url(img/orange-arrow.png);
+   background-image: url(../img/orange-arrow.png);
 }
 
 /*customizes accordion button arrow icon after clicked*/
 .accordion-faq .accordion-button:not(.collapsed)::after{
-    background-image: url(img/light-orange-arrow.png);
+    background-image: url(../img/light-orange-arrow.png);
 }
 
 /* Footer styles*/
