@@ -88,7 +88,7 @@ function validation(firstName, lastName, email, password) {
     // Regex for all fields
     let fNameRegex = /^[a-zA-Z]+$/;
     let lNameRegex = /^[a-zA-Z]+$/;
-    let emailRegex = /^[a-zA-Z]+@(gmail|ctemc|yahoo)\.(org|com)$/;
+    let emailRegex = /^\w+@(gmail|ctemc|yahoo)\.(org|com)$/;
 
     // Alert if any fields are empty
     if (isEmptyorSpaces(firstName) || isEmptyorSpaces(lastName) || isEmptyorSpaces(email)
