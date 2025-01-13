@@ -24,6 +24,10 @@ document.getElementById("submit-but").onclick = function(){checkInput("one")};
 document.getElementById("submit-but-two").onclick = function(){checkInput("two")};
 let user = null;
 
+let navList = document.getElementById("nav-list");
+let cartLink = document.getElementById("cart-link");
+
+
 function getUserName(){
     //Grab value for the 'keep logged in' switch
     let keepLoggedIn = localStorage.getItem('keepLoggedIn');
@@ -217,6 +221,10 @@ window.onload = function(){
     getData();
 
     createChart();
+
+    if (!user) {
+        navList.removeChild(cartLink)
+    }
 }
 
 //
