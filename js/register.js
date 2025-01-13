@@ -72,7 +72,7 @@ document.getElementById('submitData').onclick = function() {
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        alert(errorMessage);
+        alert(errorMessage);    // log error message
     });
 
    
@@ -85,61 +85,42 @@ function isEmptyorSpaces(str){
 
 /* ---------------------- Validate Registration Data -----------------------*/
 function validation(firstName, lastName, email, password) {
+    // Regex for all fields
     let fNameRegex = /^[a-zA-Z]+$/;
     let lNameRegex = /^[a-zA-Z]+$/;
-    let emailRegex = /^[a-zA-Z]+@(gmail|ctemc|yahoo)\.org$/;
+    let emailRegex = /^[a-zA-Z]+@(gmail|ctemc|yahoo)\.(org|com)$/;
 
+    // Alert if any fields are empty
     if (isEmptyorSpaces(firstName) || isEmptyorSpaces(lastName) || isEmptyorSpaces(email)
     || isEmptyorSpaces(password)) {
         alert("Please complete all fields");
         return false;
     }
 
+    // Alerts if firstName is invalid
     if (!fNameRegex.test(firstName)) {
         alert("The first name should only contain letters.")
         return false;
     }
 
+    // Alerts if lastName is invalid
     if (!lNameRegex.test(lastName)) {
         alert("The last name should only contain letters.")
         return false;
     }
 
+    // Alerts if email is invalid
     if (!emailRegex.test(email)) {
         alert("Please enter a valid email.")
         return false;
     }
 
     return true;
-  
 }
 
 /* --------------- Password Encryption -------------------------------------*/
 function encryptPass(password) {
+    // encrypt password before storing
     let encrypted = CryptoJS.AES.encrypt(password, password);
     return encrypted.toString();
 }
-
-// ---------------- Keep User Logged In ----------------------------------//
-function logIn(user) {
-    let keepLoggedIn = document.getElementById('keepLoggedInSwitch').ariaChecked;
-    console.log(user)
-    
-    // Session storage is temporary (only while session is active)
-    // Info saved as a string (must convert JS object to a string)
-    // session storage will be cleared with a signOut() function in home.js
-    if (!keepLoggedIn) {
-        sessionStorage.setItem('user', JSON.stringify(user))
-        window.location = 'home.html';
-    } 
-    
-    // Local storage will stay even if browser is closed
-    // Local storage will be cleared with "signOut()" function
-    else {
-        localStorage.setItem('keepLoggedIn', 'yes');
-        localStorage.setItem('user', JSON.stringify(user));
-        console.log(localStorage.getItem('user'))
-        window.location = 'home.html';
-    }
-}
-

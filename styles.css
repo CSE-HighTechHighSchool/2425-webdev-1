@@ -90,6 +90,7 @@
     top: -10px;
 }
 
+/* Sign in, Create New Account, and Sign Out buttons */
 .acct-btn {
     font-size: 1rem !important;
 }

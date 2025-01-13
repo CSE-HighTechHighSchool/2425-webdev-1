@@ -196,13 +196,15 @@
     background-color: rgb(var(--pale-yellow)); /*Set background color to pale yellow*/
     overflow-x:hidden; /*Hide x overflow*/
     /* Add your background pattern here */
+    /* Dotted background */
     background-image: radial-gradient(var(--light-orange) 10%, transparent 10%),
                         radial-gradient(var(--light-orange) 10%, transparent 10%);
     background-size: 50px 50px;
     background-position: 0 0, 25px 25px;
 }
 
-.cart-header{
+/* "Welcome" banner at top of page */
+.cart-header {
     display:block; 
     color: rgb(var(--base-text)); 
     background-color: var(--light-orange);
@@ -215,13 +217,14 @@
     border: solid 1.5px var(--orange); 
 }
 
+/* Headers above cart and edit-cart boxes */
 .cart-subheader{
     display:block; 
     color: rgb(var(--base-text)); 
-    font-family: 'Comic Neue'; 
+    font-family: 'Cookie'; 
     text-align: center; 
     margin:auto; 
-    font-size: 2.3vw; 
+    font-size: 3vw; 
 }
 
 #cart-table-header {
@@ -290,6 +293,7 @@
                 color .15s ease-in-out;
 }
 
+/* Box around sections on cart page */
 .cart-box {
     width: 80%;
     margin: auto;

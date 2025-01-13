@@ -52,13 +52,15 @@ function getUserName() {
 window.onload = function() {
     getUserName();  // Get current user's first name
     console.log(currentUser);
-    if (currentUser === null) {
+    if (currentUser === null) { // If no user signed in
+        // Put Create New Account and Sign In button in top right corner of page
         userLink.innerHTML = `
             <a class="btn menu-btn acct-btn" href="register.html">Create New Account</a>
             <a class="btn menu-btn acct-btn" href="signin.html">Sign in</a>
         `
         navList.removeChild(cartLink);
     } else {
+        // Put sign out button on top right corner of page
         userLink.innerHTML = `
             <a class="btn menu-btn acct-btn" id="signOut">Sign Out</a>
         `

@@ -1,5 +1,7 @@
 /* Registration page styles */
+
 .signin-form {
+    /* Center form on page */
     margin: auto;
     background-color: var(--light-pink);
 }
@@ -7,6 +9,7 @@
 .register-body {
     width: 100%;
     height: 100%;
+    /* Striped background */
     background: linear-gradient(
       to right,
       rgb(var(--pale-yellow)) 0%,
@@ -20,6 +23,7 @@
     background-repeat: repeat;
 }
 
+/* Submit button styling */
 .btn-register {
     --bs-btn-color: #fff;
     --bs-btn-bg: var(--medium-pink);
@@ -30,6 +34,7 @@
     width: 100%;
 }
 
+/* Input boxes */
 .user-input {
     font-size: 1.5vw;
 }

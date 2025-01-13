@@ -69,7 +69,9 @@ window.onload=function(){
       const checkout = document.getElementById("checkout-button");
       checkout.style.display= "none";
 
-      navList.removeChild(cartLink);
+      const navList = document.getElementById("nav-list");    // Navbar element
+      const cartLink = document.getElementById("nav-cart");   // Link to cart page
+      navList.removeChild(cartLink);  // remove cart link from navbar if there is no user signed
   }
 }
 
