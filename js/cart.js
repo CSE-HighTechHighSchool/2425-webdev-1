@@ -304,7 +304,7 @@ async function deleteAll(userID){
         }
     })
     .then(()=>{
-        alert('Order removed');
+        alert('Items removed');
     })
     .catch((error)=> {
         alert('unsuccessful, error'+error);
@@ -342,37 +342,39 @@ async function storeOrder (userID){
             //Push key: value pairs to corresponding arrays
             items.push(child.key);
             quantity.push(child.val());
-            });
+            }).then(()=>{
+                //Go through the array of keys and add to 'orders' section of database
+                for(let i = 0; i<items.length; i++){
+                    
+                    //Get item object properties
+                    let menuItem = menu[items[i]]
+
+                    //use menu properties to get price and add to total price
+                    price+=menuItem['price']*quantity[i];
+
+                    //update database
+                    update(ref(db, 'users/' + userID + '/accountInfo/orders/'+date), {
+                        [items[i]]: quantity[i]
+                    })
+                .catch((error)=>{
+                    alert('Error: item could not be added')
+                });
+                }
+                //Add total order price to the database
+                update(ref(db, 'users/' + userID + '/accountInfo/orders/'+date), {
+                    ['price']: price
+                }).then(()=>{
+                    alert('Order placed successfully!');
+                }).catch((error)=>{
+                    alert('Error: issue with price calculation');
+                });
+            })
         }
         else{
             alert('Cannot place a blank order');
+            throw new Error('Cannot place a blank order');
         }
     });
-    //Go through the array of keys and add to 'orders' section of database
-    for(let i = 0; i<items.length; i++){
-        
-        //Get item object properties
-        let menuItem = menu[items[i]]
-
-        //use menu properties to get price and add to total price
-        price+=menuItem['price']*quantity[i];
-
-        //update database
-        update(ref(db, 'users/' + userID + '/accountInfo/orders/'+date), {
-            [items[i]]: quantity[i]
-        })
-      .catch((error)=>{
-        alert('Error: item could not be added')
-      });
-    }
-    //Add total order price to the database
-    update(ref(db, 'users/' + userID + '/accountInfo/orders/'+date), {
-        ['price']: price
-    }).then(()=>{
-        alert('Order placed successfully!');
-    }).catch((error)=>{
-        alert('Error: issue with price calculation');
-      });
 }
 
 //Get previous order names from Firebase
@@ -664,7 +666,7 @@ document.getElementById('placeOrder').onclick = function(){
     //Call function
     storeOrder(userID).then(()=>{
         //Delete all items from current cart 
-        deleteAll(userID).then(()=>{    
+            deleteAll(userID).then(()=>{    
             //Reset data table and previous order views
             getDataSet(userID);
             getPrevOrders(userID, 'prevOrderSelectSpecific');

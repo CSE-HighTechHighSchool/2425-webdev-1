@@ -278,12 +278,12 @@
 /*Adjust table font sizes when screen is small*/
 @media screen and (max-width: 900px) { 
     .cart-header{
-        font-size: 4.5vw; 
+        font-size: 5vw; 
     }
     
     .cart-subheader, 
     .order-btn{
-        font-size: 4vw; 
+        font-size: 4.5vw; 
     }
     
     .cart-table{
@@ -296,6 +296,7 @@
         font-size: 3.4vw;
     }
 }
+
 
 /*Styles for items column of cart table*/
 .cart-items-col{
@@ -422,10 +423,10 @@
     text-align: center; /*Align text to the center*/
     width: 25%; /*Set width to 25%*/
     margin:auto; /*Center textbox*/
-    font-size: 2.3vw; /*Set font size to lg heading size*/
+    font-size: 3vw; /*Set font size to 3vw*/
     border-radius:30px; /*Round text box edges*/
     border: solid 1.5px var(--magenta); /*Add black border to text box*/
-    padding:0px;
+    padding:3px;
 }
 
 /*Hover animation for Place Order Button*/
