@@ -5,6 +5,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebas
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
 import { getDatabase, ref, set, update, child, get } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
 
+import { getUserName, signOutUser } from "./helper.js";
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
 apiKey: "AIzaSyDrkDGdwaN0Ny08t08JPv8mb3_jZqUsSRg",
@@ -26,20 +28,6 @@ let user = null;
 
 let navList = document.getElementById("nav-list");
 let cartLink = document.getElementById("nav-cart");
-
-
-function getUserName(){
-    //Grab value for the 'keep logged in' switch
-    let keepLoggedIn = localStorage.getItem('keepLoggedIn');
-  
-    //Grab user information from the signIn.JS
-    if(keepLoggedIn == 'yes'){
-      user = JSON.parse(localStorage.getItem('user'));
-    }
-    else{
-      user = JSON.parse(sessionStorage.getItem('user'));
-    }
-}
 
 const dbref = ref(db);
 
@@ -194,14 +182,26 @@ async function createChart(){
 }
 
 window.onload = function(){
-    getUserName();
+    user = getUserName();
 
     getData();
 
     createChart();
 
+    let userLink = document.getElementById("account-button");
     if (!user) {
         navList.removeChild(cartLink)
+        userLink.innerHTML = `
+            <a class="btn menu-btn acct-btn" href="register.html">Create New Account</a>
+            <a class="btn menu-btn acct-btn" href="signin.html">Sign in</a>
+        `
+    } else {
+      userLink.innerHTML = `
+            <a class="btn menu-btn acct-btn" id="signOut">Sign Out</a>
+        `
+        document.getElementById('signOut').onclick = () => {
+          signOutUser("podcasts.html");
+      }
     }
 }
 

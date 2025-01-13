@@ -5,6 +5,8 @@ import { getAuth }
 import { getDatabase, ref, update, child, get, remove} 
   from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
 
+import { signOutUser } from "./helper.js";
+
   // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyDrkDGdwaN0Ny08t08JPv8mb3_jZqUsSRg",
@@ -610,4 +612,9 @@ document.getElementById('seePrevOrderSpecific').onclick=function(){
     const item = document.getElementById('prevItemSelect').value;
 
     getPrevOrderSpecific(userID, order, item);
+}
+
+// Sign out button
+document.getElementById('signOut').onclick = () => {
+    signOutUser("menu.html");
 }

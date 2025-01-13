@@ -10,6 +10,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebas
 import { getAuth } 
   from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
 
+import { getUserName, signOutUser } from "./helper.js";
+
   // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyDrkDGdwaN0Ny08t08JPv8mb3_jZqUsSRg",
@@ -29,26 +31,28 @@ const auth = getAuth();
 // Store current user
 let currentUser = null;
 
-// Get the current user, if there is ones
-function getUserName(){
-    //Grab value for the 'keep logged in' switch
-    let keepLoggedIn = localStorage.getItem('keepLoggedIn');
-  
-    //Grab user information from the signIn.JS
-    if(keepLoggedIn == 'yes'){
-      currentUser = JSON.parse(localStorage.getItem('user'));
-    }
-    else{
-      currentUser = JSON.parse(sessionStorage.getItem('user'));
-    }
-}
 
 // Runs when the page loads
 window.onload = function() {
-    getUserName();
+    currentUser = getUserName();
+    let userLink = document.getElementById("account-button");
     if (!currentUser) {
         const navList = document.getElementById("nav-list");    // Navbar element
         const cartLink = document.getElementById("nav-cart");   // Link to cart page
         navList.removeChild(cartLink);  // remove cart link from navbar if there is no user signed
+
+        // Add Create Account and SIgn In buttons
+        userLink.innerHTML = `
+            <a class="btn menu-btn acct-btn" href="register.html">Create New Account</a>
+            <a class="btn menu-btn acct-btn" href="signin.html">Sign in</a>
+        `
+    } else {
+      // Add sign out button
+      userLink.innerHTML = `
+            <a class="btn menu-btn acct-btn" id="signOut">Sign Out</a>
+        `
+        document.getElementById('signOut').onclick = () => {
+          signOutUser("about.html");
+      }
     }
 }

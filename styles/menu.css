@@ -20,10 +20,11 @@
     font-family: 'Cookie'; /*Set font to Cookie*/
     text-align: center; /*Align text to the center*/
     width: 25%; /*Set width to 25%*/
-    margin:auto; /*Center textbox*/
+    margin: auto; /*Center textbox*/
     font-size: var(--lg-heading-size); /*Set font size to lg heading size*/
     border-radius:30px; /*Round text box edges*/
     border: solid 1.5px rgb(var(--base-text)); /*Add black border to text box*/
+    margin-top: -20px;
 }
 
 /*Flexbox section of menu to hold accordions*/
@@ -46,6 +47,10 @@
     border-radius: 30px; /*Round edges*/
     border: solid 1.5px rgb(var(--base-text)); /*Create black border*/
     min-width:20rem;
+}
+
+#account-wrapper {
+    margin-top: 40px;
 }
 
 /*Menu subheaders*/
@@ -215,6 +220,7 @@
     font-size: var(--md-heading-size); 
     border-radius: 20px; 
     border: solid 1.5px var(--orange); 
+    margin-top: -25px;
 }
 
 /* Headers above cart and edit-cart boxes */
