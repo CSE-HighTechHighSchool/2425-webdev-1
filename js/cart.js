@@ -528,19 +528,21 @@ async function getPrevOrderFull(userID,order){
 
             //Dynamically add table rows to HTML using string interpolation
             for(let i = 0; i<items.length; i++){
+                //Set variable totalPrice to the order price instead of adding it to the table
                 if(items[i]=='price'){
                     totalPrice=quantities[i];
                 }
                 else{   
+                //Add items to table
                     addOrderToTable(items[i], quantities[i], tbodyEl);
                 }
             }
             
+            //Create table footer
             let tFootRow = document.createElement("tr");
             let tf1 = document.createElement("td");
             let tf2 = document.createElement("td");
             let tf3 = document.createElement("td");
-            
             tf1.innerHTML = 'Total Price: ';
             tf1.className="p-2"
             tf2.innerHTML = '';
@@ -557,12 +559,14 @@ async function getPrevOrderFull(userID,order){
     });
 }
 
+//Add items to the table
 function addOrderToTable(item, quantity, tbodyEl){
 
-    //console.log(item, quantity);
-  
+    //Use object values for the item
     let menuItem=menu[item];
   
+    //Add name, price, and quantity of item to the table
+    
     let tableRow = document.createElement("tr");
     let td1 = document.createElement("td");
     td1.className="cart-items-col p-2"
@@ -570,7 +574,7 @@ function addOrderToTable(item, quantity, tbodyEl){
     td2.className="cart-quant-col p-2"
     let td3 = document.createElement("td");
     td3.className="cart-price-col p-2"
-  
+    
     td1.innerHTML = menuItem['name'];
     td3.innerHTML = menuItem['price']*quantity;
     td2.innerHTML = quantity;
@@ -582,17 +586,22 @@ function addOrderToTable(item, quantity, tbodyEl){
     tbodyEl.appendChild(tableRow);
   }
 
-
+//When page loads
 window.onload = function(){
-    
+    //Get user information
     getUserName()
+
+    //If not signed in, tell user and hide other information
     if(!currentUser){
         welcome.innerText = "You are not signed in. Please sign in to order";
         const page = document.getElementById("cart-functions");
         page.style.display = "none";
     }
     else{
+        //Greet user
         welcome.innerText = 'Welcome '+currentUser.firstname+'!';
+        
+        //get user information and display data
         const userID = currentUser.uid;
         getDataSet(userID);
         getPrevOrders(userID, 'prevOrderSelectSpecific');
@@ -601,36 +610,53 @@ window.onload = function(){
 
 }
 
+//Update cart
 document.getElementById('orderItem').onclick = function(){
+    //Get values
     const item = document.getElementById('itemSelect').value;
     const quantity = document.getElementById('itemNum').value;
     const userID = currentUser.uid;
 
+    //Call function
     addItemToOrder(userID, item, quantity);  
+
+    //Reset data table
     getDataSet(userID);
 }
 
+//Delete item from cart
 document.getElementById('deleteItem').onclick = function(){
+    //Get values
     const item = document.getElementById('deleteItemSelect').value;
     const userID = currentUser.uid;
 
+    //Call function
     deleteItem(item, userID);  
+    //Reset data table
     getDataSet(userID);
 }
 
+//Delete all items from cart
 document.getElementById('deleteAll').onclick = function(){
+    //Get user id
     const userID = currentUser.uid;
 
+    //Call function then reset data table
     deleteAll(userID).then(()=>{    
         getDataSet(userID);
     });
 }
 
+//Place order
 document.getElementById('placeOrder').onclick = function(){
+    //Get user id
     const userID = currentUser.uid;
 
+    //Call function
     storeOrder(userID).then(()=>{
+        //Delete all items from current cart 
         deleteAll(userID).then(()=>{    
+            //Reset data table and previous order views
             getDataSet(userID);
             getPrevOrders(userID, 'prevOrderSelectSpecific');
             getPrevOrders(userID, 'prevOrderSelectFull');
@@ -639,23 +665,33 @@ document.getElementById('placeOrder').onclick = function(){
     
 }
 
+//View entire previous order
 document.getElementById('seePrevOrderFull').onclick=function(){
+    //get values
     const userID = currentUser.uid;
     const order = document.getElementById('prevOrderSelectFull').value;
 
+    //call function
     getPrevOrderFull(userID, order);
 }
 
+//Update dropdown list depending on selected order
 document.getElementById('prevOrderSelectSpecific').onchange=function(){
+    //get values
     const userID = currentUser.uid;
     const order = document.getElementById('prevOrderSelectSpecific').value;
+
+    //call function
     getPrevOrderItem(userID, order);
 }
 
+//See specific item from previous order
 document.getElementById('seePrevOrderSpecific').onclick=function(){
+    //get values
     const userID = currentUser.uid;
     const order = document.getElementById('prevOrderSelectSpecific').value;
     const item = document.getElementById('prevItemSelect').value;
 
+    //call function
     getPrevOrderSpecific(userID, order, item);
 }
