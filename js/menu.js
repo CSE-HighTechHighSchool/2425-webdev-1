@@ -68,6 +68,8 @@ window.onload=function(){
     })
       const checkout = document.getElementById("checkout-button");
       checkout.style.display= "none";
+
+      navList.removeChild(cartLink);
   }
 }
 

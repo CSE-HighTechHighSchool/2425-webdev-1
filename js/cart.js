@@ -420,7 +420,6 @@ window.onload = function(){
         welcome.innerText = "You are not signed in. Please sign in to order";
         const page = document.getElementById("cart-functions");
         page.style.display = "none";
-
     }
     else{
         welcome.innerText = 'Welcome '+currentUser.firstname+'!';

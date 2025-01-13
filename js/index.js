@@ -23,6 +23,8 @@ const auth = getAuth();
 // ---------------------// Get reference values -----------------------------
 let userLink = document.getElementById('account-button'); // User name for navbar
 let signOutLink = document.getElementById('signOut');   // Sign out link
+let navList = document.getElementById("nav-list");
+let cartLink = document.getElementById("nav-cart");
 let currentUser = null;
 
 // ----------------------- Get User's Name'Name ------------------------------
@@ -36,22 +38,26 @@ function getUserName() {
     } else {
         currentUser = JSON.parse(sessionStorage.getItem('user'));
     }
+    console.log("hello")
 }
 
 window.onload = function() {
     getUserName();  // Get current user's first name
-    if (currentUser == null) {
+    console.log(currentUser);
+    if (currentUser === null) {
         userLink.innerHTML = `
             <a class="btn menu-btn acct-btn" href="register.html">Create New Account</a>
             <a class="btn menu-btn acct-btn" href="signin.html">Sign in</a>
         `
+        navList.removeChild(cartLink);
     } else {
         userLink.innerHTML = `
             <a class="btn menu-btn acct-btn" id="signOut">Sign Out</a>
         `
+        console.log("here")
 
         document.getElementById('signOut').onclick = () => {
-        signOutUser();
+            signOutUser();
         }
     }
 }
