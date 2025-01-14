@@ -342,33 +342,33 @@ async function storeOrder (userID){
             //Push key: value pairs to corresponding arrays
             items.push(child.key);
             quantity.push(child.val());
-            }).then(()=>{
+            })
+
                 //Go through the array of keys and add to 'orders' section of database
-                for(let i = 0; i<items.length; i++){
+            for(let i = 0; i<items.length; i++){
                     
                     //Get item object properties
-                    let menuItem = menu[items[i]]
+                let menuItem = menu[items[i]]
 
-                    //use menu properties to get price and add to total price
-                    price+=menuItem['price']*quantity[i];
+                //use menu properties to get price and add to total price
+                price+=menuItem['price']*quantity[i];
 
                     //update database
-                    update(ref(db, 'users/' + userID + '/accountInfo/orders/'+date), {
-                        [items[i]]: quantity[i]
-                    })
-                .catch((error)=>{
-                    alert('Error: item could not be added')
-                });
-                }
-                //Add total order price to the database
                 update(ref(db, 'users/' + userID + '/accountInfo/orders/'+date), {
-                    ['price']: price
-                }).then(()=>{
-                    alert('Order placed successfully!');
-                }).catch((error)=>{
-                    alert('Error: issue with price calculation');
-                });
-            })
+                    [items[i]]: quantity[i]
+                })
+            .catch((error)=>{
+                alert('Error: item could not be added')
+            });
+            }
+            //Add total order price to the database
+            update(ref(db, 'users/' + userID + '/accountInfo/orders/'+date), {
+                ['price']: price
+            }).then(()=>{
+                alert('Order placed successfully!');
+            }).catch((error)=>{
+                alert('Error: issue with price calculation');
+            });
         }
         else{
             alert('Cannot place a blank order');
